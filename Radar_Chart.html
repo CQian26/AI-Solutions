@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Interactive Radar Chart (1–10, unlimited axes)</title>
+  <title>Interactive Radar Chart — Save/Load Demo</title>
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -11,7 +11,7 @@
     tailwind.config = { theme: { extend: {} } }
   </script>
 
-  <!-- React 18 (production UMD) + Babel Standalone (for inline JSX) -->
+  <!-- React 18 (UMD) + Babel (for inline JSX/ESNext) -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -19,17 +19,40 @@
 <body class="bg-slate-50">
   <div id="root"></div>
 
-  <script type="text/babel">
+  <!-- The app -->
+  <script type="text/babel" data-presets="env,react">
     const { useState, useMemo, useRef, useEffect } = React;
 
-    // --- math + helpers ---
+    // ---------- math + helpers ----------
     const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
     const rFromValue = (value, maxR) => (clamp(value, 1, 10) / 10) * maxR;
     const valueFromR = (r, maxR) => clamp((r / maxR) * 10, 1, 10);
     const polar = (cx, cy, r, theta) => ({ x: cx + r * Math.cos(theta), y: cy + r * Math.sin(theta) });
     const polygonPoints = (cx, cy, r, angles) => angles.map(a => polar(cx, cy, r, a));
 
+    // ---------- persistence helpers ----------
+    const STORAGE_KEY = "radarCharts_v1";
+    const readStore = () => {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return {};
+        const obj = JSON.parse(raw);
+        return (obj && typeof obj === "object") ? obj : {};
+      } catch (e) {
+        console.warn("Failed to read store", e);
+        return {};
+      }
+    };
+    const writeStore = (obj) => {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+      } catch (e) {
+        alert("Could not save to localStorage (maybe storage is full or blocked).");
+      }
+    };
+
     function App() {
+      // Initial chart
       const [axes, setAxes] = useState([
         { label: "Strength",  value: 6 },
         { label: "Speed",     value: 7.5 },
@@ -39,27 +62,27 @@
       ]);
 
       const [dragIndex, setDragIndex] = useState(null);
-      const svgRef = useRef(null);
+      const [chartName, setChartName] = useState("My Chart");
+      const [store, setStore] = useState(readStore());
+      const [selectedSaved, setSelectedSaved] = useState("");
 
+      // sizing
       const size = 520;
       const padding = 56; // room for labels
       const cx = size / 2, cy = size / 2;
       const maxR = (size / 2) - padding;
 
+      // layout
       const N = axes.length;
-
-      // Evenly spaced, start at -90° (top) clockwise
       const angles = useMemo(() => {
-        const base = -Math.PI / 2;
+        const base = -Math.PI / 2; // start at top, clockwise
         return Array.from({ length: N }, (_, i) => base + (i * 2 * Math.PI) / N);
       }, [N]);
 
-      // Points for the data polygon
       const dataPts = useMemo(() => (
         axes.map((ax, i) => polar(cx, cy, rFromValue(ax.value, maxR), angles[i]))
       ), [axes, angles]);
 
-      // 10 grid levels
       const gridLevels = useMemo(() => (
         Array.from({ length: 10 }, (_, i) => {
           const r = ((i + 1) / 10) * maxR;
@@ -67,10 +90,10 @@
         })
       ), [angles]);
 
-      // Axis endpoints
       const axisEnds = useMemo(() => angles.map(a => polar(cx, cy, maxR, a)), [angles]);
 
-      // Drag logic (constrained along axis)
+      // ---------- drag logic (constrained along axis) ----------
+      const svgRef = useRef(null);
       useEffect(() => {
         if (dragIndex == null) return;
 
@@ -79,8 +102,7 @@
           if (!svg) return;
 
           const pt = svg.createSVGPoint();
-          pt.x = e.clientX;
-          pt.y = e.clientY;
+          pt.x = e.clientX; pt.y = e.clientY;
           const cursor = pt.matrixTransform(svg.getScreenCTM().inverse());
 
           const dx = cursor.x - cx;
@@ -112,28 +134,119 @@
         };
       }, [dragIndex, angles, maxR, cx, cy]);
 
-      // CRUD helpers
+      // ---------- helpers ----------
       const addAxis = () => setAxes(a => [...a, { label: `Axis ${a.length + 1}`, value: 5 }]);
       const removeAxis = (idx) => { if (axes.length > 3) setAxes(a => a.filter((_, i) => i !== idx)); };
       const updateAxis = (idx, patch) => setAxes(prev => prev.map((ax, i) => i === idx ? { ...ax, ...patch } : ax));
-
-      // Keyboard adjust from focused handle
       const handleKeyAdjust = (idx, delta) => {
         setAxes(prev => prev.map((ax, i) => i === idx ? { ...ax, value: clamp(Math.round((ax.value + delta) * 10) / 10, 1, 10) } : ax));
       };
 
+      // ---------- Save/Load/Import/Export ----------
+      const saveChart = () => {
+        const name = (chartName || "").trim();
+        if (!name) return alert("Please give your chart a name.");
+        const existing = readStore();
+        if (existing[name] && !confirm(`A chart named "${name}" exists. Overwrite?`)) return;
+        existing[name] = { axes };
+        writeStore(existing);
+        setStore(existing);
+        setSelectedSaved(name);
+      };
+
+      const loadChart = (name) => {
+        const saved = store[name];
+        if (!saved) return;
+        if (!saved.axes || !Array.isArray(saved.axes) || saved.axes.length < 3) {
+          alert("Saved chart is invalid.");
+          return;
+        }
+        setAxes(saved.axes.map(ax => ({
+          label: String(ax.label || ""),
+          value: clamp(Number(ax.value) || 1, 1, 10),
+        })));
+        setChartName(name);
+      };
+
+      const deleteChart = (name) => {
+        if (!store[name]) return;
+        if (!confirm(`Delete "${name}"?`)) return;
+        const copy = { ...store };
+        delete copy[name];
+        writeStore(copy);
+        setStore(copy);
+        if (selectedSaved === name) setSelectedSaved("");
+      };
+
+      const exportJSON = () => {
+        const data = JSON.stringify({ name: chartName, axes }, null, 2);
+        const blob = new Blob([data], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = (chartName || "radar-chart") + ".json";
+        a.click();
+        URL.revokeObjectURL(url);
+      };
+
+      const importJSON = (file) => {
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          try {
+            const obj = JSON.parse(reader.result ? reader.result.toString() : "{}");
+            if (!obj.axes || !Array.isArray(obj.axes)) return alert("Invalid file format.");
+            const name = (obj.name || "Imported Chart").trim();
+            setAxes(obj.axes.map(ax => ({
+              label: String(ax.label || ""),
+              value: clamp(Number(ax.value) || 1, 1, 10),
+            })));
+            setChartName(name);
+          } catch (e) {
+            alert("Failed to parse JSON.");
+          }
+        };
+        reader.readAsText(file);
+      };
+
+      const copyJSON = async () => {
+        try {
+          await navigator.clipboard.writeText(JSON.stringify({ name: chartName, axes }, null, 2));
+          alert("Config copied to clipboard!");
+        } catch {
+          alert("Clipboard copy failed.");
+        }
+      };
+
+      const exportSVG = () => {
+        const svg = document.getElementById("radar-svg");
+        if (!svg) return;
+        const serializer = new XMLSerializer();
+        const source = serializer.serializeToString(svg);
+        const blob = new Blob([source], { type: "image/svg+xml;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = (chartName || "radar-chart") + ".svg";
+        a.click();
+        URL.revokeObjectURL(url);
+      };
+
+      // ---------- UI ----------
       return (
         <div className="min-h-screen flex flex-col items-center p-6 gap-6">
-          <h1 className="text-2xl font-semibold tracking-tight">Interactive Radar Chart (1–10, unlimited axes)</h1>
+          <h1 className="text-2xl font-semibold tracking-tight">Interactive Radar Chart (Save/Load)</h1>
 
-          <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Chart */}
-            <div className="bg-white rounded-2xl shadow-sm p-4">
+            <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm p-4">
               <svg
+                id="radar-svg"
                 ref={svgRef}
                 width={size}
                 height={size}
                 className="mx-auto touch-none"
+                viewBox={`0 0 ${size} ${size}`}
               >
                 {/* Grid rings */}
                 {gridLevels.map((ring, i) => (
@@ -148,7 +261,11 @@
 
                 {/* Axis spokes */}
                 {axisEnds.map((p, i) => (
-                  <line key={`spoke-${i}`} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke="#e5e7eb" strokeWidth="1" />
+                  <line
+                    key={`spoke-${i}`}
+                    x1={cx} y1={cy} x2={p.x} y2={p.y}
+                    stroke="#e5e7eb" strokeWidth="1"
+                  />
                 ))}
 
                 {/* Data polygon */}
@@ -216,6 +333,62 @@
 
             {/* Controls */}
             <div className="bg-white rounded-2xl shadow-sm p-4 flex flex-col gap-4">
+              {/* Save/Load */}
+              <div className="rounded-xl border p-3">
+                <div className="text-lg font-medium mb-2">Save / Load</div>
+
+                <label className="text-xs text-slate-600">Chart name</label>
+                <div className="mt-1 flex gap-2">
+                  <input
+                    className="flex-1 px-3 py-2 rounded-lg border outline-none focus:ring-2 focus:ring-blue-400"
+                    value={chartName}
+                    onChange={e => setChartName(e.target.value)}
+                    placeholder="My Chart"
+                  />
+                  <button
+                    className="px-3 py-2 rounded-lg bg-blue-600 text-white text-sm hover:bg-blue-700"
+                    onClick={saveChart}
+                    title="Save to your browser (localStorage)"
+                  >
+                    Save
+                  </button>
+                </div>
+
+                <div className="mt-3 flex items-center gap-2">
+                  <select
+                    className="flex-1 px-3 py-2 rounded-lg border"
+                    value={selectedSaved}
+                    onChange={e => setSelectedSaved(e.target.value)}
+                  >
+                    <option value="" disabled>Select a saved chart…</option>
+                    {Object.keys(store).sort().map(name => (
+                      <option key={name} value={name}>{name}</option>
+                    ))}
+                  </select>
+                  <button
+                    className="px-3 py-2 rounded-lg border text-sm hover:bg-slate-50 disabled:opacity-40"
+                    disabled={!selectedSaved}
+                    onClick={() => loadChart(selectedSaved)}
+                  >Load</button>
+                  <button
+                    className="px-3 py-2 rounded-lg border text-sm hover:bg-slate-50 disabled:opacity-40"
+                    disabled={!selectedSaved}
+                    onClick={() => deleteChart(selectedSaved)}
+                  >Delete</button>
+                </div>
+
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <button className="px-3 py-1.5 rounded-lg border text-sm hover:bg-slate-50" onClick={copyJSON}>Copy JSON</button>
+                  <button className="px-3 py-1.5 rounded-lg border text-sm hover:bg-slate-50" onClick={exportJSON}>Download JSON</button>
+                  <label className="px-3 py-1.5 rounded-lg border text-sm hover:bg-slate-50 cursor-pointer">
+                    Import JSON
+                    <input type="file" accept="application/json" className="hidden" onChange={(e) => importJSON(e.target.files && e.target.files[0])} />
+                  </label>
+                  <button className="px-3 py-1.5 rounded-lg border text-sm hover:bg-slate-50" onClick={exportSVG}>Download SVG</button>
+                </div>
+              </div>
+
+              {/* Axes list */}
               <div className="flex items-center justify-between">
                 <div className="text-lg font-medium">Axes</div>
                 <button
