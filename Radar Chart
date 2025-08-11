@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interactive Radar Chart (1–10, unlimited axes)</title>
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {} } }
+  </script>
+
+  <!-- React 18 (production UMD) + Babel Standalone (for inline JSX) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-slate-50">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useMemo, useRef, useEffect } = React;
+
+    // --- math + helpers ---
+    const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+    const rFromValue = (value, maxR) => (clamp(value, 1, 10) / 10) * maxR;
+    const valueFromR = (r, maxR) => clamp((r / maxR) * 10, 1, 10);
+    const polar = (cx, cy, r, theta) => ({ x: cx + r * Math.cos(theta), y: cy + r * Math.sin(theta) });
+    const polygonPoints = (cx, cy, r, angles) => angles.map(a => polar(cx, cy, r, a));
+
+    function App() {
+      const [axes, setAxes] = useState([
+        { label: "Strength",  value: 6 },
+        { label: "Speed",     value: 7.5 },
+        { label: "Endurance", value: 5 },
+        { label: "Technique", value: 8.5 },
+        { label: "Strategy",  value: 6.5 },
+      ]);
+
+      const [dragIndex, setDragIndex] = useState(null);
+      const svgRef = useRef(null);
+
+      const size = 520;
+      const padding = 56; // room for labels
+      const cx = size / 2, cy = size / 2;
+      const maxR = (size / 2) - padding;
+
+      const N = axes.length;
+
+      // Evenly spaced, start at -90° (top) clockwise
+      const angles = useMemo(() => {
+        const base = -Math.PI / 2;
+        return Array.from({ length: N }, (_, i) => base + (i * 2 * Math.PI) / N);
+      }, [N]);
+
+      // Points for the data polygon
+      const dataPts = useMemo(() => (
+        axes.map((ax, i) => polar(cx, cy, rFromValue(ax.value, maxR), angles[i]))
+      ), [axes, angles]);
+
+      // 10 grid levels
+      const gridLevels = useMemo(() => (
+        Array.from({ length: 10 }, (_, i) => {
+          const r = ((i + 1) / 10) * maxR;
+          return polygonPoints(cx, cy, r, angles);
+        })
+      ), [angles]);
+
+      // Axis endpoints
+      const axisEnds = useMemo(() => angles.map(a => polar(cx, cy, maxR, a)), [angles]);
+
+      // Drag logic (constrained along axis)
+      useEffect(() => {
+        if (dragIndex == null) return;
+
+        const onMove = (e) => {
+          const svg = svgRef.current;
+          if (!svg) return;
+
+          const pt = svg.createSVGPoint();
+          pt.x = e.clientX;
+          pt.y = e.clientY;
+          const cursor = pt.matrixTransform(svg.getScreenCTM().inverse());
+
+          const dx = cursor.x - cx;
+          const dy = cursor.y - cy;
+
+          const a = angles[dragIndex];
+          const ux = Math.cos(a), uy = Math.sin(a);
+
+          const proj = dx * ux + dy * uy; // projection onto axis
+          const r = clamp(proj, (1/10)*maxR, maxR);
+          const newVal = valueFromR(r, maxR);
+
+          setAxes(prev => {
+            const copy = prev.slice();
+            copy[dragIndex] = { ...copy[dragIndex], value: Math.round(newVal * 10) / 10 };
+            return copy;
+          });
+        };
+
+        const stop = () => setDragIndex(null);
+
+        window.addEventListener("pointermove", onMove);
+        window.addEventListener("pointerup", stop, { once: true });
+        window.addEventListener("pointercancel", stop, { once: true });
+        return () => {
+          window.removeEventListener("pointermove", onMove);
+          window.removeEventListener("pointerup", stop);
+          window.removeEventListener("pointercancel", stop);
+        };
+      }, [dragIndex, angles, maxR, cx, cy]);
+
+      // CRUD helpers
+      const addAxis = () => setAxes(a => [...a, { label: `Axis ${a.length + 1}`, value: 5 }]);
+      const removeAxis = (idx) => { if (axes.length > 3) setAxes(a => a.filter((_, i) => i !== idx)); };
+      const updateAxis = (idx, patch) => setAxes(prev => prev.map((ax, i) => i === idx ? { ...ax, ...patch } : ax));
+
+      // Keyboard adjust from focused handle
+      const handleKeyAdjust = (idx, delta) => {
+        setAxes(prev => prev.map((ax, i) => i === idx ? { ...ax, value: clamp(Math.round((ax.value + delta) * 10) / 10, 1, 10) } : ax));
+      };
+
+      return (
+        <div className="min-h-screen flex flex-col items-center p-6 gap-6">
+          <h1 className="text-2xl font-semibold tracking-tight">Interactive Radar Chart (1–10, unlimited axes)</h1>
+
+          <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Chart */}
+            <div className="bg-white rounded-2xl shadow-sm p-4">
+              <svg
+                ref={svgRef}
+                width={size}
+                height={size}
+                className="mx-auto touch-none"
+              >
+                {/* Grid rings */}
+                {gridLevels.map((ring, i) => (
+                  <polygon
+                    key={`grid-${i}`}
+                    points={ring.map(p => `${p.x},${p.y}`).join(" ")}
+                    fill="none"
+                    stroke="#e5e7eb"
+                    strokeWidth="1"
+                  />
+                ))}
+
+                {/* Axis spokes */}
+                {axisEnds.map((p, i) => (
+                  <line key={`spoke-${i}`} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke="#e5e7eb" strokeWidth="1" />
+                ))}
+
+                {/* Data polygon */}
+                <polygon
+                  points={dataPts.map(p => `${p.x},${p.y}`).join(" ")}
+                  fill="rgba(59,130,246,0.18)"
+                  stroke="#3b82f6"
+                  strokeWidth="2"
+                />
+
+                {/* Handles (draggable + keyboard accessible) */}
+                {dataPts.map((p, i) => (
+                  <g key={`handle-${i}`}>
+                    <circle
+                      cx={p.x} cy={p.y} r="7"
+                      fill="#3b82f6"
+                      className="cursor-grab"
+                      onPointerDown={(e) => { e.preventDefault(); setDragIndex(i); }}
+                    />
+                    {/* focus ring & keyboard control */}
+                    <circle
+                      cx={p.x} cy={p.y} r="12"
+                      fill="transparent"
+                      tabIndex="0"
+                      role="slider"
+                      aria-label={`${axes[i].label} value`}
+                      aria-valuemin="1"
+                      aria-valuemax="10"
+                      aria-valuenow={axes[i].value}
+                      onKeyDown={(e) => {
+                        if (e.key === "ArrowLeft")  handleKeyAdjust(i, e.shiftKey ? -1 : -0.1);
+                        if (e.key === "ArrowRight") handleKeyAdjust(i, e.shiftKey ? +1 : +0.1);
+                        if (e.key === "ArrowDown")  handleKeyAdjust(i, e.shiftKey ? -1 : -0.1);
+                        if (e.key === "ArrowUp")    handleKeyAdjust(i, e.shiftKey ? +1 : +0.1);
+                      }}
+                    />
+                    {/* tiny dot at outer ring as a visual target */}
+                    <circle cx={axisEnds[i].x} cy={axisEnds[i].y} r="3" fill="#94a3b8" />
+                  </g>
+                ))}
+
+                {/* Labels near outer ring */}
+                {axisEnds.map((p, i) => {
+                  const label = axes[i].label || `Axis ${i + 1}`;
+                  const a = angles[i];
+                  const labelPt = polar(p.x, p.y, 16, a);
+                  const cos = Math.cos(a);
+                  const anchor = Math.abs(cos) < 0.35 ? "middle" : (cos > 0 ? "start" : "end");
+                  return (
+                    <text
+                      key={`label-${i}`}
+                      x={labelPt.x}
+                      y={labelPt.y}
+                      fontSize="12"
+                      textAnchor={anchor}
+                      dominantBaseline="middle"
+                      fill="#0f172a"
+                    >
+                      {label}
+                    </text>
+                  );
+                })}
+              </svg>
+            </div>
+
+            {/* Controls */}
+            <div className="bg-white rounded-2xl shadow-sm p-4 flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <div className="text-lg font-medium">Axes</div>
+                <button
+                  className="px-3 py-1.5 rounded-xl bg-blue-600 text-white text-sm hover:bg-blue-700"
+                  onClick={addAxis}
+                >
+                  + Add axis
+                </button>
+              </div>
+
+              <div className="flex-1 overflow-auto pr-1">
+                <ul className="space-y-4">
+                  {axes.map((ax, i) => (
+                    <li key={i} className="border rounded-xl p-3">
+                      <div className="flex items-center gap-2">
+                        <input
+                          className="flex-1 px-3 py-2 rounded-lg border outline-none focus:ring-2 focus:ring-blue-400"
+                          value={ax.label}
+                          onChange={e => updateAxis(i, { label: e.target.value })}
+                          placeholder={`Axis ${i + 1}`}
+                        />
+                        <button
+                          className={`px-2.5 py-1.5 rounded-lg text-sm border ${axes.length <= 3 ? "opacity-40 cursor-not-allowed" : "hover:bg-slate-50"}`}
+                          onClick={() => removeAxis(i)}
+                          disabled={axes.length <= 3}
+                          title={axes.length <= 3 ? "Keep at least 3 axes" : "Remove axis"}
+                        >
+                          Remove
+                        </button>
+                      </div>
+
+                      <div className="mt-3 grid grid-cols-5 gap-2 items-center">
+                        <label className="col-span-1 text-sm text-slate-600">Value</label>
+                        <input
+                          type="range"
+                          min="1"
+                          max="10"
+                          step="0.1"
+                          value={ax.value}
+                          onChange={e => updateAxis(i, { value: clamp(parseFloat(e.target.value || "1"), 1, 10) })}
+                          className="col-span-3"
+                        />
+                        <input
+                          type="number"
+                          min="1"
+                          max="10"
+                          step="0.1"
+                          value={ax.value}
+                          onChange={e => {
+                            const v = parseFloat(e.target.value);
+                            updateAxis(i, { value: clamp(isNaN(v) ? 1 : v, 1, 10) });
+                          }}
+                          className="col-span-1 px-2 py-1 rounded border"
+                        />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="text-xs text-slate-500">
+                Tips: drag a blue dot, or use sliders/inputs. Arrow keys also work on focused dots (Shift = faster).
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>
