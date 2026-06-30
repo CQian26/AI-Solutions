@@ -1,0 +1,269 @@
+{
+  "generated_at": "2026-06-30T14:44:13Z",
+  "axes": [
+    "AI & Machine Learning",
+    "Data & Analytics",
+    "Cloud & Infrastructure",
+    "Cybersecurity",
+    "Software Development",
+    "Eligibility & Set-Aside"
+  ],
+  "contracts": [
+    {
+      "id": "BM-2026-0001",
+      "title": "Enterprise AI & Predictive Analytics Platform",
+      "url": "sample_pages/BM-2026-0001.html",
+      "agency": "State Department of Health & Human Services",
+      "tags": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Predictive Analytics",
+        "Data Analytics",
+        "541511",
+        "Small Business"
+      ],
+      "matched": {
+        "AI & Machine Learning": [
+          "artificial intelligence",
+          "machine learning",
+          "natural language processing",
+          "predictive analytics",
+          "generative ai"
+        ],
+        "Data & Analytics": [
+          "data analytics",
+          "data warehouse",
+          "dashboard"
+        ],
+        "Cloud & Infrastructure": [
+          "cloud",
+          "aws"
+        ],
+        "Cybersecurity": [],
+        "Software Development": [],
+        "Eligibility & Set-Aside": [
+          "small business",
+          "541511"
+        ]
+      },
+      "category_scores": {
+        "AI & Machine Learning": 7.5,
+        "Data & Analytics": 6.0,
+        "Cloud & Infrastructure": 4.4,
+        "Cybersecurity": 0.0,
+        "Software Development": 0.0,
+        "Eligibility & Set-Aside": 5.0
+      },
+      "overall_score": 41.3,
+      "rank": 1
+    },
+    {
+      "id": "BM-2026-0005",
+      "title": "Cybersecurity Assessment & Zero Trust Implementation",
+      "url": "sample_pages/BM-2026-0005.html",
+      "agency": "State Military Department",
+      "tags": [
+        "Cybersecurity",
+        "Zero Trust",
+        "FedRAMP",
+        "NIST",
+        "Penetration Testing",
+        "541519",
+        "SDVOSB"
+      ],
+      "matched": {
+        "AI & Machine Learning": [],
+        "Data & Analytics": [],
+        "Cloud & Infrastructure": [
+          "cloud",
+          "azure"
+        ],
+        "Cybersecurity": [
+          "cybersecurity",
+          "zero trust",
+          "fedramp",
+          "nist",
+          "compliance",
+          "penetration testing"
+        ],
+        "Software Development": [],
+        "Eligibility & Set-Aside": [
+          "small business",
+          "veteran-owned",
+          "541511"
+        ]
+      },
+      "category_scores": {
+        "AI & Machine Learning": 0.0,
+        "Data & Analytics": 0.0,
+        "Cloud & Infrastructure": 4.4,
+        "Cybersecurity": 10.0,
+        "Software Development": 0.0,
+        "Eligibility & Set-Aside": 6.2
+      },
+      "overall_score": 30.2,
+      "rank": 2
+    },
+    {
+      "id": "BM-2026-0002",
+      "title": "Statewide Data Warehouse Modernization",
+      "url": "sample_pages/BM-2026-0002.html",
+      "agency": "Office of the State CIO",
+      "tags": [
+        "Data Warehouse",
+        "ETL",
+        "Big Data",
+        "Data Governance",
+        "Azure",
+        "518210"
+      ],
+      "matched": {
+        "AI & Machine Learning": [
+          "machine learning"
+        ],
+        "Data & Analytics": [
+          "big data",
+          "data warehouse",
+          "etl",
+          "dashboard",
+          "data governance"
+        ],
+        "Cloud & Infrastructure": [
+          "cloud",
+          "azure"
+        ],
+        "Cybersecurity": [],
+        "Software Development": [
+          "modernization"
+        ],
+        "Eligibility & Set-Aside": [
+          "541511"
+        ]
+      },
+      "category_scores": {
+        "AI & Machine Learning": 1.9,
+        "Data & Analytics": 7.0,
+        "Cloud & Infrastructure": 4.4,
+        "Cybersecurity": 0.0,
+        "Software Development": 2.0,
+        "Eligibility & Set-Aside": 2.5
+      },
+      "overall_score": 28.6,
+      "rank": 3
+    },
+    {
+      "id": "BM-2026-0003",
+      "title": "Cloud Migration & DevSecOps Services",
+      "url": "sample_pages/BM-2026-0003.html",
+      "agency": "Department of Transportation",
+      "tags": [
+        "Cloud Computing",
+        "AWS",
+        "Kubernetes",
+        "DevSecOps",
+        "CI/CD",
+        "541512"
+      ],
+      "matched": {
+        "AI & Machine Learning": [],
+        "Data & Analytics": [],
+        "Cloud & Infrastructure": [
+          "cloud",
+          "aws",
+          "kubernetes",
+          "devops"
+        ],
+        "Cybersecurity": [
+          "fedramp",
+          "nist",
+          "compliance"
+        ],
+        "Software Development": [
+          "api",
+          "agile",
+          "modernization"
+        ],
+        "Eligibility & Set-Aside": [
+          "541511"
+        ]
+      },
+      "category_scores": {
+        "AI & Machine Learning": 0.0,
+        "Data & Analytics": 0.0,
+        "Cloud & Infrastructure": 6.7,
+        "Cybersecurity": 4.0,
+        "Software Development": 5.0,
+        "Eligibility & Set-Aside": 2.5
+      },
+      "overall_score": 27.0,
+      "rank": 4
+    },
+    {
+      "id": "BM-2026-0004",
+      "title": "Municipal Website Redesign",
+      "url": "sample_pages/BM-2026-0004.html",
+      "agency": "City of Riverton",
+      "tags": [
+        "Web Development",
+        "Web Application",
+        "Accessibility",
+        "Small Business"
+      ],
+      "matched": {
+        "AI & Machine Learning": [],
+        "Data & Analytics": [],
+        "Cloud & Infrastructure": [],
+        "Cybersecurity": [],
+        "Software Development": [
+          "web application",
+          "api",
+          "agile"
+        ],
+        "Eligibility & Set-Aside": [
+          "small business"
+        ]
+      },
+      "category_scores": {
+        "AI & Machine Learning": 0.0,
+        "Data & Analytics": 0.0,
+        "Cloud & Infrastructure": 0.0,
+        "Cybersecurity": 0.0,
+        "Software Development": 5.0,
+        "Eligibility & Set-Aside": 2.5
+      },
+      "overall_score": 11.1,
+      "rank": 5
+    },
+    {
+      "id": "BM-2026-0006",
+      "title": "Grounds Maintenance & Landscaping Services",
+      "url": "sample_pages/BM-2026-0006.html",
+      "agency": "State Parks Department",
+      "tags": [
+        "Landscaping",
+        "Groundskeeping",
+        "Mowing",
+        "Irrigation",
+        "561730"
+      ],
+      "matched": {
+        "AI & Machine Learning": [],
+        "Data & Analytics": [],
+        "Cloud & Infrastructure": [],
+        "Cybersecurity": [],
+        "Software Development": [],
+        "Eligibility & Set-Aside": []
+      },
+      "category_scores": {
+        "AI & Machine Learning": 0.0,
+        "Data & Analytics": 0.0,
+        "Cloud & Infrastructure": 0.0,
+        "Cybersecurity": 0.0,
+        "Software Development": 0.0,
+        "Eligibility & Set-Aside": 0.0
+      },
+      "overall_score": 0.0,
+      "rank": 6
+    }
+  ]
+}
