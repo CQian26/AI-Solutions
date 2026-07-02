@@ -78,7 +78,7 @@ class SamClient:
         max_retries: int = 3,
         posted_from: Optional[str] = None,
         posted_to: Optional[str] = None,
-        lookback_days: int = 365,
+        lookback_days: int = 364,
     ):
         self.api_key = api_key or os.environ.get("SAM_API_KEY")
         self.mock_dir = Path(mock_dir) if mock_dir else None
@@ -86,9 +86,13 @@ class SamClient:
         self.timeout = timeout
         self.max_retries = max_retries
         # SAM.gov v2 /opportunities/search REQUIRES postedFrom/postedTo in
-        # MM/dd/yyyy format. Default to today back 'lookback_days' — 365d
-        # covers active opportunities (typical posting window is 30-90d) plus
-        # recently-archived ones (SAM archives 15d after response deadline).
+        # MM/dd/yyyy AND enforces a "strictly less than 1 year" window
+        # (365 days exactly is rejected with 'Date range must be null year(s)
+        # apart'). 364d is the safe max and covers active opportunities
+        # (typical posting window 30-90d) plus recently-archived ones (SAM
+        # archives ~15d after response deadline).
+        if lookback_days > 364:
+            lookback_days = 364
         today = date.today()
         self.posted_to = posted_to or today.strftime("%m/%d/%Y")
         self.posted_from = posted_from or (today - timedelta(days=lookback_days)).strftime("%m/%d/%Y")

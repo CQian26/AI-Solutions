@@ -150,8 +150,8 @@ def main() -> int:
     ap.add_argument("--no-attachments", action="store_true", help="Skip downloading and scanning attachments")
     ap.add_argument("--include-untitled", action="store_true", help="Also search opportunities with truncated titles")
     ap.add_argument("--rate", type=float, default=1.5, help="Seconds between SAM.gov requests (default 1.5)")
-    ap.add_argument("--lookback-days", type=int, default=365,
-                    help="How many days back to search SAM.gov (default 365). Increase if solicitations are older.")
+    ap.add_argument("--lookback-days", type=int, default=364,
+                    help="How many days back to search SAM.gov (default 364, MAX 364 — the API rejects >=365d windows).")
     ap.add_argument("--posted-from", help="Override start of search window (MM/DD/YYYY).")
     ap.add_argument("--posted-to", help="Override end of search window (MM/DD/YYYY).")
     ap.add_argument("--filters", default="filters.json",
