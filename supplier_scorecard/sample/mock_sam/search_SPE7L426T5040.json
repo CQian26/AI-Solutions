@@ -1,0 +1,19 @@
+{
+  "totalRecords": 1,
+  "opportunitiesData": [
+    {
+      "noticeId": "mock-notice-SPE7L426T5040",
+      "solicitationNumber": "SPE7L426T5040",
+      "title": "SWITCH",
+      "fullParentPathName": "DEPT OF DEFENSE.DEFENSE LOGISTICS AGENCY.DLA AVIATION",
+      "naicsCode": "334419",
+      "classificationCode": "1005",
+      "typeOfSetAsideDescription": null,
+      "postedDate": "2026-05-26",
+      "responseDeadLine": "2026-06-22T17:00:00-05:00",
+      "uiLink": "https://sam.gov/opp/mock-notice-SPE7L426T5040/view",
+      "resourceLinks": [],
+      "description": "This is a brand-name or equal solicitation under FAR 52.211-6. AMSC Code B. The following provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 252.225-7012 Preference for Certain Domestic Commodities; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.246-7003; DFARS 252.247-7023."
+    }
+  ]
+}

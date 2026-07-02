@@ -1,0 +1,7 @@
+# Required
+openpyxl>=3.1        # write the .xlsx scorecard
+
+# For attachment scanning — install the ones you need:
+pdfminer.six>=20240706  # preferred PDF text extractor (better on gov PDFs)
+pypdf>=4.0              # fallback PDF extractor
+python-docx>=1.1        # .docx attachments

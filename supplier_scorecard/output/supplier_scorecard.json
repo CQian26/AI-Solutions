@@ -1,0 +1,1948 @@
+{
+  "contracts": [
+    {
+      "id": "FBI-26-SUP-556",
+      "title": "Suppressors 5.56 NATO",
+      "agency": "JUSTICE, DEPARTMENT OF.FEDERAL BUREAU OF INVESTIGATION",
+      "naics": "332994",
+      "psc": "1005",
+      "set_aside": "Total Small Business Set-Aside",
+      "posted": "2026-05-10",
+      "deadline": "2026-06-30T17:00:00-05:00",
+      "url": "https://sam.gov/opp/mock-notice-FBI-Suppressors/view",
+      "sources": [
+        "description"
+      ],
+      "clauses": [
+        {
+          "regulation": "FAR",
+          "number": "52.203-13",
+          "citation": "FAR 52.203-13",
+          "part": "52.203",
+          "title": "Contractor Code of Business Ethics and Conduct",
+          "contexts": [
+            "\u2026s. This is a commercial-item acquisition. The following FAR provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26;\u2026",
+            "\u2026his is a commercial-item acquisition. The following FAR provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-7",
+          "citation": "FAR 52.204-7",
+          "part": "52.204",
+          "title": "System for Award Management",
+          "contexts": [
+            "\u2026mmercial-item acquisition. The following FAR provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6;\u2026",
+            "\u2026cial-item acquisition. The following FAR provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-10",
+          "citation": "FAR 52.204-10",
+          "part": "52.204",
+          "title": "Reporting Executive Compensation and First-Tier Subcontract Awards",
+          "contexts": [
+            "\u2026acquisition. The following FAR provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1;\u2026",
+            "\u2026isition. The following FAR provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-13",
+          "citation": "FAR 52.204-13",
+          "part": "52.204",
+          "title": "System for Award Management Maintenance",
+          "contexts": [
+            "\u2026e following FAR provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; F\u2026",
+            "\u2026llowing FAR provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; F\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-24",
+          "citation": "FAR 52.204-24",
+          "part": "52.204",
+          "title": "Representation Regarding Certain Telecommunications and Video Surveillance Services or Equipment",
+          "contexts": [
+            "\u2026provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FA\u2026",
+            "\u2026visions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FA\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-25",
+          "citation": "FAR 52.204-25",
+          "part": "52.204",
+          "title": "Prohibition on Contracting for Certain Telecommunications and Video Surveillance Services or Equipment",
+          "contexts": [
+            "\u2026clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR\u2026",
+            "\u2026uses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-26",
+          "citation": "FAR 52.204-26",
+          "part": "52.204",
+          "title": "Covered Telecommunications Equipment or Services\u2014Representation",
+          "contexts": [
+            "\u2026FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR\u2026",
+            "\u202652.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.209-6",
+          "citation": "FAR 52.209-6",
+          "part": "52.209",
+          "title": "Protecting the Government's Interest When Subcontracting with Contractors Debarred, Suspended, or Proposed for Debarment",
+          "contexts": [
+            "\u2026FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notic\u2026",
+            "\u202652.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notic\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-1",
+          "citation": "FAR 52.212-1",
+          "part": "52.212",
+          "title": "Instructions to Offerors\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u2026FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Sma\u2026",
+            "\u202652.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Sma\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-3",
+          "citation": "FAR 52.212-3",
+          "part": "52.212",
+          "title": "Offeror Representations and Certifications\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u2026; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Se\u2026",
+            "\u2026R 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Se\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-4",
+          "citation": "FAR 52.212-4",
+          "part": "52.212",
+          "title": "Contract Terms and Conditions\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u20263; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 5\u2026",
+            "\u2026AR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 5\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-5",
+          "citation": "FAR 52.212-5",
+          "part": "52.212",
+          "title": "Contract Terms and Conditions Required to Implement Statutes or Executive Orders\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u202624; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 5\u2026",
+            "\u2026FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 5\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.219-1",
+          "citation": "FAR 52.219-1",
+          "part": "52.219",
+          "title": "Small Business Program Representations",
+          "contexts": [
+            "\u2026-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR\u2026",
+            "\u2026FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.219-6",
+          "citation": "FAR 52.219-6",
+          "part": "52.219",
+          "title": "Notice of Total Small Business Set-Aside",
+          "contexts": [
+            "\u20264-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR\u2026",
+            "\u2026; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.219-8",
+          "citation": "FAR 52.219-8",
+          "part": "52.219",
+          "title": "Utilization of Small Business Concerns",
+          "contexts": [
+            "\u2026212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35;\u2026",
+            "\u20264; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.219-28",
+          "citation": "FAR 52.219-28",
+          "part": "52.219",
+          "title": "Post-Award Small Business Program Rerepresentation",
+          "contexts": [
+            "\u2026212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36;\u2026",
+            "\u20265; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-3",
+          "citation": "FAR 52.222-3",
+          "part": "52.222",
+          "title": "Convict Labor",
+          "contexts": [
+            "\u202619-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50\u2026",
+            "\u2026; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-19",
+          "citation": "FAR 52.222-19",
+          "part": "52.222",
+          "title": "Child Labor\u2014Cooperation with Authorities and Remedies",
+          "contexts": [
+            "\u202619-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1;\u2026",
+            "\u2026Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-21",
+          "citation": "FAR 52.222-21",
+          "part": "52.222",
+          "title": "Prohibition of Segregated Facilities",
+          "contexts": [
+            "\u2026Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13;\u2026",
+            "\u2026l Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-26",
+          "citation": "FAR 52.222-26",
+          "part": "52.222",
+          "title": "Equal Opportunity",
+          "contexts": [
+            "\u2026iness Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33;\u2026",
+            "\u2026s Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-35",
+          "citation": "FAR 52.222-35",
+          "part": "52.222",
+          "title": "Equal Opportunity for Veterans",
+          "contexts": [
+            "\u2026; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1;\u2026",
+            "\u2026R 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-36",
+          "citation": "FAR 52.222-36",
+          "part": "52.222",
+          "title": "Equal Opportunity for Workers with Disabilities",
+          "contexts": [
+            "\u2026FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; F\u2026",
+            "\u202652.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; F\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-50",
+          "citation": "FAR 52.222-50",
+          "part": "52.222",
+          "title": "Combating Trafficking in Persons",
+          "contexts": [
+            "\u2026FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FA\u2026",
+            "\u202652.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FA\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.225-1",
+          "citation": "FAR 52.225-1",
+          "part": "52.225",
+          "title": "Buy American\u2014Supplies",
+          "contexts": [
+            "\u2026FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FA\u2026",
+            "\u202652.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FA\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.225-13",
+          "citation": "FAR 52.225-13",
+          "part": "52.225",
+          "title": "Restrictions on Certain Foreign Purchases",
+          "contexts": [
+            "\u2026FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR\u2026",
+            "\u202652.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.232-33",
+          "citation": "FAR 52.232-33",
+          "part": "52.232",
+          "title": "Payment by Electronic Funds Transfer\u2014System for Award Management",
+          "contexts": [
+            "\u2026FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR\u2026",
+            "\u202652.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.233-1",
+          "citation": "FAR 52.233-1",
+          "part": "52.233",
+          "title": "Disputes",
+          "contexts": [
+            "\u2026FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. Thi\u2026",
+            "\u202652.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. Thi\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.233-3",
+          "citation": "FAR 52.233-3",
+          "part": "52.233",
+          "title": "Protest After Award",
+          "contexts": [
+            "\u2026; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acq\u2026",
+            "\u2026R 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acq\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.233-4",
+          "citation": "FAR 52.233-4",
+          "part": "52.233",
+          "title": "Applicable Law for Breach of Contract Claim",
+          "contexts": [
+            "\u20266; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acquisition \u2014 DFA\u2026",
+            "\u2026AR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acquisition \u2014 DFA\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.243-1",
+          "citation": "FAR 52.243-1",
+          "part": "52.243",
+          "title": "Changes\u2014Fixed-Price",
+          "contexts": [
+            "\u202650; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acquisition \u2014 DFARS does not ap\u2026",
+            "\u2026FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acquisition \u2014 DFARS does not ap\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.246-2",
+          "citation": "FAR 52.246-2",
+          "part": "52.246",
+          "title": "Inspection of Supplies\u2014Fixed-Price",
+          "contexts": [
+            "\u2026-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acquisition \u2014 DFARS does not apply.",
+            "\u2026FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acquisition \u2014 DFARS does not apply."
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.247-34",
+          "citation": "FAR 52.247-34",
+          "part": "52.247",
+          "title": "F.o.b. Destination",
+          "contexts": [
+            "\u2026-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acquisition \u2014 DFARS does not apply.",
+            "\u2026FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acquisition \u2014 DFARS does not apply."
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.249-8",
+          "citation": "FAR 52.249-8",
+          "part": "52.249",
+          "title": "Default (Fixed-Price Supply and Service)",
+          "contexts": [
+            "\u2026-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acquisition \u2014 DFARS does not apply.",
+            "\u2026FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acquisition \u2014 DFARS does not apply."
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SPE7L026T0325",
+      "title": "BRACKET,VEHICULAR",
+      "agency": "DEPT OF DEFENSE.DEFENSE LOGISTICS AGENCY.DLA LAND AND MARITIME",
+      "naics": "336413",
+      "psc": "2590",
+      "set_aside": "Total Small Business Set-Aside",
+      "posted": "2026-05-15",
+      "deadline": "2026-06-11T17:00:00-05:00",
+      "url": "https://sam.gov/opp/mock-notice-SPE7L026T0325/view",
+      "sources": [
+        "description",
+        "attachment:SPE7L026T0325_sow.txt"
+      ],
+      "clauses": [
+        {
+          "regulation": "DFARS",
+          "number": "252.203-7000",
+          "citation": "DFARS 252.203-7000",
+          "part": "252.203",
+          "title": "Requirements Relating to Compensation of Former DoD Officials",
+          "contexts": [
+            "\u20264; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: DFARS 252.203-7000; DFARS 252.204-7012 Safeguarding Covered Defense Information and Cyber Incident Reporting\u2026",
+            "\u202652.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: DFARS 252.203-7000; DFARS 252.204-7012 Safeguarding Covered Defense Information and Cyber Incident Reporting\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7012",
+          "citation": "DFARS 252.204-7012",
+          "part": "252.204",
+          "title": "Safeguarding Covered Defense Information and Cyber Incident Reporting",
+          "contexts": [
+            "\u202652.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: DFARS 252.203-7000; DFARS 252.204-7012 Safeguarding Covered Defense Information and Cyber Incident Reporting; DFARS 252.204-7019\u2026",
+            "\u20266-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: DFARS 252.203-7000; DFARS 252.204-7012 Safeguarding Covered Defense Information and Cyber Incident Reporting; DFARS 252.204-7019\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7019",
+          "citation": "DFARS 252.204-7019",
+          "part": "252.204",
+          "title": "Notice of NIST SP 800-171 DoD Assessment Requirements",
+          "contexts": [
+            "\u2026DFARS 252.204-7012 Safeguarding Covered Defense Information and Cyber Incident Reporting; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.204-7021; DFARS 252.211-7003 Item Unique Identification an\u2026",
+            "\u2026252.204-7012 Safeguarding Covered Defense Information and Cyber Incident Reporting; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.204-7021; DFARS 252.211-7003 Item Unique Identification an\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7020",
+          "citation": "DFARS 252.204-7020",
+          "part": "252.204",
+          "title": "NIST SP 800-171 DoD Assessment Requirements",
+          "contexts": [
+            "\u2026afeguarding Covered Defense Information and Cyber Incident Reporting; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.204-7021; DFARS 252.211-7003 Item Unique Identification and Valuation; DFARS 2\u2026",
+            "\u2026rding Covered Defense Information and Cyber Incident Reporting; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.204-7021; DFARS 252.211-7003 Item Unique Identification and Valuation; DFARS 2\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7021",
+          "citation": "DFARS 252.204-7021",
+          "part": "252.204",
+          "title": "Contractor Compliance with the Cybersecurity Maturity Model Certification Level Requirement",
+          "contexts": [
+            "\u2026Defense Information and Cyber Incident Reporting; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.204-7021; DFARS 252.211-7003 Item Unique Identification and Valuation; DFARS 252.225-7001 Buy Amer\u2026",
+            "\u2026e Information and Cyber Incident Reporting; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.204-7021; DFARS 252.211-7003 Item Unique Identification and Valuation; DFARS 252.225-7001 Buy Amer\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.211-7003",
+          "citation": "DFARS 252.211-7003",
+          "part": "252.211",
+          "title": "Item Unique Identification and Valuation",
+          "contexts": [
+            "\u2026and Cyber Incident Reporting; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.204-7021; DFARS 252.211-7003 Item Unique Identification and Valuation; DFARS 252.225-7001 Buy American and Balance of\u2026",
+            "\u2026ber Incident Reporting; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.204-7021; DFARS 252.211-7003 Item Unique Identification and Valuation; DFARS 252.225-7001 Buy American and Balance of\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.223-7008",
+          "citation": "DFARS 252.223-7008",
+          "part": "252.223",
+          "title": "Prohibition of Hexavalent Chromium",
+          "contexts": [
+            "\u2026The Contractor shall not use Hexavalent Chromium in any deliverable in accordance with DFARS 252.223-7008 Prohibition of Hexavalent Chromium. Written approval of the Contracting Officer is\u2026",
+            "\u2026ntractor shall not use Hexavalent Chromium in any deliverable in accordance with DFARS 252.223-7008 Prohibition of Hexavalent Chromium. Written approval of the Contracting Officer is\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.225-7001",
+          "citation": "DFARS 252.225-7001",
+          "part": "252.225",
+          "title": "Buy American and Balance of Payments Program",
+          "contexts": [
+            "\u202604-7020; DFARS 252.204-7021; DFARS 252.211-7003 Item Unique Identification and Valuation; DFARS 252.225-7001 Buy American and Balance of Payments Program; DFARS 252.232-7003; DFARS 252.232-7006; DFA\u2026",
+            "\u20260; DFARS 252.204-7021; DFARS 252.211-7003 Item Unique Identification and Valuation; DFARS 252.225-7001 Buy American and Balance of Payments Program; DFARS 252.232-7003; DFARS 252.232-7006; DFA\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.225-7008",
+          "citation": "DFARS 252.225-7008",
+          "part": "252.225",
+          "title": "Restriction on Acquisition of Specialty Metals",
+          "contexts": [
+            "\u2026ge attached to this solicitation. 2. Specialty Metals. The Contractor shall comply with DFARS 252.225-7008 Restriction on Acquisition of Specialty Metals and, where applicable, DFARS 252.225\u2026",
+            "\u2026ached to this solicitation. 2. Specialty Metals. The Contractor shall comply with DFARS 252.225-7008 Restriction on Acquisition of Specialty Metals and, where applicable, DFARS 252.225\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.225-7009",
+          "citation": "DFARS 252.225-7009",
+          "part": "252.225",
+          "title": "Restriction on Acquisition of Certain Articles Containing Specialty Metals",
+          "contexts": [
+            "\u2026252.225-7008 Restriction on Acquisition of Specialty Metals and, where applicable, DFARS 252.225-7009 Restriction on Acquisition of Certain Articles Containing Specialty Metals. A domesti\u2026",
+            "\u202625-7008 Restriction on Acquisition of Specialty Metals and, where applicable, DFARS 252.225-7009 Restriction on Acquisition of Certain Articles Containing Specialty Metals. A domesti\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.227-7013",
+          "citation": "DFARS 252.227-7013",
+          "part": "252.227",
+          "title": "Rights in Technical Data\u2014Noncommercial Items",
+          "contexts": [
+            "\u2026lies to any electronic items procured under this contract. 5. Rights in Technical Data. DFARS 252.227-7013 Rights in Technical Data\u2014Noncommercial Items applies to any technical data delivered.\u2026",
+            "\u2026o any electronic items procured under this contract. 5. Rights in Technical Data. DFARS 252.227-7013 Rights in Technical Data\u2014Noncommercial Items applies to any technical data delivered.\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.232-7003",
+          "citation": "DFARS 252.232-7003",
+          "part": "252.232",
+          "title": "Electronic Submission of Payment Requests and Receiving Reports",
+          "contexts": [
+            "\u2026ification and Valuation; DFARS 252.225-7001 Buy American and Balance of Payments Program; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.247-7023 Transportation of Supplies by\u2026",
+            "\u2026orkflow. Payment requests and receiving reports shall be submitted electronically per DFARS 252.232-7003 and DFARS 252.232-7006.",
+            "\u2026ion and Valuation; DFARS 252.225-7001 Buy American and Balance of Payments Program; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.247-7023 Transportation of Supplies by\u2026",
+            "\u2026w. Payment requests and receiving reports shall be submitted electronically per DFARS 252.232-7003 and DFARS 252.232-7006."
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.232-7006",
+          "citation": "DFARS 252.232-7006",
+          "part": "252.232",
+          "title": "Wide Area WorkFlow Payment Instructions",
+          "contexts": [
+            "\u2026ion; DFARS 252.225-7001 Buy American and Balance of Payments Program; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.247-7023 Transportation of Supplies by Sea. See attached S\u2026",
+            "\u2026sts and receiving reports shall be submitted electronically per DFARS 252.232-7003 and DFARS 252.232-7006.",
+            "\u2026FARS 252.225-7001 Buy American and Balance of Payments Program; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.247-7023 Transportation of Supplies by Sea. See attached S\u2026",
+            "\u2026d receiving reports shall be submitted electronically per DFARS 252.232-7003 and DFARS 252.232-7006."
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.244-7000",
+          "citation": "DFARS 252.244-7000",
+          "part": "252.244",
+          "title": "Subcontracts for Commercial Products or Commercial Services",
+          "contexts": [
+            "\u2026001 Buy American and Balance of Payments Program; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.247-7023 Transportation of Supplies by Sea. See attached Statement of Work for\u2026",
+            "\u2026y American and Balance of Payments Program; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.247-7023 Transportation of Supplies by Sea. See attached Statement of Work for\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.246-7003",
+          "citation": "DFARS 252.246-7003",
+          "part": "252.246",
+          "title": "Notification of Potential Safety Issues",
+          "contexts": [
+            "\u2026ms applies to any technical data delivered. 6. Notification of Potential Safety Issues. DFARS 252.246-7003 applies \u2014 this is a critical safety item. 7. Wide Area Workflow. Payment requests an\u2026",
+            "\u2026lies to any technical data delivered. 6. Notification of Potential Safety Issues. DFARS 252.246-7003 applies \u2014 this is a critical safety item. 7. Wide Area Workflow. Payment requests an\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.246-7008",
+          "citation": "DFARS 252.246-7008",
+          "part": "252.246",
+          "title": "Sources of Electronic Parts",
+          "contexts": [
+            "\u2026e Contracting Officer is required for any exception. 4. Sources of Electronic Parts. DFARS 252.246-7008 Sources of Electronic Parts applies to any electronic items procured under this contra\u2026",
+            "\u2026racting Officer is required for any exception. 4. Sources of Electronic Parts. DFARS 252.246-7008 Sources of Electronic Parts applies to any electronic items procured under this contra\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.247-7023",
+          "citation": "DFARS 252.247-7023",
+          "part": "252.247",
+          "title": "Transportation of Supplies by Sea",
+          "contexts": [
+            "\u2026Balance of Payments Program; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.247-7023 Transportation of Supplies by Sea. See attached Statement of Work for critical safety ite\u2026",
+            "\u2026ce of Payments Program; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.247-7023 Transportation of Supplies by Sea. See attached Statement of Work for critical safety ite\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-7",
+          "citation": "FAR 52.204-7",
+          "part": "52.204",
+          "title": "System for Award Management",
+          "contexts": [
+            "\u2026under Simplified Acquisition Procedures. The following FAR provisions and clauses apply: FAR 52.204-7 System for Award Management; FAR 52.204-13 System for Award Management Maintenance; FAR 5\u2026",
+            "\u2026er Simplified Acquisition Procedures. The following FAR provisions and clauses apply: FAR 52.204-7 System for Award Management; FAR 52.204-13 System for Award Management Maintenance; FAR 5\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-13",
+          "citation": "FAR 52.204-13",
+          "part": "52.204",
+          "title": "System for Award Management Maintenance",
+          "contexts": [
+            "\u2026The following FAR provisions and clauses apply: FAR 52.204-7 System for Award Management; FAR 52.204-13 System for Award Management Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR\u2026",
+            "\u2026following FAR provisions and clauses apply: FAR 52.204-7 System for Award Management; FAR 52.204-13 System for Award Management Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-24",
+          "citation": "FAR 52.204-24",
+          "part": "52.204",
+          "title": "Representation Regarding Certain Telecommunications and Video Surveillance Services or Equipment",
+          "contexts": [
+            "\u2026204-7 System for Award Management; FAR 52.204-13 System for Award Management Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Noti\u2026",
+            "\u20267 System for Award Management; FAR 52.204-13 System for Award Management Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Noti\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-25",
+          "citation": "FAR 52.204-25",
+          "part": "52.204",
+          "title": "Prohibition on Contracting for Certain Telecommunications and Video Surveillance Services or Equipment",
+          "contexts": [
+            "\u2026r Award Management; FAR 52.204-13 System for Award Management Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Sma\u2026",
+            "\u2026ard Management; FAR 52.204-13 System for Award Management Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Sma\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-1",
+          "citation": "FAR 52.212-1",
+          "part": "52.212",
+          "title": "Instructions to Offerors\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u2026ent; FAR 52.204-13 System for Award Management Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Se\u2026",
+            "\u2026FAR 52.204-13 System for Award Management Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Se\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-3",
+          "citation": "FAR 52.212-3",
+          "part": "52.212",
+          "title": "Offeror Representations and Certifications\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u20264-13 System for Award Management Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 5\u2026",
+            "\u2026System for Award Management Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 5\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-4",
+          "citation": "FAR 52.212-4",
+          "part": "52.212",
+          "title": "Contract Terms and Conditions\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u2026r Award Management Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 5\u2026",
+            "\u2026ard Management Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 5\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-5",
+          "citation": "FAR 52.212-5",
+          "part": "52.212",
+          "title": "Contract Terms and Conditions Required to Implement Statutes or Executive Orders\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u2026ment Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR\u2026",
+            "\u2026Maintenance; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.219-6",
+          "citation": "FAR 52.219-6",
+          "part": "52.219",
+          "title": "Notice of Total Small Business Set-Aside",
+          "contexts": [
+            "\u2026ce; FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR\u2026",
+            "\u2026FAR 52.204-24; FAR 52.204-25; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-3",
+          "citation": "FAR 52.222-3",
+          "part": "52.222",
+          "title": "Convict Labor",
+          "contexts": [
+            "\u2026212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50\u2026",
+            "\u20263; FAR 52.212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-19",
+          "citation": "FAR 52.222-19",
+          "part": "52.222",
+          "title": "Child Labor\u2014Cooperation with Authorities and Remedies",
+          "contexts": [
+            "\u2026212-4; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13\u2026",
+            "\u20264; FAR 52.212-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-21",
+          "citation": "FAR 52.222-21",
+          "part": "52.222",
+          "title": "Prohibition of Segregated Facilities",
+          "contexts": [
+            "\u202612-5; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33\u2026",
+            "\u2026; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-26",
+          "citation": "FAR 52.222-26",
+          "part": "52.222",
+          "title": "Equal Opportunity",
+          "contexts": [
+            "\u20269-6 Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40\u2026",
+            "\u2026Notice of Total Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-35",
+          "citation": "FAR 52.222-35",
+          "part": "52.222",
+          "title": "Equal Opportunity for Veterans",
+          "contexts": [
+            "\u2026otal Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1;\u2026",
+            "\u2026Small Business Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-36",
+          "citation": "FAR 52.222-36",
+          "part": "52.222",
+          "title": "Equal Opportunity for Workers with Disabilities",
+          "contexts": [
+            "\u2026ness Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3;\u2026",
+            "\u2026Set-Aside; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-50",
+          "citation": "FAR 52.222-50",
+          "part": "52.222",
+          "title": "Combating Trafficking in Persons",
+          "contexts": [
+            "\u2026FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; F\u2026",
+            "\u202652.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; F\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.225-13",
+          "citation": "FAR 52.225-13",
+          "part": "52.225",
+          "title": "Restrictions on Certain Foreign Purchases",
+          "contexts": [
+            "\u2026FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FA\u2026",
+            "\u202652.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FA\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.232-33",
+          "citation": "FAR 52.232-33",
+          "part": "52.232",
+          "title": "Payment by Electronic Funds Transfer\u2014System for Award Management",
+          "contexts": [
+            "\u2026FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR\u2026",
+            "\u202652.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.232-40",
+          "citation": "FAR 52.232-40",
+          "part": "52.232",
+          "title": "Providing Accelerated Payments to Small Business Subcontractors",
+          "contexts": [
+            "\u2026FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR\u2026",
+            "\u202652.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.233-1",
+          "citation": "FAR 52.233-1",
+          "part": "52.233",
+          "title": "Disputes",
+          "contexts": [
+            "\u2026FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFA\u2026",
+            "\u202652.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFA\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.233-3",
+          "citation": "FAR 52.233-3",
+          "part": "52.233",
+          "title": "Protest After Award",
+          "contexts": [
+            "\u2026FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions\u2026",
+            "\u202652.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.233-4",
+          "citation": "FAR 52.233-4",
+          "part": "52.233",
+          "title": "Applicable Law for Breach of Contract Claim",
+          "contexts": [
+            "\u2026; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: D\u2026",
+            "\u2026R 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: D\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.243-1",
+          "citation": "FAR 52.243-1",
+          "part": "52.243",
+          "title": "Changes\u2014Fixed-Price",
+          "contexts": [
+            "\u20260; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: DFARS 252.203-7\u2026",
+            "\u2026AR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: DFARS 252.203-7\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.246-2",
+          "citation": "FAR 52.246-2",
+          "part": "52.246",
+          "title": "Inspection of Supplies\u2014Fixed-Price",
+          "contexts": [
+            "\u202613; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: DFARS 252.203-7000; DFARS 252\u2026",
+            "\u2026FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: DFARS 252.203-7000; DFARS 252\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.247-34",
+          "citation": "FAR 52.247-34",
+          "part": "52.247",
+          "title": "F.o.b. Destination",
+          "contexts": [
+            "\u2026-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: DFARS 252.203-7000; DFARS 252.204-7012 Safeg\u2026",
+            "\u2026FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: DFARS 252.203-7000; DFARS 252.204-7012 Safeg\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.249-8",
+          "citation": "FAR 52.249-8",
+          "part": "52.249",
+          "title": "Default (Fixed-Price Supply and Service)",
+          "contexts": [
+            "\u2026-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: DFARS 252.203-7000; DFARS 252.204-7012 Safeguarding Covere\u2026",
+            "\u2026FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS provisions and clauses: DFARS 252.203-7000; DFARS 252.204-7012 Safeguarding Covere\u2026"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SPE7L326U0564",
+      "title": "CASE, SMALL ARMS AMMUNITION",
+      "agency": "DEPT OF DEFENSE.DEFENSE LOGISTICS AGENCY.DLA TROOP SUPPORT",
+      "naics": "332999",
+      "psc": "1095",
+      "set_aside": null,
+      "posted": "2026-05-24",
+      "deadline": "2026-06-23T17:00:00-05:00",
+      "url": "https://sam.gov/opp/mock-notice-SPE7L326U0564/view",
+      "sources": [
+        "description",
+        "attachment:SPE7L326U0564_terms.txt"
+      ],
+      "clauses": [
+        {
+          "regulation": "DFARS",
+          "number": "252.203-7000",
+          "citation": "DFARS 252.203-7000",
+          "part": "252.203",
+          "title": "Requirements Relating to Compensation of Former DoD Officials",
+          "contexts": [
+            "\u202613; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 25\u2026",
+            "\u2026R 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 25\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7008",
+          "citation": "DFARS 252.204-7008",
+          "part": "252.204",
+          "title": "Compliance with Safeguarding Covered Defense Information Controls",
+          "contexts": [
+            "\u2026LL ARMS AMMUNITION This solicitation is subject to export control requirements. See: DFARS 252.204-7008 Compliance with Safeguarding Covered Defense Information Controls. DFARS 252.204-70\u2026",
+            "\u2026S AMMUNITION This solicitation is subject to export control requirements. See: DFARS 252.204-7008 Compliance with Safeguarding Covered Defense Information Controls. DFARS 252.204-70\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7009",
+          "citation": "DFARS 252.204-7009",
+          "part": "252.204",
+          "title": "Limitations on the Use or Disclosure of Third-Party Contractor Reported Cyber Incident Information",
+          "contexts": [
+            "\u2026ARS 252.204-7008 Compliance with Safeguarding Covered Defense Information Controls. DFARS 252.204-7009 Limitations on Use or Disclosure of Third-Party Contractor Reported Cyber Incident In\u2026",
+            "\u20262.204-7008 Compliance with Safeguarding Covered Defense Information Controls. DFARS 252.204-7009 Limitations on Use or Disclosure of Third-Party Contractor Reported Cyber Incident In\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7012",
+          "citation": "DFARS 252.204-7012",
+          "part": "252.204",
+          "title": "Safeguarding Covered Defense Information and Cyber Incident Reporting",
+          "contexts": [
+            "\u2026AR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 25\u2026",
+            "\u2026233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 25\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7015",
+          "citation": "DFARS 252.204-7015",
+          "part": "252.204",
+          "title": "Notice of Authorized Disclosure of Information for Litigation Support",
+          "contexts": [
+            "\u2026243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 25\u2026",
+            "\u2026FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 25\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7016",
+          "citation": "DFARS 252.204-7016",
+          "part": "252.204",
+          "title": "Covered Defense Telecommunications Equipment or Services\u2014Representation",
+          "contexts": [
+            "\u2026FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 25\u2026",
+            "\u20262.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 25\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7017",
+          "citation": "DFARS 252.204-7017",
+          "part": "252.204",
+          "title": "Prohibition on the Acquisition of Covered Defense Telecommunications Equipment or Services\u2014Representation",
+          "contexts": [
+            "\u202652.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 25\u2026",
+            "\u2026-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 25\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7018",
+          "citation": "DFARS 252.204-7018",
+          "part": "252.204",
+          "title": "Prohibition on the Acquisition of Covered Defense Telecommunications Equipment or Services",
+          "contexts": [
+            "\u2026203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Co\u2026",
+            "\u202600; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Co\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7019",
+          "citation": "DFARS 252.204-7019",
+          "part": "252.204",
+          "title": "Notice of NIST SP 800-171 DoD Assessment Requirements",
+          "contexts": [
+            "\u2026204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Controlled Items; DFAR\u2026",
+            "\u202612; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Controlled Items; DFAR\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7020",
+          "citation": "DFARS 252.204-7020",
+          "part": "252.204",
+          "title": "NIST SP 800-171 DoD Assessment Requirements",
+          "contexts": [
+            "\u2026204-7015; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Controlled Items; DFARS 252.232-7003; DFAR\u2026",
+            "\u202615; DFARS 252.204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Controlled Items; DFARS 252.232-7003; DFAR\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.211-7003",
+          "citation": "DFARS 252.211-7003",
+          "part": "252.211",
+          "title": "Item Unique Identification and Valuation",
+          "contexts": [
+            "\u2026204-7016; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Controlled Items; DFARS 252.232-7003; DFARS 252.232-7006; DFAR\u2026",
+            "\u202616; DFARS 252.204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Controlled Items; DFARS 252.232-7003; DFARS 252.232-7006; DFAR\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.225-7000",
+          "citation": "DFARS 252.225-7000",
+          "part": "252.225",
+          "title": "Buy American\u2014Balance of Payments Program Certificate",
+          "contexts": [
+            "\u2026on Use or Disclosure of Third-Party Contractor Reported Cyber Incident Information. DFARS 252.225-7000 Buy American\u2014Balance of Payments Program Certificate. DFARS 252.225-7001 Buy American a\u2026",
+            "\u2026or Disclosure of Third-Party Contractor Reported Cyber Incident Information. DFARS 252.225-7000 Buy American\u2014Balance of Payments Program Certificate. DFARS 252.225-7001 Buy American a\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.225-7001",
+          "citation": "DFARS 252.225-7001",
+          "part": "252.225",
+          "title": "Buy American and Balance of Payments Program",
+          "contexts": [
+            "\u2026Information. DFARS 252.225-7000 Buy American\u2014Balance of Payments Program Certificate. DFARS 252.225-7001 Buy American and Balance of Payments Program. DFARS 252.225-7002 Qualifying Country Sou\u2026",
+            "\u2026ation. DFARS 252.225-7000 Buy American\u2014Balance of Payments Program Certificate. DFARS 252.225-7001 Buy American and Balance of Payments Program. DFARS 252.225-7002 Qualifying Country Sou\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.225-7002",
+          "citation": "DFARS 252.225-7002",
+          "part": "252.225",
+          "title": "Qualifying Country Sources as Subcontractors",
+          "contexts": [
+            "\u2026Program Certificate. DFARS 252.225-7001 Buy American and Balance of Payments Program. DFARS 252.225-7002 Qualifying Country Sources as Subcontractors. DFARS 252.227-7015 Technical Data\u2014Commerc\u2026",
+            "\u2026m Certificate. DFARS 252.225-7001 Buy American and Balance of Payments Program. DFARS 252.225-7002 Qualifying Country Sources as Subcontractors. DFARS 252.227-7015 Technical Data\u2014Commerc\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.225-7048",
+          "citation": "DFARS 252.225-7048",
+          "part": "252.225",
+          "title": "Export-Controlled Items",
+          "contexts": [
+            "\u2026204-7017; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Controlled Items; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.239-7018; DFAR\u2026",
+            "\u202617; DFARS 252.204-7018; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Controlled Items; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.239-7018; DFAR\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.227-7015",
+          "citation": "DFARS 252.227-7015",
+          "part": "252.227",
+          "title": "Technical Data\u2014Commercial Items",
+          "contexts": [
+            "\u2026of Payments Program. DFARS 252.225-7002 Qualifying Country Sources as Subcontractors. DFARS 252.227-7015 Technical Data\u2014Commercial Items. DFARS 252.243-7001 Pricing of Contract Modifications.\u2026",
+            "\u2026ments Program. DFARS 252.225-7002 Qualifying Country Sources as Subcontractors. DFARS 252.227-7015 Technical Data\u2014Commercial Items. DFARS 252.243-7001 Pricing of Contract Modifications.\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.232-7003",
+          "citation": "DFARS 252.232-7003",
+          "part": "252.232",
+          "title": "Electronic Submission of Payment Requests and Receiving Reports",
+          "contexts": [
+            "\u20267019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Controlled Items; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.239-7018; DFARS 252.244-7000. See attached Terms and Condi\u2026",
+            "\u2026DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Controlled Items; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.239-7018; DFARS 252.244-7000. See attached Terms and Condi\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.232-7006",
+          "citation": "DFARS 252.232-7006",
+          "part": "252.232",
+          "title": "Wide Area WorkFlow Payment Instructions",
+          "contexts": [
+            "\u20267020; DFARS 252.211-7003; DFARS 252.225-7048 Export-Controlled Items; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.239-7018; DFARS 252.244-7000. See attached Terms and Conditions. ADDITIONAL T\u2026",
+            "\u2026DFARS 252.211-7003; DFARS 252.225-7048 Export-Controlled Items; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.239-7018; DFARS 252.244-7000. See attached Terms and Conditions. ADDITIONAL T\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.239-7018",
+          "citation": "DFARS 252.239-7018",
+          "part": "252.239",
+          "title": "Supply Chain Risk",
+          "contexts": [
+            "\u20267003; DFARS 252.225-7048 Export-Controlled Items; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.239-7018; DFARS 252.244-7000. See attached Terms and Conditions. ADDITIONAL TERMS AND CONDITIONS\u2026",
+            "\u2026DFARS 252.225-7048 Export-Controlled Items; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.239-7018; DFARS 252.244-7000. See attached Terms and Conditions. ADDITIONAL TERMS AND CONDITIONS\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.243-7001",
+          "citation": "DFARS 252.243-7001",
+          "part": "252.243",
+          "title": "Pricing of Contract Modifications",
+          "contexts": [
+            "\u2026ountry Sources as Subcontractors. DFARS 252.227-7015 Technical Data\u2014Commercial Items. DFARS 252.243-7001 Pricing of Contract Modifications. Ethics and reporting: FAR 52.203-13 Contractor Code\u2026",
+            "\u2026Sources as Subcontractors. DFARS 252.227-7015 Technical Data\u2014Commercial Items. DFARS 252.243-7001 Pricing of Contract Modifications. Ethics and reporting: FAR 52.203-13 Contractor Code\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.244-7000",
+          "citation": "DFARS 252.244-7000",
+          "part": "252.244",
+          "title": "Subcontracts for Commercial Products or Commercial Services",
+          "contexts": [
+            "\u20267048 Export-Controlled Items; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.239-7018; DFARS 252.244-7000. See attached Terms and Conditions. ADDITIONAL TERMS AND CONDITIONS \u2014 CASE, SMALL ARMS A\u2026",
+            "\u2026xport-Controlled Items; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.239-7018; DFARS 252.244-7000. See attached Terms and Conditions. ADDITIONAL TERMS AND CONDITIONS \u2014 CASE, SMALL ARMS A\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.203-13",
+          "citation": "FAR 52.203-13",
+          "part": "52.203",
+          "title": "Contractor Code of Business Ethics and Conduct",
+          "contexts": [
+            "\u2026l Items. DFARS 252.243-7001 Pricing of Contract Modifications. Ethics and reporting: FAR 52.203-13 Contractor Code of Business Ethics and Conduct. FAR 52.203-17 Contractor Employee Whist\u2026",
+            "\u2026ems. DFARS 252.243-7001 Pricing of Contract Modifications. Ethics and reporting: FAR 52.203-13 Contractor Code of Business Ethics and Conduct. FAR 52.203-17 Contractor Employee Whist\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.203-17",
+          "citation": "FAR 52.203-17",
+          "part": "52.203",
+          "title": "Contractor Employee Whistleblower Rights",
+          "contexts": [
+            "\u2026Ethics and reporting: FAR 52.203-13 Contractor Code of Business Ethics and Conduct. FAR 52.203-17 Contractor Employee Whistleblower Rights. FAR 52.204-21 Basic Safeguarding of Covered C\u2026",
+            "\u2026hics and reporting: FAR 52.203-13 Contractor Code of Business Ethics and Conduct. FAR 52.203-17 Contractor Employee Whistleblower Rights. FAR 52.204-21 Basic Safeguarding of Covered C\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-7",
+          "citation": "FAR 52.204-7",
+          "part": "52.204",
+          "title": "System for Award Management",
+          "contexts": [
+            "Full and open competition. The following FAR provisions and clauses apply: FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-13",
+          "citation": "FAR 52.204-13",
+          "part": "52.204",
+          "title": "System for Award Management Maintenance",
+          "contexts": [
+            "Full and open competition. The following FAR provisions and clauses apply: FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; F\u2026",
+            "\u2026l and open competition. The following FAR provisions and clauses apply: FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; F\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-21",
+          "citation": "FAR 52.204-21",
+          "part": "52.204",
+          "title": "Basic Safeguarding of Covered Contractor Information Systems",
+          "contexts": [
+            "\u2026Business Ethics and Conduct. FAR 52.203-17 Contractor Employee Whistleblower Rights. FAR 52.204-21 Basic Safeguarding of Covered Contractor Information Systems. FAR 52.204-23 Prohibition\u2026",
+            "\u2026iness Ethics and Conduct. FAR 52.203-17 Contractor Employee Whistleblower Rights. FAR 52.204-21 Basic Safeguarding of Covered Contractor Information Systems. FAR 52.204-23 Prohibition\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-23",
+          "citation": "FAR 52.204-23",
+          "part": "52.204",
+          "title": "Prohibition on Contracting for Hardware, Software, and Services Developed or Provided by Kaspersky Lab and Other Covered Entities",
+          "contexts": [
+            "\u2026r Rights. FAR 52.204-21 Basic Safeguarding of Covered Contractor Information Systems. FAR 52.204-23 Prohibition on Contracting for Hardware, Software, and Services Developed or Provided\u2026",
+            "\u2026ghts. FAR 52.204-21 Basic Safeguarding of Covered Contractor Information Systems. FAR 52.204-23 Prohibition on Contracting for Hardware, Software, and Services Developed or Provided\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-24",
+          "citation": "FAR 52.204-24",
+          "part": "52.204",
+          "title": "Representation Regarding Certain Telecommunications and Video Surveillance Services or Equipment",
+          "contexts": [
+            "\u2026competition. The following FAR provisions and clauses apply: FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FA\u2026",
+            "\u2026etition. The following FAR provisions and clauses apply: FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FA\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-25",
+          "citation": "FAR 52.204-25",
+          "part": "52.204",
+          "title": "Prohibition on Contracting for Certain Telecommunications and Video Surveillance Services or Equipment",
+          "contexts": [
+            "\u2026e following FAR provisions and clauses apply: FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR\u2026",
+            "\u2026llowing FAR provisions and clauses apply: FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-26",
+          "citation": "FAR 52.204-26",
+          "part": "52.204",
+          "title": "Covered Telecommunications Equipment or Services\u2014Representation",
+          "contexts": [
+            "\u2026provisions and clauses apply: FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR\u2026",
+            "\u2026visions and clauses apply: FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.209-6",
+          "citation": "FAR 52.209-6",
+          "part": "52.209",
+          "title": "Protecting the Government's Interest When Subcontracting with Contractors Debarred, Suspended, or Proposed for Debarment",
+          "contexts": [
+            "\u2026acting for Hardware, Software, and Services Developed or Provided by Kaspersky Lab. FAR 52.209-6 Protecting the Government's Interest. FAR 52.222-40 Notification of Employee Rights Und\u2026",
+            "\u2026ng for Hardware, Software, and Services Developed or Provided by Kaspersky Lab. FAR 52.209-6 Protecting the Government's Interest. FAR 52.222-40 Notification of Employee Rights Und\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-1",
+          "citation": "FAR 52.212-1",
+          "part": "52.212",
+          "title": "Instructions to Offerors\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u2026clauses apply: FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FA\u2026",
+            "\u2026uses apply: FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FA\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-3",
+          "citation": "FAR 52.212-3",
+          "part": "52.212",
+          "title": "Offeror Representations and Certifications\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u2026: FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; F\u2026",
+            "\u2026R 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; F\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-4",
+          "citation": "FAR 52.212-4",
+          "part": "52.212",
+          "title": "Contract Terms and Conditions\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u2026; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35;\u2026",
+            "\u2026R 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-5",
+          "citation": "FAR 52.212-5",
+          "part": "52.212",
+          "title": "Contract Terms and Conditions Required to Implement Statutes or Executive Orders\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u20263; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36;\u2026",
+            "\u2026AR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-3",
+          "citation": "FAR 52.222-3",
+          "part": "52.222",
+          "title": "Convict Labor",
+          "contexts": [
+            "\u202624; FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50\u2026",
+            "\u2026FAR 52.204-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-19",
+          "citation": "FAR 52.222-19",
+          "part": "52.222",
+          "title": "Child Labor\u2014Cooperation with Authorities and Remedies",
+          "contexts": [
+            "\u2026-25; FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1\u2026",
+            "\u2026FAR 52.204-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-21",
+          "citation": "FAR 52.222-21",
+          "part": "52.222",
+          "title": "Prohibition of Segregated Facilities",
+          "contexts": [
+            "\u2026-26; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Su\u2026",
+            "\u2026FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Su\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-26",
+          "citation": "FAR 52.222-26",
+          "part": "52.222",
+          "title": "Equal Opportunity",
+          "contexts": [
+            "\u2026-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.\u2026",
+            "\u2026FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-35",
+          "citation": "FAR 52.222-35",
+          "part": "52.222",
+          "title": "Equal Opportunity for Veterans",
+          "contexts": [
+            "\u20263; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.\u2026",
+            "\u2026AR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-36",
+          "citation": "FAR 52.222-36",
+          "part": "52.222",
+          "title": "Equal Opportunity for Workers with Disabilities",
+          "contexts": [
+            "\u2026; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.\u2026",
+            "\u2026R 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-40",
+          "citation": "FAR 52.222-40",
+          "part": "52.222",
+          "title": "Notification of Employee Rights Under the National Labor Relations Act",
+          "contexts": [
+            "\u2026oped or Provided by Kaspersky Lab. FAR 52.209-6 Protecting the Government's Interest. FAR 52.222-40 Notification of Employee Rights Under NLRA.",
+            "\u2026or Provided by Kaspersky Lab. FAR 52.209-6 Protecting the Government's Interest. FAR 52.222-40 Notification of Employee Rights Under NLRA."
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-50",
+          "citation": "FAR 52.222-50",
+          "part": "52.222",
+          "title": "Combating Trafficking in Persons",
+          "contexts": [
+            "\u2026FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.2\u2026",
+            "\u202652.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.2\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.225-1",
+          "citation": "FAR 52.225-1",
+          "part": "52.225",
+          "title": "Buy American\u2014Supplies",
+          "contexts": [
+            "\u2026FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.2\u2026",
+            "\u202652.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.2\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.225-13",
+          "citation": "FAR 52.225-13",
+          "part": "52.225",
+          "title": "Restrictions on Certain Foreign Purchases",
+          "contexts": [
+            "\u2026.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DF\u2026",
+            "\u2026-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DF\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.232-33",
+          "citation": "FAR 52.232-33",
+          "part": "52.232",
+          "title": "Payment by Electronic Funds Transfer\u2014System for Award Management",
+          "contexts": [
+            "\u2026.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-700\u2026",
+            "\u2026-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-700\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.233-1",
+          "citation": "FAR 52.233-1",
+          "part": "52.233",
+          "title": "Disputes",
+          "contexts": [
+            "\u2026.222-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.2\u2026",
+            "\u2026-36; FAR 52.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.2\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.243-1",
+          "citation": "FAR 52.243-1",
+          "part": "52.243",
+          "title": "Changes\u2014Fixed-Price",
+          "contexts": [
+            "\u20262.222-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS\u2026",
+            "\u20262-50; FAR 52.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.246-2",
+          "citation": "FAR 52.246-2",
+          "part": "52.246",
+          "title": "Inspection of Supplies\u2014Fixed-Price",
+          "contexts": [
+            "\u202652.225-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015;\u2026",
+            "\u202625-1 Buy American\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.247-34",
+          "citation": "FAR 52.247-34",
+          "part": "52.247",
+          "title": "F.o.b. Destination",
+          "contexts": [
+            "\u2026merican\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-\u2026",
+            "\u2026can\u2014Supplies; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.249-8",
+          "citation": "FAR 52.249-8",
+          "part": "52.249",
+          "title": "Default (Fixed-Price Supply and Service)",
+          "contexts": [
+            "\u2026s; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 25\u2026",
+            "\u2026AR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. DFARS 252.203-7000; DFARS 252.204-7012; DFARS 252.204-7015; DFARS 252.204-7016; DFARS 25\u2026"
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SPE7L426T5040",
+      "title": "SWITCH",
+      "agency": "DEPT OF DEFENSE.DEFENSE LOGISTICS AGENCY.DLA AVIATION",
+      "naics": "334419",
+      "psc": "1005",
+      "set_aside": null,
+      "posted": "2026-05-26",
+      "deadline": "2026-06-22T17:00:00-05:00",
+      "url": "https://sam.gov/opp/mock-notice-SPE7L426T5040/view",
+      "sources": [
+        "description"
+      ],
+      "clauses": [
+        {
+          "regulation": "DFARS",
+          "number": "252.203-7000",
+          "citation": "DFARS 252.203-7000",
+          "part": "252.203",
+          "title": "Requirements Relating to Compensation of Former DoD Officials",
+          "contexts": [
+            "\u20261; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DF\u2026",
+            "\u202652.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DF\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.203-7002",
+          "citation": "DFARS 252.203-7002",
+          "part": "252.203",
+          "title": "Requirement to Inform Employees of Whistleblower Rights",
+          "contexts": [
+            "\u2026R 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DF\u2026",
+            "\u202632-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DF\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7000",
+          "citation": "DFARS 252.204-7000",
+          "part": "252.204",
+          "title": "Disclosure of Information",
+          "contexts": [
+            "\u2026233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DF\u2026",
+            "\u2026FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DF\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7012",
+          "citation": "DFARS 252.204-7012",
+          "part": "252.204",
+          "title": "Safeguarding Covered Defense Information and Cyber Incident Reporting",
+          "contexts": [
+            "\u2026es: DFARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 25\u2026",
+            "\u2026ARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 25\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7019",
+          "citation": "DFARS 252.204-7019",
+          "part": "252.204",
+          "title": "Notice of NIST SP 800-171 DoD Assessment Requirements",
+          "contexts": [
+            "\u202600; DFARS 252.203-7002; DFARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 252.225-7012 Preferenc\u2026",
+            "\u2026ARS 252.203-7002; DFARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 252.225-7012 Preferenc\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.204-7020",
+          "citation": "DFARS 252.204-7020",
+          "part": "252.204",
+          "title": "NIST SP 800-171 DoD Assessment Requirements",
+          "contexts": [
+            "\u202602; DFARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 252.225-7012 Preference for Certain Domest\u2026",
+            "\u2026ARS 252.204-7000 Disclosure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 252.225-7012 Preference for Certain Domest\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.211-7003",
+          "citation": "DFARS 252.211-7003",
+          "part": "252.211",
+          "title": "Item Unique Identification and Valuation",
+          "contexts": [
+            "\u202600 Disclosure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 252.225-7012 Preference for Certain Domestic Commodities; DFAR\u2026",
+            "\u2026closure of Information; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 252.225-7012 Preference for Certain Domestic Commodities; DFAR\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.225-7001",
+          "citation": "DFARS 252.225-7001",
+          "part": "252.225",
+          "title": "Buy American and Balance of Payments Program",
+          "contexts": [
+            "\u2026ormation; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 252.225-7012 Preference for Certain Domestic Commodities; DFARS 252.232-7003; DFAR\u2026",
+            "\u2026on; DFARS 252.204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 252.225-7012 Preference for Certain Domestic Commodities; DFARS 252.232-7003; DFAR\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.225-7012",
+          "citation": "DFARS 252.225-7012",
+          "part": "252.225",
+          "title": "Preference for Certain Domestic Commodities",
+          "contexts": [
+            "\u2026204-7012; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 252.225-7012 Preference for Certain Domestic Commodities; DFARS 252.232-7003; DFARS 252.232-7006; DFAR\u2026",
+            "\u202612; DFARS 252.204-7019; DFARS 252.204-7020; DFARS 252.211-7003; DFARS 252.225-7001; DFARS 252.225-7012 Preference for Certain Domestic Commodities; DFARS 252.232-7003; DFARS 252.232-7006; DFAR\u2026"
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.232-7003",
+          "citation": "DFARS 252.232-7003",
+          "part": "252.232",
+          "title": "Electronic Submission of Payment Requests and Receiving Reports",
+          "contexts": [
+            "\u20267003; DFARS 252.225-7001; DFARS 252.225-7012 Preference for Certain Domestic Commodities; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.246-7003; DFARS 252.247-7023.",
+            "\u2026DFARS 252.225-7001; DFARS 252.225-7012 Preference for Certain Domestic Commodities; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.246-7003; DFARS 252.247-7023."
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.232-7006",
+          "citation": "DFARS 252.232-7006",
+          "part": "252.232",
+          "title": "Wide Area WorkFlow Payment Instructions",
+          "contexts": [
+            "\u20267001; DFARS 252.225-7012 Preference for Certain Domestic Commodities; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.246-7003; DFARS 252.247-7023.",
+            "\u2026DFARS 252.225-7012 Preference for Certain Domestic Commodities; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.246-7003; DFARS 252.247-7023."
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.244-7000",
+          "citation": "DFARS 252.244-7000",
+          "part": "252.244",
+          "title": "Subcontracts for Commercial Products or Commercial Services",
+          "contexts": [
+            "\u20267012 Preference for Certain Domestic Commodities; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.246-7003; DFARS 252.247-7023.",
+            "\u2026reference for Certain Domestic Commodities; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.246-7003; DFARS 252.247-7023."
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.246-7003",
+          "citation": "DFARS 252.246-7003",
+          "part": "252.246",
+          "title": "Notification of Potential Safety Issues",
+          "contexts": [
+            "\u2026Certain Domestic Commodities; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.246-7003; DFARS 252.247-7023.",
+            "\u2026n Domestic Commodities; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.246-7003; DFARS 252.247-7023."
+          ]
+        },
+        {
+          "regulation": "DFARS",
+          "number": "252.247-7023",
+          "citation": "DFARS 252.247-7023",
+          "part": "252.247",
+          "title": "Transportation of Supplies by Sea",
+          "contexts": [
+            "\u2026modities; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.246-7003; DFARS 252.247-7023.",
+            "\u2026es; DFARS 252.232-7003; DFARS 252.232-7006; DFARS 252.244-7000; DFARS 252.246-7003; DFARS 252.247-7023."
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.203-13",
+          "citation": "FAR 52.203-13",
+          "part": "52.203",
+          "title": "Contractor Code of Business Ethics and Conduct",
+          "contexts": [
+            "\u2026solicitation under FAR 52.211-6. AMSC Code B. The following provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10;\u2026",
+            "\u2026citation under FAR 52.211-6. AMSC Code B. The following provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-7",
+          "citation": "FAR 52.204-7",
+          "part": "52.204",
+          "title": "System for Award Management",
+          "contexts": [
+            "\u2026der FAR 52.211-6. AMSC Code B. The following provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 B\u2026",
+            "\u2026FAR 52.211-6. AMSC Code B. The following provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 B\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-13",
+          "citation": "FAR 52.204-13",
+          "part": "52.204",
+          "title": "System for Award Management Maintenance",
+          "contexts": [
+            "\u2026-6. AMSC Code B. The following provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Eq\u2026",
+            "\u2026AMSC Code B. The following provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Eq\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-24",
+          "citation": "FAR 52.204-24",
+          "part": "52.204",
+          "title": "Representation Regarding Certain Telecommunications and Video Surveillance Services or Equipment",
+          "contexts": [
+            "\u2026. The following provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211\u2026",
+            "\u2026e following provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.204-25",
+          "citation": "FAR 52.204-25",
+          "part": "52.204",
+          "title": "Prohibition on Contracting for Certain Telecommunications and Video Surveillance Services or Equipment",
+          "contexts": [
+            "\u2026provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212\u2026",
+            "\u2026visions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.209-6",
+          "citation": "FAR 52.209-6",
+          "part": "52.209",
+          "title": "Protecting the Government's Interest When Subcontracting with Contractors Debarred, Suspended, or Proposed for Debarment",
+          "contexts": [
+            "\u2026clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212\u2026",
+            "\u2026uses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.209-10",
+          "citation": "FAR 52.209-10",
+          "part": "52.209",
+          "title": "Prohibition on Contracting with Inverted Domestic Corporations",
+          "contexts": [
+            "\u2026: FAR 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-\u2026",
+            "\u2026R 52.203-13; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.211-6",
+          "citation": "FAR 52.211-6",
+          "part": "52.211",
+          "title": "Brand Name or Equal",
+          "contexts": [
+            "This is a brand-name or equal solicitation under FAR 52.211-6. AMSC Code B. The following provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FA\u2026",
+            "\u2026; FAR 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-\u2026",
+            "\u2026R 52.204-7; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.211-14",
+          "citation": "FAR 52.211-14",
+          "part": "52.211",
+          "title": "Notice of Priority Rating for National Defense, Emergency Preparedness, and Energy Program Use",
+          "contexts": [
+            "\u202652.204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR\u2026",
+            "\u2026204-24; FAR 52.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-1",
+          "citation": "FAR 52.212-1",
+          "part": "52.212",
+          "title": "Instructions to Offerors\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u202652.204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FA\u2026",
+            "\u2026204-25; FAR 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FA\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-3",
+          "citation": "FAR 52.212-3",
+          "part": "52.212",
+          "title": "Offeror Representations and Certifications\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u2026R 52.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FA\u2026",
+            "\u2026.209-6; FAR 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FA\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-4",
+          "citation": "FAR 52.212-4",
+          "part": "52.212",
+          "title": "Contract Terms and Conditions\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u2026R 52.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; F\u2026",
+            "\u2026.209-10; FAR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; F\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.212-5",
+          "citation": "FAR 52.212-5",
+          "part": "52.212",
+          "title": "Contract Terms and Conditions Required to Implement Statutes or Executive Orders\u2014Commercial Products and Commercial Services",
+          "contexts": [
+            "\u2026AR 52.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21;\u2026",
+            "\u20262.211-6 Brand Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.219-8",
+          "citation": "FAR 52.219-8",
+          "part": "52.219",
+          "title": "Utilization of Small Business Concerns",
+          "contexts": [
+            "\u2026and Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26;\u2026",
+            "\u2026Name or Equal; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.219-14",
+          "citation": "FAR 52.219-14",
+          "part": "52.219",
+          "title": "Limitations on Subcontracting",
+          "contexts": [
+            "\u2026ual; FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37;\u2026",
+            "\u2026FAR 52.211-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.219-28",
+          "citation": "FAR 52.219-28",
+          "part": "52.219",
+          "title": "Post-Award Small Business Program Rerepresentation",
+          "contexts": [
+            "\u2026-14; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40;\u2026",
+            "\u2026FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-3",
+          "citation": "FAR 52.222-3",
+          "part": "52.222",
+          "title": "Convict Labor",
+          "contexts": [
+            "\u2026-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18\u2026",
+            "\u2026FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-19",
+          "citation": "FAR 52.222-19",
+          "part": "52.222",
+          "title": "Child Labor\u2014Cooperation with Authorities and Remedies",
+          "contexts": [
+            "\u2026-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1;\u2026",
+            "\u2026FAR 52.212-4; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-21",
+          "citation": "FAR 52.222-21",
+          "part": "52.222",
+          "title": "Prohibition of Segregated Facilities",
+          "contexts": [
+            "\u20264; FAR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33;\u2026",
+            "\u2026AR 52.212-5; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-26",
+          "citation": "FAR 52.222-26",
+          "part": "52.222",
+          "title": "Equal Opportunity",
+          "contexts": [
+            "\u2026; FAR 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40;\u2026",
+            "\u2026R 52.219-8; FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-37",
+          "citation": "FAR 52.222-37",
+          "part": "52.222",
+          "title": "Employment Reports on Veterans",
+          "contexts": [
+            "\u2026FAR 52.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1;\u2026",
+            "\u202652.219-14; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1;\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.222-40",
+          "citation": "FAR 52.222-40",
+          "part": "52.222",
+          "title": "Notification of Employee Rights Under the National Labor Relations Act",
+          "contexts": [
+            "\u2026FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; F\u2026",
+            "\u202652.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; F\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.223-18",
+          "citation": "FAR 52.223-18",
+          "part": "52.223",
+          "title": "Encouraging Contractor Policies to Ban Text Messaging While Driving",
+          "contexts": [
+            "\u2026FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DF\u2026",
+            "\u202652.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DF\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.225-1",
+          "citation": "FAR 52.225-1",
+          "part": "52.225",
+          "title": "Buy American\u2014Supplies",
+          "contexts": [
+            "\u2026FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: D\u2026",
+            "\u202652.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: D\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.232-33",
+          "citation": "FAR 52.232-33",
+          "part": "52.232",
+          "title": "Payment by Electronic Funds Transfer\u2014System for Award Management",
+          "contexts": [
+            "\u2026FAR 52.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-70\u2026",
+            "\u202652.222-21; FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-70\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.232-40",
+          "citation": "FAR 52.232-40",
+          "part": "52.232",
+          "title": "Providing Accelerated Payments to Small Business Subcontractors",
+          "contexts": [
+            "\u2026FAR 52.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.2\u2026",
+            "\u202652.222-26; FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.2\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.233-1",
+          "citation": "FAR 52.233-1",
+          "part": "52.233",
+          "title": "Disputes",
+          "contexts": [
+            "\u2026FAR 52.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS\u2026",
+            "\u202652.222-37; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.246-2",
+          "citation": "FAR 52.246-2",
+          "part": "52.246",
+          "title": "Inspection of Supplies\u2014Fixed-Price",
+          "contexts": [
+            "\u2026; FAR 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000\u2026",
+            "\u2026R 52.222-40; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000\u2026"
+          ]
+        },
+        {
+          "regulation": "FAR",
+          "number": "52.249-8",
+          "citation": "FAR 52.249-8",
+          "part": "52.249",
+          "title": "Default (Fixed-Price Supply and Service)",
+          "contexts": [
+            "\u20260; FAR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000 Disclosure of\u2026",
+            "\u2026AR 52.223-18; FAR 52.225-1; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.246-2; FAR 52.249-8. DFARS clauses: DFARS 252.203-7000; DFARS 252.203-7002; DFARS 252.204-7000 Disclosure of\u2026"
+          ]
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

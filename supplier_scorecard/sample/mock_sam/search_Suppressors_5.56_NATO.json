@@ -1,0 +1,19 @@
+{
+  "totalRecords": 1,
+  "opportunitiesData": [
+    {
+      "noticeId": "mock-notice-FBI-Suppressors",
+      "solicitationNumber": "FBI-26-SUP-556",
+      "title": "Suppressors 5.56 NATO",
+      "fullParentPathName": "JUSTICE, DEPARTMENT OF.FEDERAL BUREAU OF INVESTIGATION",
+      "naicsCode": "332994",
+      "classificationCode": "1005",
+      "typeOfSetAsideDescription": "Total Small Business Set-Aside",
+      "postedDate": "2026-05-10",
+      "responseDeadLine": "2026-06-30T17:00:00-05:00",
+      "uiLink": "https://sam.gov/opp/mock-notice-FBI-Suppressors/view",
+      "resourceLinks": [],
+      "description": "The Federal Bureau of Investigation intends to procure 5.56 NATO suppressors. This is a commercial-item acquisition. The following FAR provisions and clauses apply: FAR 52.203-13; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.219-1; FAR 52.219-6 Notice of Total Small Business Set-Aside; FAR 52.219-8; FAR 52.219-28; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-1; FAR 52.225-13; FAR 52.232-33; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8. This is a DOJ acquisition — DFARS does not apply."
+    }
+  ]
+}
