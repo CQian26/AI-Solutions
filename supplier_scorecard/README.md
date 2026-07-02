@@ -26,15 +26,19 @@ The **`.xlsx`** has three sheets:
 
 ## Quick start — offline demo
 
-The bundled sample (real email content + mocked SAM.gov responses) runs with
-no network and no API key:
+Paste your bidmatch email into **`input.txt`** (a starter is already there),
+then:
 
 ```bash
 cd supplier_scorecard
-pip install -r requirements.txt         # openpyxl is required; the rest are for PDF/DOCX
-python3 run.py samples_from_email/bidmatch_email_1.txt \
-    --mock-dir sample/mock_sam \
-    --out output/supplier_scorecard.xlsx
+pip install -r requirements.txt         # openpyxl required; the rest are for PDF/DOCX
+python3 run.py --mock-dir sample/mock_sam   # reads input.txt by default
+```
+
+Or point at a specific file:
+
+```bash
+python3 run.py path/to/your_bidmatch_email.txt --mock-dir sample/mock_sam
 ```
 
 Open **`output/supplier_scorecard.xlsx`**. You'll see 76 unique clauses across
@@ -53,11 +57,12 @@ or Equal, Hexavalent Chromium) at the bottom.
 2. **Set the key + run:**
    ```bash
    export SAM_API_KEY=your_key_here
-   python3 run.py path/to/your_bidmatch_email.txt \
-       --out output/supplier_scorecard.xlsx
+   python3 run.py                     # reads input.txt
+   # or: python3 run.py path/to/your_email.txt
    ```
 
-   The email can be plain `.txt`, `.eml`, or `.mbox`.
+   The input can be plain `.txt`, `.eml`, or `.mbox`. Anything in `input.txt`
+   above the first FSC-coded line (e.g. the instructional header) is ignored.
 
 Useful flags:
 
@@ -120,8 +125,10 @@ add entries to `KNOWN_TITLES` to enrich the table.
 | `attachment_scanner.py` | PDF (pdfminer.six / pypdf), DOCX (python-docx), and plain-text extraction. |
 | `clause_extractor.py` | FAR/DFARS/agency-supplement citation extractor with title lookup. |
 | `scorecard_writer.py` | Writes the 3-sheet `.xlsx`. |
-| `run.py` | Orchestrator. |
-| `samples_from_email/bidmatch_email_1.txt` | Real bidmatch email content used for testing. |
+| `run.py` | Orchestrator (defaults to reading `input.txt`). |
+| `input.txt` | **Paste your bidmatch email here.** Header comments are ignored. |
+| `filters.json` | Which clauses to keep vs. move to the "Dropped Clauses" sheet. |
+| `samples_from_email/bidmatch_email_1.txt` | Preserved sample for reference. |
 | `sample/mock_sam/*.json` | Canned SAM.gov responses so the demo runs offline. |
 | `sample/mock_attachments/*.txt` | Bundled "attachments" the mock SAM.gov responses point to. |
 | `output/` | Generated `.xlsx` + audit `.json` land here. |

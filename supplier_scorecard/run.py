@@ -122,7 +122,8 @@ def _process_notice(
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("email", help="Path to a bidmatch email (.txt/.eml/.mbox)")
+    ap.add_argument("email", nargs="?", default=None,
+                    help="Path to a bidmatch email (.txt/.eml/.mbox). Defaults to input.txt in this folder.")
     ap.add_argument("--out", default="output/supplier_scorecard.xlsx", help="Output .xlsx path")
     ap.add_argument("--mock-dir", help="Use canned SAM.gov JSON responses from this dir (offline mode)")
     ap.add_argument("--limit", type=int, default=0, help="Only process the first N opportunities (0 = all)")
@@ -139,7 +140,13 @@ def main() -> int:
         format="%(message)s",
     )
 
-    email_path = Path(args.email)
+    if args.email:
+        email_path = Path(args.email)
+    else:
+        email_path = Path(__file__).parent / "input.txt"
+    if not email_path.exists():
+        print(f"ERROR: {email_path} not found. Paste your bidmatch email into it, or pass a path.")
+        return 2
     text = _email_body_text(email_path)
     ops = parse_email_text(text)
     print(f"Parsed {len(ops)} opportunities from {email_path.name}")
