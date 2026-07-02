@@ -129,6 +129,8 @@ def main() -> int:
     ap.add_argument("--no-attachments", action="store_true", help="Skip downloading and scanning attachments")
     ap.add_argument("--include-untitled", action="store_true", help="Also search opportunities with truncated titles")
     ap.add_argument("--rate", type=float, default=1.5, help="Seconds between SAM.gov requests (default 1.5)")
+    ap.add_argument("--filters", default="filters.json",
+                    help="Path to a filters JSON to slim the scorecard (default: filters.json; pass empty string to disable)")
     ap.add_argument("-v", "--verbose", action="store_true")
     args = ap.parse_args()
 
@@ -193,7 +195,12 @@ def main() -> int:
         contracts.append(result)
 
     print(f"\nAggregating scorecard over {len(contracts)} contract(s)...")
-    out_path = write_scorecard({"contracts": contracts}, Path(args.out))
+    filters_path = Path(args.filters) if args.filters else None
+    if filters_path and not filters_path.is_absolute():
+        filters_path = Path(__file__).parent / filters_path
+    if filters_path and filters_path.exists():
+        print(f"Applying filters from {filters_path.name}")
+    out_path = write_scorecard({"contracts": contracts}, Path(args.out), filters_path=filters_path)
     print(f"Wrote {out_path}")
 
     # also stash raw JSON for auditing

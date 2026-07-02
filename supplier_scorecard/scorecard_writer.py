@@ -42,12 +42,69 @@ Consumes the shape produced by run.py's pipeline:
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Optional
 
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
+
+
+def apply_filters(agg_rows: list[dict], filters_cfg: dict) -> tuple[list[dict], list[dict]]:
+    """Split aggregated clause rows into (kept, dropped) based on filters_cfg.
+
+    Each dropped row gains a 'drop_reason' field explaining which filter caught it.
+    """
+    kept: list[dict] = []
+    dropped: list[dict] = []
+
+    boiler = filters_cfg.get("drop_admin_boilerplate") or {}
+    boiler_on = boiler.get("enabled")
+    boiler_set = set(boiler.get("citations") or [])
+    boiler_reason = boiler.get("reason") or "Admin boilerplate"
+
+    regs = filters_cfg.get("drop_regulations") or {}
+    regs_on = regs.get("enabled")
+    regs_set = set(regs.get("regulations") or [])
+    regs_reason = regs.get("reason") or "Regulation excluded"
+
+    below = filters_cfg.get("drop_below_count") or {}
+    below_on = below.get("enabled")
+    below_min = int(below.get("min_contracts") or 2)
+    below_reason = below.get("reason") or f"Appeared in fewer than {below_min} contracts"
+
+    specific = filters_cfg.get("drop_specific") or {}
+    specific_on = specific.get("enabled")
+    specific_set = set(specific.get("citations") or [])
+    specific_reason = specific.get("reason") or "Manually excluded"
+
+    for r in agg_rows:
+        reasons = []
+        if boiler_on and r["citation"] in boiler_set:
+            reasons.append(boiler_reason)
+        if regs_on and r["regulation"] in regs_set:
+            reasons.append(regs_reason)
+        if below_on and r["count"] < below_min:
+            reasons.append(below_reason)
+        if specific_on and r["citation"] in specific_set:
+            reasons.append(specific_reason)
+
+        if reasons:
+            r = {**r, "drop_reason": " | ".join(reasons)}
+            dropped.append(r)
+        else:
+            kept.append(r)
+    return kept, dropped
+
+
+def _load_filters(path: Optional[Path]) -> dict:
+    if not path:
+        return {}
+    p = Path(path)
+    if not p.exists():
+        return {}
+    return json.loads(p.read_text(encoding="utf-8"))
 
 
 HEADER_FILL = PatternFill("solid", fgColor="1F4E78")
@@ -79,8 +136,9 @@ def _autosize(ws, min_w: int = 8, max_w: int = 60):
         ws.column_dimensions[letter].width = best + 2
 
 
-def write_scorecard(results: dict, out_path: Path) -> Path:
+def write_scorecard(results: dict, out_path: Path, *, filters_path: Optional[Path] = None) -> Path:
     contracts = results.get("contracts", []) or []
+    filters_cfg = _load_filters(filters_path)
 
     # --- aggregate ---
     # clause_id -> {"regulation","number","citation","part","title", "contracts": set, "titles_seen": set}
@@ -116,6 +174,10 @@ def write_scorecard(results: dict, out_path: Path) -> Path:
             "contract_ids": sorted(s["contracts"]),
         })
     rows.sort(key=lambda r: (-r["count"], r["regulation"], r["number"]))
+
+    # Split into kept / dropped per the filters config (if any).
+    kept_rows, dropped_rows = apply_filters(rows, filters_cfg) if filters_cfg else (rows, [])
+    rows = kept_rows  # main sheets show only kept clauses
 
     wb = Workbook()
 
@@ -235,6 +297,38 @@ def write_scorecard(results: dict, out_path: Path) -> Path:
     ws3.column_dimensions["C"].width = 25
     ws3.column_dimensions["I"].width = 40
     ws3.column_dimensions["L"].width = 45
+
+    # === Sheet 5: Dropped Clauses (audit trail) ========================
+    if dropped_rows:
+        ws4 = wb.create_sheet("Dropped Clauses")
+        ws4.append([
+            "Citation", "Regulation", "Part", "Number", "Title",
+            "Count", "Coverage %", "Contract IDs", "Drop reason",
+        ])
+        # sort dropped by count desc too so common boilerplate shows first
+        dropped_rows.sort(key=lambda r: (-r["count"], r["regulation"], r["number"]))
+        for i, r in enumerate(dropped_rows, start=2):
+            ws4.append([
+                r["citation"], r["regulation"], r["part"], r["number"],
+                r["title"], r["count"], r["coverage"],
+                ", ".join(r["contract_ids"]),
+                r.get("drop_reason", ""),
+            ])
+            if i % 2 == 0:
+                for col in range(1, 10):
+                    ws4.cell(row=i, column=col).fill = ODD_FILL
+            ws4.cell(row=i, column=6).alignment = CENTER
+            cov = ws4.cell(row=i, column=7); cov.number_format = "0.0%"; cov.alignment = CENTER
+            ws4.cell(row=i, column=5).alignment = LEFT
+            ws4.cell(row=i, column=8).alignment = LEFT
+            ws4.cell(row=i, column=9).alignment = LEFT
+        _style_header(ws4, 9)
+        _autosize(ws4)
+        ws4.column_dimensions["E"].width = 55
+        ws4.column_dimensions["H"].width = 40
+        ws4.column_dimensions["I"].width = 60
+        # Grey out the tab to signal these are excluded — openpyxl uses tab color.
+        ws4.sheet_properties.tabColor = "888888"
 
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
