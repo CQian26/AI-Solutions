@@ -66,35 +66,62 @@ their paste verbatim.
 Run `pip install -r supplier_scorecard/requirements.txt` if `openpyxl` isn't
 already importable. Silent success or the pip output is fine — don't linger.
 
-### 5. Decide live-vs-mock mode
+### 5. Verify live SAM.gov is reachable — DO NOT SIMULATE
 
-Check `echo "${SAM_API_KEY:-}"`:
+This pipeline exists to produce real supplier scorecards. Simulated data
+is worse than no data because it looks plausible and would drive real
+bid/no-bid decisions. **Never run in mock mode unless the user
+*explicitly* asks for it AND acknowledges it's simulated.**
 
-- **If a key is set**: proceed live against SAM.gov. The pipeline reads it
-  from the environment automatically.
-- **If empty**: tell the user:
-  > No `SAM_API_KEY` in your environment. Two options:
-  > 1. **Demo mode** — run against the bundled mock SAM.gov responses so you
-  >    see the shape of the output (`--mock-dir sample/mock_sam`). Clauses
-  >    will reflect template profiles, not the actual live opportunity text.
-  > 2. **Live mode** — get a free key at
-  >    https://open.gsa.gov/api/get-opportunities-public-api/, then set
-  >    `export SAM_API_KEY=xxx` and re-run.
-  >
-  > Which would you like?
+Check the environment:
 
-  Default to demo mode if they say "just show me" or similar.
+```bash
+echo "${SAM_API_KEY:-}"
+curl -sS -m 10 -o /dev/null -w "%{http_code}" "https://api.sam.gov/opportunities/v2/search?limit=1" 2>&1
+```
 
-### 6. Run the pipeline
+- **If `SAM_API_KEY` is empty**: STOP. Tell the user:
+  > This pipeline only produces real scorecards from live SAM.gov data.
+  > Get a free key at
+  > <https://open.gsa.gov/api/get-opportunities-public-api/>, then
+  > `export SAM_API_KEY=xxxxx` and try again.
+
+  Do **not** offer to run in mock mode as a substitute. If the user asks
+  for a demo anyway, warn them the output is fabricated and require them
+  to explicitly say something like "yes, I want simulated data" before
+  proceeding — and even then, the pipeline itself will require the
+  `--i-understand-this-is-simulated` flag.
+
+- **If the API key is set but `api.sam.gov` is unreachable** (any status
+  other than 2xx/4xx from the curl above, e.g. 403 from a proxy, network
+  timeout): STOP. Tell the user:
+  > The environment can't reach api.sam.gov (`<the actual error>`).
+  > Run this pipeline in an environment that has outbound HTTPS access to
+  > sam.gov — your laptop, a self-hosted Claude Code, or any VM you
+  > control. The `.claude/skills/bidmatch-scorecard/` skill will work
+  > there the same way it would here.
+
+  Some environments (including Claude on the web) block outbound access
+  to sam.gov by policy — this is not something you can work around.
+
+- **Only if both checks pass**: proceed to step 6.
+
+### 6. Run the pipeline (live only)
 
 From the `supplier_scorecard/` directory:
 
-- Live: `python3 run.py`
-- Demo: `python3 run.py --mock-dir sample/mock_sam`
+```bash
+python3 run.py
+```
 
-The run defaults to `input.txt` and `filters.json`, writes
-`output/supplier_scorecard.xlsx` and `output/supplier_scorecard.json`.
-Rate-limits SAM.gov requests by default; a 60-line email takes 60-90s live.
+The run reads `input.txt` and `filters.json` by default, hits
+api.sam.gov for every opportunity, downloads and scans attachments, and
+writes `output/supplier_scorecard.xlsx` + `output/supplier_scorecard.json`.
+Rate-limits at 1.5s between requests; a 60-line email takes 60-90s live.
+
+If the pipeline errors mid-run (401 = bad key, 429 = rate-limited,
+network error), stop and tell the user what happened — do not fall back
+to mock data.
 
 ### 7. Report a summary + deliver the file
 
@@ -152,13 +179,20 @@ titled instead of appearing with a blank Title.
   a citation the extractor didn't find, look it up (`grep -n "FAR 52.X" .`
   under `supplier_scorecard/`) or fetch the acquisition.gov reference —
   don't fabricate.
-- **Never guess a live SAM.gov API response.** If the network can't reach
-  `api.sam.gov`, either use the mock dir or ask the user to run the pipeline
-  in an environment that can, then paste the resulting `scorecard.json` back.
+- **Never guess or fabricate a SAM.gov API response.** If the network can't
+  reach `api.sam.gov`, STOP and tell the user (see step 5). Do not silently
+  fall back to mock data. Do not synthesize what a plausible response
+  "would" contain. The output of this pipeline is used to drive real
+  bid/no-bid decisions; fabricated data is worse than no data.
+- **The pipeline enforces this too.** `run.py` refuses to accept
+  `--dev-only-mock-dir` without `--i-understand-this-is-simulated`, and any
+  simulated xlsx gets a large red "!! SIMULATED DATA !!" cover sheet the
+  user cannot miss.
 - **File-write scope.** Only write to `supplier_scorecard/input.txt`,
   `supplier_scorecard/filters.json` (when editing filters), and
   `supplier_scorecard/output/`. Everything else is source code — edit only if
   the user explicitly asked for a feature change.
-- **The `.xlsx` is the deliverable.** After every run, call `SendUserFile` on
-  `supplier_scorecard/output/supplier_scorecard.xlsx` so the user sees it
-  even if they don't have file-system access to the container.
+- **The `.xlsx` is the deliverable.** After every real run, call
+  `SendUserFile` on `supplier_scorecard/output/supplier_scorecard.xlsx` so
+  the user sees it even if they don't have file-system access to the
+  container.

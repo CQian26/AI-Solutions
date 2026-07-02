@@ -35,10 +35,21 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import os
 import re
 import sys
 from dataclasses import asdict
 from pathlib import Path
+
+
+def _banner_stderr(*lines: str) -> None:
+    """Print an eye-catching warning banner to stderr."""
+    width = max(72, max((len(l) for l in lines), default=0) + 4)
+    bar = "!" * width
+    print("\n" + bar, file=sys.stderr)
+    for l in lines:
+        print(f"!! {l}".ljust(width - 2) + "!!", file=sys.stderr)
+    print(bar + "\n", file=sys.stderr)
 
 from parse_email import parse_email_text, _email_body_text, Opportunity
 from sam_client import SamClient, SamClientError, Notice
@@ -125,7 +136,16 @@ def main() -> int:
     ap.add_argument("email", nargs="?", default=None,
                     help="Path to a bidmatch email (.txt/.eml/.mbox). Defaults to input.txt in this folder.")
     ap.add_argument("--out", default="output/supplier_scorecard.xlsx", help="Output .xlsx path")
-    ap.add_argument("--mock-dir", help="Use canned SAM.gov JSON responses from this dir (offline mode)")
+    # Simulation mode is intentionally awkward. Real SAM.gov data is the ONLY
+    # supported production path. --dev-only-mock-dir is retained for pipeline
+    # testing after code changes and requires --i-understand-this-is-simulated
+    # to actually run.
+    ap.add_argument("--dev-only-mock-dir", dest="mock_dir",
+                    help="[NOT FOR PRODUCTION USE] Read canned SAM.gov JSON responses from this dir. "
+                         "Requires --i-understand-this-is-simulated. Every row in the output will be "
+                         "watermarked as simulated data.")
+    ap.add_argument("--i-understand-this-is-simulated", action="store_true",
+                    help="Required alongside --dev-only-mock-dir. Confirms you know the output is fabricated.")
     ap.add_argument("--limit", type=int, default=0, help="Only process the first N opportunities (0 = all)")
     ap.add_argument("--no-attachments", action="store_true", help="Skip downloading and scanning attachments")
     ap.add_argument("--include-untitled", action="store_true", help="Also search opportunities with truncated titles")
@@ -154,6 +174,40 @@ def main() -> int:
     if args.limit:
         ops = ops[: args.limit]
         print(f"  → processing first {len(ops)} (--limit)")
+
+    # Guard: refuse silent simulation.
+    if args.mock_dir and not args.i_understand_this_is_simulated:
+        print(
+            "\nERROR: --dev-only-mock-dir requires --i-understand-this-is-simulated.\n"
+            "       Mock output is fabricated data for pipeline testing only —\n"
+            "       it does NOT reflect real SAM.gov content. If you want a\n"
+            "       supplier scorecard you can act on, set SAM_API_KEY and\n"
+            "       run without --dev-only-mock-dir.\n",
+            file=sys.stderr,
+        )
+        return 2
+
+    if args.mock_dir:
+        _banner_stderr(
+            "SIMULATION MODE",
+            "Every row in the resulting xlsx is FABRICATED per FSC×agency template.",
+            "This is for testing the pipeline shape ONLY. Do not use it to make",
+            "bid/no-bid decisions or to build a real supplier compliance profile.",
+            f"Reading canned responses from: {args.mock_dir}",
+        )
+    else:
+        # Real-run guard: if there's no API key, stop with a clear message
+        # BEFORE we run through 60 opportunities and hit a wall of errors.
+        if not os.environ.get("SAM_API_KEY"):
+            print(
+                "\nERROR: SAM_API_KEY is not set in the environment.\n\n"
+                "This pipeline only produces real supplier scorecards from live\n"
+                "SAM.gov data. Get a free key at:\n"
+                "  https://open.gsa.gov/api/get-opportunities-public-api/\n\n"
+                "Then:  export SAM_API_KEY=your_key   &&   python3 run.py\n",
+                file=sys.stderr,
+            )
+            return 2
 
     sam = SamClient(
         mock_dir=Path(args.mock_dir) if args.mock_dir else None,

@@ -139,6 +139,11 @@ def _autosize(ws, min_w: int = 8, max_w: int = 60):
 def write_scorecard(results: dict, out_path: Path, *, filters_path: Optional[Path] = None) -> Path:
     contracts = results.get("contracts", []) or []
     filters_cfg = _load_filters(filters_path)
+    # Detect simulation mode by looking at the notes column.
+    is_simulated = any(
+        (c.get("notes") or "").upper().startswith(("MOCK", "DEMO MOCK", "SIMULAT"))
+        for c in contracts
+    )
 
     # --- aggregate ---
     agg: dict[str, dict] = {}
@@ -184,10 +189,43 @@ def write_scorecard(results: dict, out_path: Path, *, filters_path: Optional[Pat
 
     wb = Workbook()
 
+    # === Simulation banner (only appears when the run used mock data) =======
+    if is_simulated:
+        ws_warn = wb.active
+        ws_warn.title = "!! SIMULATED DATA !!"
+        ws_warn.sheet_properties.tabColor = "C00000"
+        banner_fill = PatternFill("solid", fgColor="C00000")
+        banner_font = Font(color="FFFFFF", bold=True, size=14)
+        lines = [
+            "⚠ THIS SCORECARD IS SIMULATED — DO NOT USE FOR BID/NO-BID DECISIONS",
+            "",
+            "Every clause and contract row was fabricated from FSC × agency templates",
+            "because the pipeline could not reach api.sam.gov (or was explicitly told",
+            "to use --dev-only-mock-dir). The clause distribution is plausible but is",
+            "NOT the actual clause set for these opportunities.",
+            "",
+            "To get a real scorecard:",
+            "  1. Get a free key at https://open.gsa.gov/api/get-opportunities-public-api/",
+            "  2. export SAM_API_KEY=your_key",
+            "  3. Re-run the pipeline in a network environment that can reach sam.gov.",
+            "",
+            "Run this workbook again after those steps and this sheet will disappear.",
+        ]
+        for i, line in enumerate(lines, start=1):
+            c = ws_warn.cell(row=i, column=1, value=line)
+            c.font = banner_font
+            c.alignment = LEFT
+            if i == 1:
+                c.fill = banner_fill
+        ws_warn.column_dimensions["A"].width = 90
+
     # === Sheet 1: Scorecard ============================================
     # Columns: Citation | Part | Title | What it means | Count | Contract IDs
-    ws = wb.active
-    ws.title = "Scorecard"
+    if is_simulated:
+        ws = wb.create_sheet("Scorecard")
+    else:
+        ws = wb.active
+        ws.title = "Scorecard"
     ws.append(["Citation", "Part", "Title", "What it means", "Count", "Contract IDs"])
     for i, r in enumerate(rows, start=2):
         ws.append([

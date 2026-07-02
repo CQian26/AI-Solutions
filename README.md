@@ -31,18 +31,50 @@ The skill file is `.claude/skills/bidmatch-scorecard/SKILL.md`. It auto-loads
 because it lives in `.claude/skills/` inside the repo — Claude Code discovers
 project-local skills whenever you open a session in the repo directory.
 
-### First-time setup
+### Where to run it
 
-Two things the skill will prompt about on the first run:
+**On your own machine** (laptop, workstation, self-hosted Claude Code, or any
+VM you control). This pipeline calls the SAM.gov API directly, so it needs
+outbound HTTPS to `api.sam.gov`.
 
-- **Python deps** — `pip install -r supplier_scorecard/requirements.txt`
-  (`openpyxl` is required; `pdfminer.six` / `pypdf` / `python-docx` are for
-  PDF/DOCX attachment scanning).
-- **SAM.gov API key** — get a free one at
-  <https://open.gsa.gov/api/get-opportunities-public-api/>, then
-  `export SAM_API_KEY=xxxxx`. Without a key the skill can still run in **demo
-  mode** against bundled mock responses (`--mock-dir sample/mock_sam`) so you
-  see the shape of the output before wiring in live data.
+**Not** in Claude on the web — that environment's egress proxy blocks
+`api.sam.gov` by policy, so the skill will detect the block and stop rather
+than fabricate a result.
+
+### First-time setup on your laptop
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/CQian26/AI-Solutions.git
+cd AI-Solutions
+
+# 2. Install Python deps
+pip install -r supplier_scorecard/requirements.txt
+
+# 3. Get a free SAM.gov API key
+#    https://open.gsa.gov/api/get-opportunities-public-api/
+export SAM_API_KEY=your_key_here
+
+# 4. Paste your bidmatch email into supplier_scorecard/input.txt
+
+# 5. Run — either via Claude Code (skill picks it up automatically):
+claude
+# then: "score the contracts in input.txt"
+#
+# OR directly:
+python3 supplier_scorecard/run.py
+```
+
+The `.xlsx` scorecard lands at `supplier_scorecard/output/supplier_scorecard.xlsx`.
+
+### Simulation mode is intentionally off by default
+
+The pipeline refuses to fabricate results. If `SAM_API_KEY` is missing or
+the network cannot reach `api.sam.gov`, it stops with a clear error. A
+`--dev-only-mock-dir` flag exists for testing code changes to the pipeline
+itself — it requires `--i-understand-this-is-simulated` and stamps every
+resulting workbook with a red **!! SIMULATED DATA !!** cover sheet so no one
+mistakes it for a real supplier profile.
 
 ---
 
