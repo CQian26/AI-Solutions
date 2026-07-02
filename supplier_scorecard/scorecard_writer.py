@@ -287,7 +287,55 @@ def write_scorecard(results: dict, out_path: Path, *, filters_path: Optional[Pat
     ws.column_dimensions["D"].width = 14
     ws.column_dimensions["E"].width = 55
 
-    # === Sheet 2: Contract x Clause matrix =============================
+    # === Sheet 2: Citation Detail (drilldown per citation) =============
+    # Same detail as pre-rollup Scorecard but with a leading Regulation
+    # column so rows are grouped by family. Sorted by regulation, then
+    # count desc within each regulation. Only KEPT citations (dropped
+    # ones stay on the Dropped Clauses sheet).
+    detail_rows = sorted(
+        rows,
+        key=lambda r: (r["regulation"], -r["count"], r["number"]),
+    )
+    ws_det = wb.create_sheet("Citation Detail")
+    ws_det.append([
+        "Regulation", "Citation", "Part", "Title", "What it means",
+        "Count", "Contract IDs",
+    ])
+    prev_reg = None
+    for i, r in enumerate(detail_rows, start=2):
+        ws_det.append([
+            r["regulation"],
+            r["citation"],
+            r["part"],
+            r["title"],
+            r.get("explanation") or "",
+            r["count"],
+            ", ".join(r["contract_ids"]),
+        ])
+        # Subtle band per regulation group so it reads as sections at a glance:
+        # bold the first row of each new regulation.
+        if r["regulation"] != prev_reg:
+            for c in range(1, 8):
+                ws_det.cell(row=i, column=c).font = Font(bold=True)
+            prev_reg = r["regulation"]
+        elif i % 2 == 0:
+            for c in range(1, 8):
+                ws_det.cell(row=i, column=c).fill = ODD_FILL
+        ws_det.cell(row=i, column=4).alignment = LEFT   # Title
+        ws_det.cell(row=i, column=5).alignment = LEFT   # What it means
+        ws_det.cell(row=i, column=6).alignment = CENTER # Count
+        ws_det.cell(row=i, column=7).alignment = LEFT   # Contract IDs
+    _style_header(ws_det, 7)
+    _autosize(ws_det)
+    ws_det.column_dimensions["A"].width = 12
+    ws_det.column_dimensions["B"].width = 22
+    ws_det.column_dimensions["C"].width = 10
+    ws_det.column_dimensions["D"].width = 45
+    ws_det.column_dimensions["E"].width = 70
+    ws_det.column_dimensions["F"].width = 8
+    ws_det.column_dimensions["G"].width = 45
+
+    # === Sheet 3: Contract x Clause matrix =============================
     ws2 = wb.create_sheet("Contract x Clause")
     contract_ids = [c.get("id") or c.get("title") or f"C{i+1}"
                     for i, c in enumerate(contracts)]
