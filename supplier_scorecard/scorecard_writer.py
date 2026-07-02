@@ -141,7 +141,6 @@ def write_scorecard(results: dict, out_path: Path, *, filters_path: Optional[Pat
     filters_cfg = _load_filters(filters_path)
 
     # --- aggregate ---
-    # clause_id -> {"regulation","number","citation","part","title", "contracts": set, "titles_seen": set}
     agg: dict[str, dict] = {}
     for c in contracts:
         cid = c.get("id") or c.get("title") or "?"
@@ -153,12 +152,15 @@ def write_scorecard(results: dict, out_path: Path, *, filters_path: Optional[Pat
                 "citation": key,
                 "part": cl["number"].rsplit("-", 1)[0],
                 "title": cl.get("title") or "",
+                "explanation": cl.get("explanation") or "",
                 "contracts": set(),
                 "titles_seen": set(),
             })
             slot["contracts"].add(cid)
             if cl.get("title"):
                 slot["titles_seen"].add(cl["title"])
+            if not slot["explanation"] and cl.get("explanation"):
+                slot["explanation"] = cl["explanation"]
 
     total_contracts = len(contracts) or 1
     rows = []
@@ -169,6 +171,7 @@ def write_scorecard(results: dict, out_path: Path, *, filters_path: Optional[Pat
             "part": s["part"],
             "number": s["number"],
             "title": s["title"] or (next(iter(s["titles_seen"])) if s["titles_seen"] else ""),
+            "explanation": s["explanation"],
             "count": len(s["contracts"]),
             "coverage": len(s["contracts"]) / total_contracts,
             "contract_ids": sorted(s["contracts"]),
@@ -182,31 +185,33 @@ def write_scorecard(results: dict, out_path: Path, *, filters_path: Optional[Pat
     wb = Workbook()
 
     # === Sheet 1: Scorecard ============================================
+    # Columns: Citation | Part | Title | What it means | Count | Contract IDs
     ws = wb.active
     ws.title = "Scorecard"
-    ws.append(["Citation", "Regulation", "Part", "Number", "Title",
-               "Count", "Coverage %", "Contract IDs"])
+    ws.append(["Citation", "Part", "Title", "What it means", "Count", "Contract IDs"])
     for i, r in enumerate(rows, start=2):
         ws.append([
-            r["citation"], r["regulation"], r["part"], r["number"],
-            r["title"], r["count"], r["coverage"],
+            r["citation"], r["part"], r["title"],
+            r["explanation"] or "",
+            r["count"],
             ", ".join(r["contract_ids"]),
         ])
         # zebra
         if i % 2 == 0:
-            for c in range(1, 9):
+            for c in range(1, 7):
                 ws.cell(row=i, column=c).fill = ODD_FILL
-        # right-align count, format coverage as %
-        ws.cell(row=i, column=6).alignment = CENTER
-        cov = ws.cell(row=i, column=7)
-        cov.number_format = "0.0%"
-        cov.alignment = CENTER
-        ws.cell(row=i, column=5).alignment = LEFT
-        ws.cell(row=i, column=8).alignment = LEFT
-    _style_header(ws, 8)
+        ws.cell(row=i, column=3).alignment = LEFT  # Title
+        ws.cell(row=i, column=4).alignment = LEFT  # Explanation
+        ws.cell(row=i, column=5).alignment = CENTER  # Count
+        ws.cell(row=i, column=6).alignment = LEFT  # Contract IDs
+    _style_header(ws, 6)
     _autosize(ws)
-    ws.column_dimensions["E"].width = 55
-    ws.column_dimensions["H"].width = 40
+    ws.column_dimensions["A"].width = 22
+    ws.column_dimensions["B"].width = 10
+    ws.column_dimensions["C"].width = 45
+    ws.column_dimensions["D"].width = 70   # Explanation gets the most room
+    ws.column_dimensions["E"].width = 8
+    ws.column_dimensions["F"].width = 45
 
     # === Sheet 2: Contract x Clause matrix =============================
     ws2 = wb.create_sheet("Contract x Clause")
@@ -299,35 +304,40 @@ def write_scorecard(results: dict, out_path: Path, *, filters_path: Optional[Pat
     ws3.column_dimensions["L"].width = 45
 
     # === Sheet 5: Dropped Clauses (audit trail) ========================
+    # Same shape as Scorecard + Drop reason column
     if dropped_rows:
         ws4 = wb.create_sheet("Dropped Clauses")
         ws4.append([
-            "Citation", "Regulation", "Part", "Number", "Title",
-            "Count", "Coverage %", "Contract IDs", "Drop reason",
+            "Citation", "Part", "Title", "What it means",
+            "Count", "Contract IDs", "Drop reason",
         ])
-        # sort dropped by count desc too so common boilerplate shows first
         dropped_rows.sort(key=lambda r: (-r["count"], r["regulation"], r["number"]))
         for i, r in enumerate(dropped_rows, start=2):
             ws4.append([
-                r["citation"], r["regulation"], r["part"], r["number"],
-                r["title"], r["count"], r["coverage"],
+                r["citation"], r["part"], r["title"],
+                r.get("explanation") or "",
+                r["count"],
                 ", ".join(r["contract_ids"]),
                 r.get("drop_reason", ""),
             ])
             if i % 2 == 0:
-                for col in range(1, 10):
+                for col in range(1, 8):
                     ws4.cell(row=i, column=col).fill = ODD_FILL
-            ws4.cell(row=i, column=6).alignment = CENTER
-            cov = ws4.cell(row=i, column=7); cov.number_format = "0.0%"; cov.alignment = CENTER
-            ws4.cell(row=i, column=5).alignment = LEFT
-            ws4.cell(row=i, column=8).alignment = LEFT
-            ws4.cell(row=i, column=9).alignment = LEFT
-        _style_header(ws4, 9)
+            ws4.cell(row=i, column=3).alignment = LEFT
+            ws4.cell(row=i, column=4).alignment = LEFT
+            ws4.cell(row=i, column=5).alignment = CENTER
+            ws4.cell(row=i, column=6).alignment = LEFT
+            ws4.cell(row=i, column=7).alignment = LEFT
+        _style_header(ws4, 7)
         _autosize(ws4)
-        ws4.column_dimensions["E"].width = 55
-        ws4.column_dimensions["H"].width = 40
-        ws4.column_dimensions["I"].width = 60
-        # Grey out the tab to signal these are excluded — openpyxl uses tab color.
+        ws4.column_dimensions["A"].width = 22
+        ws4.column_dimensions["B"].width = 10
+        ws4.column_dimensions["C"].width = 45
+        ws4.column_dimensions["D"].width = 70
+        ws4.column_dimensions["E"].width = 8
+        ws4.column_dimensions["F"].width = 45
+        ws4.column_dimensions["G"].width = 60
+        # Grey out the tab to signal these are excluded.
         ws4.sheet_properties.tabColor = "888888"
 
     out_path = Path(out_path)

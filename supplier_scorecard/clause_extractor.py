@@ -171,6 +171,149 @@ KNOWN_TITLES: dict[str, str] = {
 }
 
 
+# ------------------------- plain-English explanations -------------------------
+# One sentence per clause describing what the supplier actually has to DO to
+# comply. Kept intentionally practical — not a legal summary, a "what does this
+# mean for my capability profile?" note.
+
+EXPLANATIONS: dict[str, str] = {
+    # ----- FAR admin & reps/certs (mostly boilerplate; kept for completeness) -----
+    "FAR 52.203-13": "Maintain a written business-ethics code and an internal compliance/awareness program.",
+    "FAR 52.203-17": "Post whistleblower-rights notices for your employees.",
+    "FAR 52.203-19": "Don't require employee confidentiality agreements that would block reporting fraud.",
+    "FAR 52.204-7":  "Must have an active SAM registration before award.",
+    "FAR 52.204-10": "Report executive compensation if your annual federal revenue exceeds $30M.",
+    "FAR 52.204-13": "Keep your SAM registration active throughout performance.",
+    "FAR 52.204-16": "You must have (and report) a CAGE code.",
+    "FAR 52.204-18": "Keep the CAGE code current on ownership or control changes.",
+    "FAR 52.204-19": "SAM reps & certs are the record of truth; keep them accurate.",
+    "FAR 52.204-21": "Implement the 15 basic cybersecurity safeguards on any system handling Federal Contract Information (FCI).",
+    "FAR 52.204-23": "No Kaspersky Lab hardware, software, or services in your supply chain.",
+    "FAR 52.204-24": "Represent whether you use covered Chinese telecom (Huawei, ZTE, Hytera, Hikvision, Dahua).",
+    "FAR 52.204-25": "Section 889 — you cannot provide the government any covered Chinese telecom equipment/services.",
+    "FAR 52.204-26": "Additional covered-telecom representation flow-down.",
+    "FAR 52.209-6":  "Screen subcontractors against SAM.gov Exclusions before award; notify CO if you propose a debarred party.",
+    "FAR 52.209-10": "Certify you are not an inverted domestic corporation (former US company reincorporated abroad).",
+    "FAR 52.211-6":  "'Brand name or equal' — if the spec names a brand, your alternate must meet the listed salient characteristics.",
+    "FAR 52.211-14": "DPAS priority rating (DO / DX) — you must schedule this order ahead of unrated work.",
+    "FAR 52.212-1":  "Standard offer instructions for commercial-item solicitations (how and when to submit your bid).",
+    "FAR 52.212-3":  "Consolidated annual reps & certs — submit once per year via SAM.",
+    "FAR 52.212-4":  "The standard commercial-item contract terms: payment, inspection, warranty, disputes.",
+    "FAR 52.212-5":  "The list of statutorily required clauses that also apply to commercial contracts (EEO, small-business, labor, etc.).",
+    "FAR 52.213-4":  "Terms for simplified acquisitions of other-than-commercial items.",
+    "FAR 52.219-1":  "Represent your small-business size status for the contract's NAICS.",
+    "FAR 52.219-6":  "This procurement is set aside for small business — only SBs may bid.",
+    "FAR 52.219-8":  "Give small business and socioeconomic categories equitable subcontract opportunity.",
+    "FAR 52.219-14": "As a set-aside prime, you must perform at least 50% of the cost of manufacture with your own employees (supply contracts).",
+    "FAR 52.219-28": "Re-represent your small-business size if you outgrow the standard during performance.",
+    "FAR 52.222-3":  "No convict labor in performance.",
+    "FAR 52.222-19": "Comply with EO 13126 child-labor rules; sign the required certification.",
+    "FAR 52.222-21": "No segregated facilities.",
+    "FAR 52.222-26": "Equal-employment-opportunity — no discrimination by race, color, religion, sex, or national origin.",
+    "FAR 52.222-35": "Affirmative action for protected veterans (contracts >$150K).",
+    "FAR 52.222-36": "Affirmative action for workers with disabilities (contracts >$15K).",
+    "FAR 52.222-37": "File the annual VETS-4212 report on veteran employment.",
+    "FAR 52.222-40": "Post the NLRA employee-rights notice at your worksites.",
+    "FAR 52.222-50": "Zero-tolerance policy on human trafficking; specific prohibitions on your employees.",
+    "FAR 52.223-18": "Maintain a written policy banning texting while driving on government business.",
+    "FAR 52.225-1":  "Buy American Act — supply end items must be domestic (or from a qualifying country).",
+    "FAR 52.225-13": "Restriction on Certain Foreign Purchases — no items from OFAC-sanctioned countries.",
+    "FAR 52.232-33": "Payments only by EFT to the account in your SAM registration.",
+    "FAR 52.232-40": "You must pay your small-business subcontractors within 15 days.",
+    "FAR 52.233-1":  "Contract disputes are handled under the Contract Disputes Act (appeals to the Boards).",
+    "FAR 52.233-3":  "Post-award protest may pause performance while it's resolved.",
+    "FAR 52.233-4":  "US federal law governs any breach-of-contract claim.",
+    "FAR 52.243-1":  "Changes clause — the CO may unilaterally change certain contract terms; you get an equitable adjustment.",
+    "FAR 52.246-2":  "Inspection of Supplies — you're responsible for QC; government inspects at destination (or origin if specified).",
+    "FAR 52.247-34": "F.o.b. Destination — you own the freight cost and risk of loss until delivery.",
+    "FAR 52.249-8":  "Default clause — government may terminate for cause; you may be liable for excess reprocurement costs.",
+
+    # ----- DFARS -----
+    "DFARS 252.201-7000": "You'll deal with a designated Contracting Officer's Representative (COR).",
+    "DFARS 252.203-7000": "'Golden parachute' rule — restrictions on compensating former DoD officials.",
+    "DFARS 252.203-7002": "Inform employees of DoD-specific whistleblower rights and reporting channels.",
+    "DFARS 252.204-7000": "Don't release contract information publicly without CO authorization.",
+    "DFARS 252.204-7003": "Government retains rights in work product from DoD personnel.",
+    "DFARS 252.204-7008": "Certify you can meet the safeguarding requirements of DFARS 252.204-7012.",
+    "DFARS 252.204-7009": "Limits on how you can use/disclose third-party cyber-incident info shared with you.",
+    "DFARS 252.204-7012": "Safeguard Covered Defense Information per NIST SP 800-171; report cyber incidents to DoD within 72 hours.",
+    "DFARS 252.204-7015": "Disclose specified info in litigation support tasks.",
+    "DFARS 252.204-7016": "Representation about covered defense telecom equipment/services.",
+    "DFARS 252.204-7017": "Representation about acquiring covered defense telecom equipment/services.",
+    "DFARS 252.204-7018": "You may not acquire or provide covered defense telecom equipment for DoD.",
+    "DFARS 252.204-7019": "You must have posted a NIST SP 800-171 self-assessment score in SPRS before award.",
+    "DFARS 252.204-7020": "You must provide NIST 800-171 assessment info on request; DoD may conduct Medium/High assessments.",
+    "DFARS 252.204-7021": "You must hold the required CMMC certification level before award.",
+    "DFARS 252.211-7003": "Mark deliverables with an Item Unique Identifier (IUID) per MIL-STD-130; register in the DoD IUID registry.",
+    "DFARS 252.223-7008": "No hexavalent chromium in deliverables unless the CO approves in writing.",
+    "DFARS 252.225-7000": "Certify country of origin for supplies (Buy American / Balance of Payments certificate).",
+    "DFARS 252.225-7001": "Provide only domestic or qualifying-country end products (DoD Buy American).",
+    "DFARS 252.225-7002": "Your subcontractors must also source from the US or qualifying countries.",
+    "DFARS 252.225-7008": "Use only domestically melted or produced specialty metals unless an exception applies.",
+    "DFARS 252.225-7009": "Restriction on foreign specialty metals in items with specialty-metal content.",
+    "DFARS 252.225-7012": "Certain commodities (food, hand tools, some chemicals) must be domestic — 'Preference for Certain Domestic Commodities.'",
+    "DFARS 252.225-7048": "Comply with ITAR/EAR export-control laws; obtain any required licenses.",
+    "DFARS 252.227-7013": "Government gets a license to noncommercial technical data you deliver.",
+    "DFARS 252.227-7015": "Government gets a license to commercial technical data you deliver.",
+    "DFARS 252.232-7003": "Submit payment requests and receiving reports electronically via WAWF (iRAPT).",
+    "DFARS 252.232-7006": "WAWF-specific routing codes for your invoice (Pay DoDAAC etc.).",
+    "DFARS 252.232-7010": "IRS may levy payments on this contract to satisfy your federal tax debts.",
+    "DFARS 252.239-7018": "Assess and mitigate supply-chain risk (SCRM) across your supplier tiers.",
+    "DFARS 252.243-7001": "Contract modifications are priced per Truth in Negotiations Act (cost or pricing data).",
+    "DFARS 252.244-7000": "Flow the same requirements down to your commercial-item subcontractors.",
+    "DFARS 252.246-7003": "Notify DoD promptly of any safety issue discovered with a delivered item.",
+    "DFARS 252.246-7008": "Source electronic parts from OEMs, franchised dealers, or trusted suppliers — no unauthorized brokers.",
+    "DFARS 252.247-7023": "Ocean shipments must move on US-flag vessels to the extent available.",
+
+    # ----- DLAD (DLA-specific supply supplement) -----
+    "DLAD 52.204-9002": "Handling and disclosure rules for contractor-provided info at DLA.",
+    "DLAD 52.209-9010": "Rules for handling and returning free-issue government material.",
+    "DLAD 52.211-9006": "DLA delivery schedule — dictates required leadtime from contract award to shipment.",
+    "DLAD 52.211-9026": "Reserved contract-information handling procedures.",
+    "DLAD 52.211-9034": "Post-award product testing — DLA may test your delivered items and cancel/reject on failure.",
+    "DLAD 52.213-9001": "Notice about the procedure for filling certain solicitation requirements.",
+    "DLAD 52.215-9016": "Higher-level technical and quality requirements may apply (e.g., ISO 9001, AS9100).",
+    "DLAD 52.215-9023": "You may be required to participate in DLA reverse-auction bidding.",
+    "DLAD 52.223-9001": "Apply hazard-warning labels on hazardous items per DoT/OSHA.",
+    "DLAD 52.232-9004": "Standard DLA payment instructions (specific routing).",
+    "DLAD 52.233-9002": "Alternative dispute resolution encouraged for DLA disputes.",
+    "DLAD 52.246-9008": "Inspection and acceptance is at origin (source inspection at your facility).",
+    "DLAD 52.246-9012": "Implement a higher-level quality management system (typically ISO 9001 or AS9100).",
+    "DLAD 52.246-9060": "Product Verification Testing under DLA's Automated Best Value System.",
+    "DLAD 52.246-9080": "DLA-managed items have specific quality-system requirements you must meet.",
+    "DLAD 52.247-9032": "Item-peculiar packaging and marking — DLA-specific packing/marking specs.",
+    "DLAD 52.247-9059": "Ship-in-place — items stay at your facility until DLA calls them forward.",
+
+    # ----- Agency supplements -----
+    "NMCARS 5252.204-9400": "Navy contractor access to federally-controlled facilities.",
+    "NMCARS 5252.222-9300": "Navy contractor personnel access to Navy work sites.",
+    "NMCARS 5252.223-9400": "Report accidents/incidents to the Navy per this clause.",
+    "NMCARS 5252.227-9113": "Navy-specific rights in technical data.",
+    "NMCARS 5252.242-9115": "Comply with technical instructions issued during performance.",
+
+    "JAR 2852.203-70":  "DoJ whistleblower protection notice/training.",
+    "JAR 2852.204-70":  "DoJ contractor employees must undergo security screening.",
+    "JAR 2852.209-70":  "Disclose any organizational conflicts of interest (OCI).",
+    "JAR 2852.209-71":  "DoJ standards of conduct — apply to your on-site employees.",
+
+    "HHSAR 352.203-70": "Anti-lobbying restrictions (HHS-specific).",
+    "HHSAR 352.222-70": "Cooperate in EEO investigations.",
+    "HHSAR 352.224-70": "Privacy Act requirements when handling personally-identifiable information.",
+
+    "HSAR 3052.204-70": "DHS IT-resources security requirements.",
+    "HSAR 3052.204-71": "DHS contractor-employee access clearance.",
+    "HSAR 3052.209-70": "No inverted-corporation contracts (DHS variant).",
+    "HSAR 3052.219-70": "Small-business subcontracting-plan reporting for DHS.",
+
+    "NFS 1852.204-76": "NASA IT-security requirements for unclassified systems.",
+    "NFS 1852.223-70": "Maintain a written Safety and Health plan.",
+    "NFS 1852.225-70": "Handle export licensing for items subject to ITAR/EAR.",
+    "NFS 1852.227-11": "Contractor may retain title to inventions (Bayh-Dole implementation).",
+    "NFS 1852.245-70": "Rules for requesting and using NASA-owned equipment.",
+    "NFS 1852.246-70": "Mission-critical space system personnel reliability program.",
+}
+
+
 # ------------------------- regex library -------------------------
 
 # The core clause number: NNN-N[NNN]  with optional -Alt-N or (a)(1) style tail.
@@ -258,6 +401,7 @@ class Clause:
     regulation: str        # "FAR" | "DFARS" | "AFARS" | ...
     number: str            # canonical, e.g. "52.204-24"
     title: Optional[str] = None
+    explanation: Optional[str] = None  # plain-English "what this means for a supplier"
     contexts: list[str] = field(default_factory=list)  # short excerpts where it was found
 
     @property
@@ -286,7 +430,12 @@ def extract_clauses(text: str, *, source: str = "") -> list[Clause]:
         citation = f"{reg} {number}"
         c = seen.get(citation)
         if not c:
-            c = Clause(regulation=reg, number=number, title=KNOWN_TITLES.get(citation))
+            c = Clause(
+                regulation=reg,
+                number=number,
+                title=KNOWN_TITLES.get(citation),
+                explanation=EXPLANATIONS.get(citation),
+            )
             seen[citation] = c
         snip = _snippet(text, m)
         if source:
@@ -388,6 +537,7 @@ def clauses_to_dicts(clauses: Iterable[Clause]) -> list[dict]:
             "citation": c.citation,
             "part": c.part,
             "title": c.title,
+            "explanation": c.explanation,
             "contexts": c.contexts,
         }
         for c in clauses

@@ -14,13 +14,35 @@ bidmatch email  ─►  parse_email.py       (opportunities)
                 ─►  scorecard_writer.py   (supplier_scorecard.xlsx)
 ```
 
-The **`.xlsx`** has three sheets:
+The **`.xlsx`** has these sheets:
 
 | Sheet | What's in it |
 |---|---|
-| **Scorecard** | One row per unique clause. Citation, regulation, part, number, title, count, coverage %, contract IDs. Sorted by count — the top rows are the codes any supplier profile must cover. |
+| **Scorecard** | One row per unique clause. **Citation · Part · Title · What it means · Count · Contract IDs**. Sorted by count — the top rows are the codes any supplier profile must cover. |
 | **Contract × Clause** | Pivot matrix. Rows = clauses, columns = contracts, ✓ where a clause appears. Great for gap analysis per opportunity. |
-| **Raw Contracts** | One row per contract. Title, agency, NAICS, PSC/FSC, set-aside, posted/deadline dates, which sources were scanned (description + which attachments), clause count, SAM.gov URL. |
+| **MIL-Specs & Standards** | MIL-STD / MIL-PRF / MIL-DTL / FED-STD / A-A commercial-item descriptions harvested from the same documents, ranked by frequency. |
+| **Raw Contracts** | One row per contract. Title, agency, NAICS, PSC/FSC, set-aside, posted/deadline dates, which sources were scanned (description + which attachments), clause count, standards count, SAM.gov URL. |
+| **Dropped Clauses** *(grey tab)* | Audit trail of clauses removed by `filters.json`. Same shape as Scorecard + a **Drop reason** column so you can see why anything was excluded. |
+
+### The "What it means" column
+
+Every clause on the Scorecard (and the Dropped Clauses audit sheet) carries a
+one-sentence plain-English **capability statement** — what the clause actually
+requires the supplier to do or have. Examples:
+
+| Citation | What it means |
+|---|---|
+| `DFARS 252.204-7012` | Safeguard Covered Defense Information per NIST SP 800-171; report cyber incidents to DoD within 72 hours. |
+| `DFARS 252.204-7021` | You must hold the required CMMC certification level before award. |
+| `DFARS 252.211-7003` | Mark deliverables with an Item Unique Identifier (IUID) per MIL-STD-130; register in the DoD IUID registry. |
+| `DFARS 252.225-7008` | Use only domestically melted or produced specialty metals unless an exception applies. |
+| `DLAD 52.246-9012` | Implement a higher-level quality management system (typically ISO 9001 or AS9100). |
+| `FAR 52.211-6` | 'Brand name or equal' — if the spec names a brand, your alternate must meet the listed salient characteristics. |
+
+The explanations live in the `EXPLANATIONS` dict at the bottom of
+`clause_extractor.py`. Any citation not covered there still appears on the
+scorecard, just with an empty "What it means" cell — add or edit the dict to
+fill it in, then re-run.
 
 ---
 
