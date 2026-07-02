@@ -1,0 +1,23 @@
+{
+  "_comment": "Tells the scraper how to read a contract page on the official website. Use your browser's 'Inspect' to find the right CSS selectors for the target portal (SAM.gov, a state procurement portal, Washington BidMatch, etc.), then put them here. If a selector is left empty or finds nothing, the scraper falls back to scanning the full page text for specification tags — so it still works even with no selectors configured.",
+
+  "request": {
+    "user_agent": "Mozilla/5.0 (compatible; BidMatchScorecard/1.0; +https://example.org/bot)",
+    "timeout_seconds": 30,
+    "delay_seconds_between_requests": 1.5,
+    "max_retries": 3
+  },
+
+  "selectors": {
+    "_comment": "CSS selectors (BeautifulSoup .select). All optional.",
+    "title": "h1, .opportunity-title, .solicitation-title",
+    "agency": ".agency, .department, .buyer-name",
+    "tags": ".tag, .category, .keyword, .naics, .classification, [data-tag]",
+    "description": ".description, .opportunity-description, #synopsis, .synopsis, main"
+  },
+
+  "robots": {
+    "_comment": "Be a good citizen. The scraper checks robots.txt by default; set respect_robots_txt to false ONLY if you have explicit permission to crawl the site.",
+    "respect_robots_txt": true
+  }
+}

@@ -1,0 +1,27 @@
+STATEMENT OF WORK — BRACKET, VEHICULAR (NSN 2590-01-701-2434)
+
+1. Scope.  The Contractor shall manufacture and deliver Bracket, Vehicular
+   assemblies in accordance with drawing package attached to this solicitation.
+
+2. Specialty Metals.  The Contractor shall comply with DFARS 252.225-7008
+   Restriction on Acquisition of Specialty Metals and, where applicable,
+   DFARS 252.225-7009 Restriction on Acquisition of Certain Articles
+   Containing Specialty Metals.  A domestic melt certificate is required
+   with each shipment.
+
+3. Hexavalent Chromium.  The Contractor shall not use Hexavalent Chromium
+   in any deliverable in accordance with DFARS 252.223-7008 Prohibition of
+   Hexavalent Chromium.  Written approval of the Contracting Officer is
+   required for any exception.
+
+4. Sources of Electronic Parts.  DFARS 252.246-7008 Sources of Electronic
+   Parts applies to any electronic items procured under this contract.
+
+5. Rights in Technical Data.  DFARS 252.227-7013 Rights in Technical
+   Data—Noncommercial Items applies to any technical data delivered.
+
+6. Notification of Potential Safety Issues.  DFARS 252.246-7003 applies —
+   this is a critical safety item.
+
+7. Wide Area Workflow.  Payment requests and receiving reports shall be
+   submitted electronically per DFARS 252.232-7003 and DFARS 252.232-7006.

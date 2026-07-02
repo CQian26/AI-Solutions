@@ -1,0 +1,4 @@
+# Optional. The scraper runs on the Python standard library alone.
+# Install this only for precise, CSS-selector-based tag extraction
+# (otherwise the scraper scans full page text, which still works):
+beautifulsoup4>=4.12

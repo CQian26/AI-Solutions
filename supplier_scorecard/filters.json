@@ -1,0 +1,85 @@
+{
+  "_comment": "Filters applied to the scorecard AFTER aggregation. Anything in a drop list gets moved to the 'Dropped Clauses' sheet with a reason. Comment/uncomment or edit freely — the filter runs on citation strings ('FAR 52.203-13' etc.) and on category names.",
+
+  "drop_admin_boilerplate": {
+    "enabled": true,
+    "reason": "Boilerplate — flows automatically through SAM registration + annual reps & certs; every federal contractor complies by default and it doesn't differentiate suppliers.",
+    "citations": [
+      "FAR 52.203-13",
+      "FAR 52.203-17",
+      "FAR 52.203-19",
+      "FAR 52.204-7",
+      "FAR 52.204-10",
+      "FAR 52.204-13",
+      "FAR 52.204-16",
+      "FAR 52.204-18",
+      "FAR 52.204-19",
+      "FAR 52.204-26",
+      "FAR 52.209-6",
+      "FAR 52.209-10",
+      "FAR 52.212-3",
+      "FAR 52.219-1",
+
+      "FAR 52.222-3",
+      "FAR 52.222-19",
+      "FAR 52.222-21",
+      "FAR 52.222-26",
+      "FAR 52.222-35",
+      "FAR 52.222-36",
+      "FAR 52.222-37",
+      "FAR 52.222-40",
+      "FAR 52.222-50",
+
+      "FAR 52.223-18",
+      "FAR 52.225-13",
+      "FAR 52.232-33",
+      "FAR 52.232-40",
+      "FAR 52.233-1",
+      "FAR 52.233-3",
+      "FAR 52.233-4",
+
+      "DFARS 252.203-7000",
+      "DFARS 252.203-7002",
+      "DFARS 252.204-7000",
+      "DFARS 252.204-7003",
+      "DFARS 252.204-7015",
+      "DFARS 252.204-7016",
+      "DFARS 252.204-7017",
+      "DFARS 252.204-7018",
+      "DFARS 252.232-7003",
+      "DFARS 252.232-7006",
+      "DFARS 252.232-7010",
+
+      "DLAD 52.204-9002",
+      "DLAD 52.211-9026",
+      "DLAD 52.213-9001",
+      "DLAD 52.232-9004",
+
+      "JAR 2852.203-70",
+      "JAR 2852.209-70",
+      "HHSAR 352.203-70",
+      "HSAR 3052.209-70"
+    ]
+  },
+
+  "drop_regulations": {
+    "_comment": "Uncomment / add regulation acronyms here to drop ENTIRE agency-supplement bodies you don't bid on. Example: if you never bid NASA, add 'NFS' to the list.",
+    "enabled": false,
+    "reason": "Agency supplement excluded — we don't bid this agency.",
+    "regulations": []
+  },
+
+  "drop_below_count": {
+    "_comment": "Drop clauses that appear in fewer than N contracts. Off by default; enable when you want to trim the long tail.",
+    "enabled": false,
+    "reason": "Low-frequency — appeared in fewer than the threshold number of contracts.",
+    "min_contracts": 2
+  },
+
+  "drop_specific": {
+    "_comment": "Manual drop list for one-off exclusions the buckets above don't catch. Add citation strings here.",
+    "enabled": true,
+    "reason": "Manually excluded.",
+    "citations": []
+  }
+}

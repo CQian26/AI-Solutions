@@ -1,0 +1,19 @@
+{
+  "totalRecords": 1,
+  "opportunitiesData": [
+    {
+      "noticeId": "mock-SPE7LX26D0059",
+      "solicitationNumber": "SPE7LX26D0059",
+      "title": "J&A for Contract Award SPE7LX26D0059",
+      "fullParentPathName": "DEPT OF DEFENSE",
+      "naicsCode": "332994",
+      "classificationCode": "10",
+      "typeOfSetAsideDescription": null,
+      "postedDate": "2026-05-15",
+      "responseDeadLine": null,
+      "uiLink": "https://sam.gov/opp/mock-SPE7LX26D0059/view",
+      "resourceLinks": [],
+      "description": "[DEMO MOCK \u2014 replace with live SAM.gov API by setting SAM_API_KEY.] Solicitation for J&A for Contract Award SPE7LX26D0059. Agency: DEPT OF DEFENSE. The following provisions and clauses apply: FAR 52.204-7; FAR 52.212-4; FAR 52.212-5; FAR 52.243-1; FAR 52.249-8; DFARS 252.203-7000; DFARS 252.204-7012. "
+    }
+  ]
+}

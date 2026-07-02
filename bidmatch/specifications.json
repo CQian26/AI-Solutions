@@ -1,0 +1,70 @@
+{
+  "_comment": "The 'specifications required' — the capability profile each contract's tags are scored against. Each category becomes one axis on the radar scorecard. 'tags' are matched (whole-word, case-insensitive) against the tags/text scraped from each contract. 'weight' lets some tags count more than others. Edit freely to match YOUR company's capabilities.",
+  "categories": [
+    {
+      "name": "AI & Machine Learning",
+      "tags": [
+        { "tag": "artificial intelligence", "weight": 3, "aliases": ["a.i."] },
+        { "tag": "machine learning", "weight": 3, "aliases": ["ml"] },
+        { "tag": "deep learning", "weight": 2 },
+        { "tag": "natural language processing", "weight": 2, "aliases": ["nlp"] },
+        { "tag": "computer vision", "weight": 2 },
+        { "tag": "predictive analytics", "weight": 2 },
+        { "tag": "generative ai", "weight": 2, "aliases": ["genai", "llm", "large language model"] }
+      ]
+    },
+    {
+      "name": "Data & Analytics",
+      "tags": [
+        { "tag": "data analytics", "weight": 3, "aliases": ["analytics"] },
+        { "tag": "big data", "weight": 2 },
+        { "tag": "data warehouse", "weight": 2, "aliases": ["data warehousing"] },
+        { "tag": "etl", "weight": 1, "aliases": ["data pipeline"] },
+        { "tag": "dashboard", "weight": 1, "aliases": ["data visualization", "business intelligence", "bi"] },
+        { "tag": "data governance", "weight": 1 }
+      ]
+    },
+    {
+      "name": "Cloud & Infrastructure",
+      "tags": [
+        { "tag": "cloud", "weight": 2, "aliases": ["cloud computing"] },
+        { "tag": "aws", "weight": 2, "aliases": ["amazon web services"] },
+        { "tag": "azure", "weight": 2 },
+        { "tag": "gcp", "weight": 1, "aliases": ["google cloud"] },
+        { "tag": "kubernetes", "weight": 1, "aliases": ["k8s", "containerization"] },
+        { "tag": "devops", "weight": 1, "aliases": ["devsecops", "ci/cd"] }
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "tags": [
+        { "tag": "cybersecurity", "weight": 3, "aliases": ["cyber security", "information security", "infosec"] },
+        { "tag": "zero trust", "weight": 2 },
+        { "tag": "fedramp", "weight": 2 },
+        { "tag": "nist", "weight": 1 },
+        { "tag": "compliance", "weight": 1 },
+        { "tag": "penetration testing", "weight": 1, "aliases": ["pentest"] }
+      ]
+    },
+    {
+      "name": "Software Development",
+      "tags": [
+        { "tag": "software development", "weight": 3, "aliases": ["software engineering", "custom software"] },
+        { "tag": "web application", "weight": 2, "aliases": ["web app", "web development"] },
+        { "tag": "api", "weight": 2, "aliases": ["api integration", "rest api"] },
+        { "tag": "agile", "weight": 1, "aliases": ["scrum"] },
+        { "tag": "modernization", "weight": 2, "aliases": ["legacy modernization"] }
+      ]
+    },
+    {
+      "name": "Eligibility & Set-Aside",
+      "tags": [
+        { "tag": "small business", "weight": 2 },
+        { "tag": "8(a)", "weight": 2, "aliases": ["8a"] },
+        { "tag": "woman-owned", "weight": 1, "aliases": ["women-owned", "wosb"] },
+        { "tag": "veteran-owned", "weight": 1, "aliases": ["vosb", "sdvosb"] },
+        { "tag": "541511", "weight": 2, "aliases": ["541512", "541519", "518210"] }
+      ]
+    }
+  ]
+}
