@@ -23,11 +23,13 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import time
 import urllib.parse
 import urllib.request
 import urllib.error
 from dataclasses import dataclass, field
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Any, Optional
 
@@ -74,12 +76,22 @@ class SamClient:
         rate_limit_seconds: float = 1.5,
         timeout: int = 30,
         max_retries: int = 3,
+        posted_from: Optional[str] = None,
+        posted_to: Optional[str] = None,
+        lookback_days: int = 365,
     ):
         self.api_key = api_key or os.environ.get("SAM_API_KEY")
         self.mock_dir = Path(mock_dir) if mock_dir else None
         self.rate_limit_seconds = rate_limit_seconds
         self.timeout = timeout
         self.max_retries = max_retries
+        # SAM.gov v2 /opportunities/search REQUIRES postedFrom/postedTo in
+        # MM/dd/yyyy format. Default to today back 'lookback_days' — 365d
+        # covers active opportunities (typical posting window is 30-90d) plus
+        # recently-archived ones (SAM archives 15d after response deadline).
+        today = date.today()
+        self.posted_to = posted_to or today.strftime("%m/%d/%Y")
+        self.posted_from = posted_from or (today - timedelta(days=lookback_days)).strftime("%m/%d/%Y")
         self._last_request_at = 0.0
 
     # ---------- low-level HTTP ----------
@@ -106,7 +118,19 @@ class SamClient:
                     time.sleep(2 ** attempt)
                     last_err = e
                     continue
-                raise SamClientError(f"HTTP {e.code} from SAM.gov: {e.reason} for {url}") from e
+                # Try to surface the SAM.gov API's actual error message.
+                body_snippet = ""
+                try:
+                    body = e.read().decode("utf-8", errors="replace")
+                    body_snippet = body[:600].strip().replace("\n", " ")
+                except Exception:
+                    pass
+                # Never leak the api_key in the error message.
+                safe_url = re.sub(r"api_key=[^&]+", "api_key=***REDACTED***", url)
+                detail = f": {body_snippet}" if body_snippet else ""
+                raise SamClientError(
+                    f"HTTP {e.code} from SAM.gov: {e.reason} for {safe_url}{detail}"
+                ) from e
             except (urllib.error.URLError, TimeoutError) as e:
                 last_err = e
                 if attempt < self.max_retries:
@@ -131,7 +155,8 @@ class SamClient:
                         break
                     fh.write(chunk)
         except urllib.error.HTTPError as e:
-            raise SamClientError(f"HTTP {e.code} downloading {url}: {e.reason}") from e
+            safe_url = re.sub(r"api_key=[^&]+", "api_key=***REDACTED***", url)
+            raise SamClientError(f"HTTP {e.code} downloading {safe_url}: {e.reason}") from e
         return dest
 
     # ---------- high-level API ----------
@@ -150,33 +175,55 @@ class SamClient:
                 return json.loads(p.read_text(encoding="utf-8"))
         return None
 
-    def search(self, query: str, *, limit: int = 5, extra_params: Optional[dict] = None) -> list[dict]:
-        """Search opportunities. Returns the list of raw records."""
-        mock = self._resolve_mock(f"search_{query}")
+    def search(
+        self,
+        query: str,
+        *,
+        limit: int = 5,
+        by: str = "title",
+        extra_params: Optional[dict] = None,
+    ) -> list[dict]:
+        """Search opportunities. Returns the list of raw records.
+
+        `by` selects which SAM.gov v2 query field to use:
+            "title"  -> partial-match against the opportunity title (default)
+            "solnum" -> exact-match against the solicitation number
+        """
+        # Mock resolution: try both a by-typed key and the plain query so
+        # existing mock fixtures keep working.
+        mock = self._resolve_mock(f"search_{query}") or self._resolve_mock(f"search_{by}_{query}")
         if mock is not None:
             return mock.get("opportunitiesData", []) or mock.get("results", [])
 
-        # In mock mode, unknown queries return empty (nothing found) rather than
-        # attempting a live call. This lets a limited canned dataset coexist
-        # with a bigger email — the pipeline just quietly skips unmocked ones.
+        # In mock mode, unknown queries return empty (nothing found).
         if self.mock_dir:
             return []
 
         if not self.api_key:
             raise SamClientError(
                 "SAM_API_KEY is not set. Get a free key at "
-                "https://open.gsa.gov/api/get-opportunities-public-api/ or use --mock-dir for offline runs."
+                "https://open.gsa.gov/api/get-opportunities-public-api/."
             )
 
-        params = {"api_key": self.api_key, "limit": str(limit), "q": query}
+        if by not in ("title", "solnum"):
+            raise ValueError(f"Unknown 'by' value: {by!r} (want 'title' or 'solnum')")
+
+        # SAM.gov v2 /opportunities/search: postedFrom + postedTo are REQUIRED.
+        params = {
+            "api_key": self.api_key,
+            "limit": str(limit),
+            "postedFrom": self.posted_from,
+            "postedTo": self.posted_to,
+            by: query,
+        }
         if extra_params:
             params.update({k: str(v) for k, v in extra_params.items()})
         data = self._get_json(SAM_BASE, params)
         return data.get("opportunitiesData") or data.get("results") or []
 
     def search_solicitation(self, sol_number: str) -> Optional[dict]:
-        """Search by solicitation number, return the best-matching record or None."""
-        results = self.search(sol_number, limit=5)
+        """Search by solicitation number (exact match), return best record or None."""
+        results = self.search(sol_number, limit=5, by="solnum")
         for r in results:
             if (r.get("solicitationNumber") or "").upper() == sol_number.upper():
                 return r

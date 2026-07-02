@@ -150,6 +150,10 @@ def main() -> int:
     ap.add_argument("--no-attachments", action="store_true", help="Skip downloading and scanning attachments")
     ap.add_argument("--include-untitled", action="store_true", help="Also search opportunities with truncated titles")
     ap.add_argument("--rate", type=float, default=1.5, help="Seconds between SAM.gov requests (default 1.5)")
+    ap.add_argument("--lookback-days", type=int, default=365,
+                    help="How many days back to search SAM.gov (default 365). Increase if solicitations are older.")
+    ap.add_argument("--posted-from", help="Override start of search window (MM/DD/YYYY).")
+    ap.add_argument("--posted-to", help="Override end of search window (MM/DD/YYYY).")
     ap.add_argument("--filters", default="filters.json",
                     help="Path to a filters JSON to slim the scorecard (default: filters.json; pass empty string to disable)")
     ap.add_argument("-v", "--verbose", action="store_true")
@@ -212,7 +216,12 @@ def main() -> int:
     sam = SamClient(
         mock_dir=Path(args.mock_dir) if args.mock_dir else None,
         rate_limit_seconds=args.rate,
+        posted_from=args.posted_from,
+        posted_to=args.posted_to,
+        lookback_days=args.lookback_days,
     )
+    if not args.mock_dir:
+        print(f"SAM.gov search window: {sam.posted_from} → {sam.posted_to}")
 
     attach_dir = Path(args.out).parent / "attachments"
     contracts: list[dict] = []
@@ -231,7 +240,7 @@ def main() -> int:
 
         try:
             record = sam.search_solicitation(op.solicitation) if op.solicitation \
-                else next(iter(sam.search(op.title or "", limit=1)), None)
+                else next(iter(sam.search(op.title or "", limit=1, by="title")), None)
         except SamClientError as e:
             print(f"    ERROR: {e}")
             continue
