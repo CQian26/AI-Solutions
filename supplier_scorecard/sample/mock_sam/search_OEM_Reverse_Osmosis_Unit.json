@@ -1,0 +1,19 @@
+{
+  "totalRecords": 1,
+  "opportunitiesData": [
+    {
+      "noticeId": "mock-MOCK-OEM_Reverse_Osmosis_Unit",
+      "solicitationNumber": "MOCK-OEM_Reverse_Osmosis_Unit",
+      "title": "OEM Reverse Osmosis Unit",
+      "fullParentPathName": "HOMELAND SECURITY",
+      "naicsCode": "336611",
+      "classificationCode": "20",
+      "typeOfSetAsideDescription": null,
+      "postedDate": "2026-05-15",
+      "responseDeadLine": null,
+      "uiLink": "https://sam.gov/opp/mock-MOCK-OEM_Reverse_Osmosis_Unit/view",
+      "resourceLinks": [],
+      "description": "[DEMO MOCK \u2014 replace with live SAM.gov API by setting SAM_API_KEY.] Solicitation for OEM Reverse Osmosis Unit. Agency: HOMELAND SECURITY. The following provisions and clauses apply: FAR 52.203-13; FAR 52.203-17; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-16; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8; FAR 52.225-1; HSAR 3052.204-70; HSAR 3052.204-71; HSAR 3052.209-70; HSAR 3052.219-70. Technical requirements: MIL-STD-129P, FED-STD-595C. "
+    }
+  ]
+}

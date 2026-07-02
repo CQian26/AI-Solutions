@@ -171,11 +171,49 @@ def write_scorecard(results: dict, out_path: Path) -> Path:
         ws2.column_dimensions[get_column_letter(c_idx)].width = 16
     ws2.freeze_panes = "C2"
 
-    # === Sheet 3: Raw Contracts ========================================
+    # === Sheet 3: MIL-Specs / Standards ================================
+    #
+    # Technical standards (MIL-STD, MIL-PRF, MIL-DTL, FED-STD, A-A-...) live
+    # here — separate from FAR/DFARS clauses because they're different
+    # compliance surfaces (regs vs. technical requirements).
+    std_agg: dict[str, dict] = {}
+    for c in contracts:
+        cid = c.get("id") or "?"
+        for s in c.get("standards") or []:
+            key = s["citation"]
+            slot = std_agg.setdefault(key, {
+                "citation": key, "kind": s["kind"], "number": s["number"],
+                "contracts": set(),
+            })
+            slot["contracts"].add(cid)
+    std_rows = sorted(
+        std_agg.values(),
+        key=lambda r: (-len(r["contracts"]), r["kind"], r["number"]),
+    )
+    ws_std = wb.create_sheet("MIL-Specs & Standards")
+    ws_std.append(["Citation", "Type", "Number", "Count", "Coverage %", "Contract IDs"])
+    for i, r in enumerate(std_rows, start=2):
+        ws_std.append([
+            r["citation"], r["kind"], r["number"], len(r["contracts"]),
+            len(r["contracts"]) / total_contracts,
+            ", ".join(sorted(r["contracts"])),
+        ])
+        if i % 2 == 0:
+            for c in range(1, 7):
+                ws_std.cell(row=i, column=c).fill = ODD_FILL
+        ws_std.cell(row=i, column=4).alignment = CENTER
+        cov = ws_std.cell(row=i, column=5); cov.number_format = "0.0%"; cov.alignment = CENTER
+        ws_std.cell(row=i, column=6).alignment = LEFT
+    _style_header(ws_std, 6)
+    _autosize(ws_std)
+    ws_std.column_dimensions["F"].width = 45
+
+    # === Sheet 4: Raw Contracts ========================================
     ws3 = wb.create_sheet("Raw Contracts")
     ws3.append([
         "Contract ID", "Title", "Agency", "NAICS", "PSC/FSC", "Set-Aside",
-        "Posted", "Deadline", "Sources scanned", "# Clauses", "URL", "Notes",
+        "Posted", "Deadline", "Sources scanned", "# Clauses", "# Standards",
+        "URL", "Notes",
     ])
     for i, c in enumerate(contracts, start=2):
         ws3.append([
@@ -183,19 +221,20 @@ def write_scorecard(results: dict, out_path: Path) -> Path:
             c.get("psc"), c.get("set_aside"), c.get("posted"), c.get("deadline"),
             ", ".join(c.get("sources") or []),
             len(c.get("clauses") or []),
+            len(c.get("standards") or []),
             c.get("url"), c.get("notes"),
         ])
         if i % 2 == 0:
-            for col in range(1, 13):
+            for col in range(1, 14):
                 ws3.cell(row=i, column=col).fill = ODD_FILL
         ws3.cell(row=i, column=2).alignment = LEFT
         ws3.cell(row=i, column=9).alignment = LEFT
-    _style_header(ws3, 12)
+    _style_header(ws3, 13)
     _autosize(ws3)
     ws3.column_dimensions["B"].width = 45
     ws3.column_dimensions["C"].width = 25
     ws3.column_dimensions["I"].width = 40
-    ws3.column_dimensions["K"].width = 45
+    ws3.column_dimensions["L"].width = 45
 
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)

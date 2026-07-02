@@ -43,7 +43,7 @@ from pathlib import Path
 from parse_email import parse_email_text, _email_body_text, Opportunity
 from sam_client import SamClient, SamClientError, Notice
 from attachment_scanner import extract_text_from_file
-from clause_extractor import extract_clauses, clauses_to_dicts
+from clause_extractor import extract_clauses, clauses_to_dicts, extract_standards, standards_to_dicts
 from scorecard_writer import write_scorecard
 
 log = logging.getLogger("scorecard")
@@ -69,6 +69,7 @@ def _process_notice(
     attach_dir: Path,
     *,
     scan_attachments: bool,
+    is_mock: bool = False,
 ) -> dict:
     """Run extractors against a notice and return the per-contract result dict."""
     sources = ["description"]
@@ -100,6 +101,7 @@ def _process_notice(
 
     combined = "\n\n".join(text_blobs)
     clauses = extract_clauses(combined)
+    standards = extract_standards(combined)
 
     return {
         "id": op.solicitation or notice.solicitation_number or notice.notice_id or op.title,
@@ -113,7 +115,8 @@ def _process_notice(
         "url": notice.ui_link,
         "sources": sources,
         "clauses": clauses_to_dicts(clauses),
-        "notes": "",
+        "standards": standards_to_dicts(standards),
+        "notes": "DEMO MOCK — set SAM_API_KEY for live data" if is_mock else "",
     }
 
 
@@ -183,6 +186,7 @@ def main() -> int:
         result = _process_notice(
             op, notice, sam, attach_dir,
             scan_attachments=not args.no_attachments,
+            is_mock=bool(args.mock_dir),
         )
         n_clauses = len(result["clauses"])
         print(f"    matched: {notice.solicitation_number or notice.notice_id} — {n_clauses} clauses")

@@ -1,0 +1,19 @@
+{
+  "totalRecords": 1,
+  "opportunitiesData": [
+    {
+      "noticeId": "mock-MOCK-DetaClad_Explosion_Clad_Metal_made_up_of",
+      "solicitationNumber": "MOCK-DetaClad_Explosion_Clad_Metal_made_up_of",
+      "title": "DetaClad Explosion Clad Metal made up of Ti6AL4v, Tantalum and Inconel X750",
+      "fullParentPathName": "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION",
+      "naicsCode": "331110",
+      "classificationCode": "95",
+      "typeOfSetAsideDescription": null,
+      "postedDate": "2026-05-15",
+      "responseDeadLine": null,
+      "uiLink": "https://sam.gov/opp/mock-MOCK-DetaClad_Explosion_Clad_Metal_made_up_of/view",
+      "resourceLinks": [],
+      "description": "[DEMO MOCK \u2014 replace with live SAM.gov API by setting SAM_API_KEY.] Solicitation for DetaClad Explosion Clad Metal made up of Ti6AL4v, Tantalum and Inconel X750. Agency: NATIONAL AERONAUTICS AND SPACE ADMINISTRATION. The following provisions and clauses apply: FAR 52.203-13; FAR 52.203-17; FAR 52.204-7; FAR 52.204-10; FAR 52.204-13; FAR 52.204-16; FAR 52.204-24; FAR 52.204-25; FAR 52.204-26; FAR 52.209-6; FAR 52.212-1; FAR 52.212-3; FAR 52.212-4; FAR 52.212-5; FAR 52.222-3; FAR 52.222-19; FAR 52.222-21; FAR 52.222-26; FAR 52.222-35; FAR 52.222-36; FAR 52.222-50; FAR 52.225-13; FAR 52.232-33; FAR 52.232-40; FAR 52.233-1; FAR 52.233-3; FAR 52.233-4; FAR 52.243-1; FAR 52.246-2; FAR 52.247-34; FAR 52.249-8; FAR 52.225-1; NFS 1852.204-76; NFS 1852.223-70; NFS 1852.225-70; NFS 1852.227-11; NFS 1852.245-70; NFS 1852.246-70. Technical requirements: MIL-STD-129P, MIL-STD-1540E, MIL-STD-810G, FED-STD-595C. "
+    }
+  ]
+}

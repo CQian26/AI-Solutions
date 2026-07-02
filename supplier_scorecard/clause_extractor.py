@@ -117,6 +117,57 @@ KNOWN_TITLES: dict[str, str] = {
     "DFARS 252.246-7003": "Notification of Potential Safety Issues",
     "DFARS 252.246-7008": "Sources of Electronic Parts",
     "DFARS 252.247-7023": "Transportation of Supplies by Sea",
+
+    # DLAD 52.xxx-9xxx  (DLA supply supplement — heavily used by DLA solicitations)
+    "DLAD 52.204-9002": "Disclosure of Contractor Information",
+    "DLAD 52.209-9010": "Rules for Providing Free Issue Property/Material",
+    "DLAD 52.211-9006": "Time of Delivery",
+    "DLAD 52.211-9026": "Reserved Contract Information",
+    "DLAD 52.211-9034": "Post Award Product Testing",
+    "DLAD 52.213-9001": "Notice for Filling of Certain Solicitation Requirements",
+    "DLAD 52.215-9016": "Technical and Quality Requirements",
+    "DLAD 52.215-9023": "Reverse Auction",
+    "DLAD 52.223-9001": "Hazard Warning Labels",
+    "DLAD 52.232-9004": "Standard Payment Instructions",
+    "DLAD 52.233-9002": "Alternative Dispute Resolution",
+    "DLAD 52.246-9008": "Inspection and Acceptance at Origin",
+    "DLAD 52.246-9012": "Higher-Level Contract Quality Requirements",
+    "DLAD 52.246-9060": "Product Verification Testing (PVT) — Automated Best Value System",
+    "DLAD 52.246-9080": "Quality System — DLA-Managed Items",
+    "DLAD 52.247-9032": "Item Peculiar Packaging and Marking",
+    "DLAD 52.247-9059": "Ship-in-Place Instructions",
+
+    # NMCARS 5252.xxx-xxxx  (Navy / Marine Corps supplement)
+    "NMCARS 5252.204-9400": "Contractor Access to Federally-Controlled Facilities",
+    "NMCARS 5252.222-9300": "Contractor Personnel Access to Work Sites",
+    "NMCARS 5252.223-9400": "Accident Reporting and Investigation",
+    "NMCARS 5252.227-9113": "Rights in Technical Data (Navy)",
+    "NMCARS 5252.242-9115": "Technical Instructions",
+
+    # JAR 2852.xxx-xx  (DoJ supplement — used by FBI and other DoJ components)
+    "JAR 2852.203-70": "Whistleblower Protections",
+    "JAR 2852.204-70": "Contractor Employee Security Screening",
+    "JAR 2852.209-70": "Organizational Conflicts of Interest Notification",
+    "JAR 2852.209-71": "Standards of Conduct",
+
+    # HHSAR 352.xxx-xx  (Health & Human Services supplement)
+    "HHSAR 352.203-70": "Anti-Lobbying",
+    "HHSAR 352.222-70": "Contractor Cooperation in Equal Employment Opportunity Investigations",
+    "HHSAR 352.224-70": "Privacy Act",
+
+    # HSAR 3052.xxx-xx  (Dept. of Homeland Security supplement)
+    "HSAR 3052.204-70": "Security Requirements for Unclassified Information Technology Resources",
+    "HSAR 3052.204-71": "Contractor Employee Access",
+    "HSAR 3052.209-70": "Prohibition on Contracts with Corporate Expatriates",
+    "HSAR 3052.219-70": "Small Business Subcontracting Plan Reporting",
+
+    # NFS 1852.xxx-xx  (NASA FAR Supplement)
+    "NFS 1852.204-76": "Security Requirements for Unclassified Information Technology Resources",
+    "NFS 1852.223-70": "Safety and Health",
+    "NFS 1852.225-70": "Export Licenses",
+    "NFS 1852.227-11": "Patent Rights — Ownership by the Contractor",
+    "NFS 1852.245-70": "Contractor Requests for Government-Owned Equipment",
+    "NFS 1852.246-70": "Mission Critical Space System Personnel Reliability Program",
 }
 
 
@@ -141,13 +192,24 @@ _AGENCY_MAP = {
     "AFARS":  r"5152",
     "AFFARS": r"5352",
     "DAFFARS": r"5352",
-    "NFS":    r"1852",
-    "HSAR":   r"3052",
-    "DEAR":   r"952",
-    "VAAR":   r"852",
-    "AGAR":   r"452",
-    "EDAR":   r"3452",
-    "TAR":    r"1052",
+    "NMCARS": r"5252",   # Navy/Marine Corps supplement
+    "NFS":    r"1852",   # NASA
+    "HSAR":   r"3052",   # DHS
+    "DEAR":   r"952",    # DOE
+    "VAAR":   r"852",    # VA
+    "AGAR":   r"452",    # USDA
+    "EDAR":   r"3452",   # Dept. of Education
+    "TAR":    r"1052",   # Treasury
+    "HHSAR":  r"352",    # HHS
+    "JAR":    r"2852",   # Dept. of Justice
+    "GSAR":   r"552",    # GSA
+    "EPAAR":  r"1552",   # EPA
+    "AIDAR":  r"752",    # USAID
+    "DOSAR":  r"652",    # State Department
+    "DOLAR":  r"2952",   # Dept. of Labor
+    "IAAR":   r"1452",   # Interior
+    # DLAD uses the same "52." root as FAR but with 9000-series sub-numbers.
+    # Handled with its own regex block below.
 }
 
 # Compile once. The lookaround at the tail avoids clipping into decimals/phone digits.
@@ -167,6 +229,26 @@ for reg, part in _AGENCY_MAP.items():
 # elsewhere confirms it's FAR (otherwise we can't tell). Handled below.
 _BARE_FAR = re.compile(r"(?<![.\d])(52\.\d{3}-\d{1,4}[A-Z]?)(?!\d)")
 _BARE_DFARS = re.compile(r"(?<![.\d])(252\.\d{3}-\d{1,4}[A-Z]?)(?!\d)")
+
+# DLAD supplements FAR Part 52 with sub-numbers in the 9000-series.
+# "DLAD 52.211-9006", "DLAD Clause 52.246-9012", etc.
+_DLAD_EXPLICIT = re.compile(
+    r"\bDLAD(?:\s+(?:Clause|Provision|clause|provision))?\s+"
+    r"(52\.\d{3}-9\d{3}[A-Z]?)(?!\d)"
+)
+# Any bare 52.NNN-9NNN is treated as DLAD (FAR sub-numbers never reach 9000).
+_BARE_DLAD = re.compile(r"(?<![.\d])(52\.\d{3}-9\d{3}[A-Z]?)(?!\d)")
+
+# MIL-SPEC / MIL-STD / FED-STD technical standards.
+# Not legally binding "clauses" in the FAR sense, but they ARE binding
+# requirements for a supplier and belong on the scorecard.
+_MIL_RE = re.compile(
+    r"\bMIL-(STD|PRF|DTL|HDBK|SPEC|A|C|F|H|I|P|R|S|T|V|W)-"
+    r"([A-Z0-9]+(?:[-/][A-Z0-9]+){0,3}[A-Z]?)\b"
+)
+_FED_STD_RE = re.compile(r"\bFED-(STD|SPEC)-([A-Z0-9]+(?:-[A-Z0-9]+){0,3})\b")
+# Also pick up A-A-NNNNN commercial-item description numbers (e.g. A-A-59126).
+_AA_RE = re.compile(r"\b(A-A-\d{2,6}[A-Z]?)\b")
 
 
 # ------------------------- data class -------------------------
@@ -212,15 +294,27 @@ def extract_clauses(text: str, *, source: str = "") -> list[Clause]:
         if snip not in c.contexts:
             c.contexts.append(snip)
 
-    # 1) explicit "REG NNN.xxx-xxx" citations
+    # 1) DLAD (explicit prefix). Do this BEFORE bare-FAR so its 9xxx sub-numbers
+    #    don't get miscategorised as FAR by the fallback pass below.
+    dlad_hits: set[str] = set()
+    for m in _DLAD_EXPLICIT.finditer(text):
+        upsert("DLAD", m.group(1), m); dlad_hits.add(m.group(1))
+    # Any bare 52.xxx-9xxx (FAR's numbering never reaches 9000) → DLAD.
+    for m in _BARE_DLAD.finditer(text):
+        upsert("DLAD", m.group(1), m); dlad_hits.add(m.group(1))
+
+    # 2) All other explicit "REG NNN.xxx-xxx" citations.
     for reg, pat in _PATTERNS:
         for m in pat.finditer(text):
             upsert(reg, m.group(1), m)
 
-    # 2) bare "52.xxx-xx" / "252.xxx-xxxx" citations (only if reg name is anywhere
-    # in the doc — otherwise ambiguous)
+    # 3) bare "52.xxx-xx" / "252.xxx-xxxx" (only when reg name is somewhere in
+    #    the doc, otherwise ambiguous). Skip anything that was already claimed
+    #    as DLAD in step 1.
     if re.search(r"\bFAR\b", text):
         for m in _BARE_FAR.finditer(text):
+            if m.group(1) in dlad_hits:
+                continue
             upsert("FAR", m.group(1), m)
     if re.search(r"\bDFARS\b", text):
         for m in _BARE_DFARS.finditer(text):
@@ -237,6 +331,53 @@ def extract_clauses(text: str, *, source: str = "") -> list[Clause]:
         return (c.regulation, part, sub_num, sub_suffix)
 
     return sorted(seen.values(), key=sort_key)
+
+
+# ------------------------- MIL-SPEC / FED-STD harvesting -------------------------
+
+@dataclass
+class Standard:
+    """A technical standard referenced in the contract (MIL-STD, FED-STD, A-A-...)."""
+    kind: str        # e.g. "MIL-STD", "MIL-PRF", "FED-STD", "A-A"
+    number: str      # e.g. "810G", "129P", "59126"
+    contexts: list[str] = field(default_factory=list)
+
+    @property
+    def citation(self) -> str:
+        if self.kind == "A-A":
+            return f"A-A-{self.number}"
+        return f"{self.kind}-{self.number}"
+
+
+def extract_standards(text: str, *, source: str = "") -> list[Standard]:
+    """Return unique Standard citations (MIL-STD, MIL-PRF, FED-STD, A-A-NNNNN)."""
+    seen: dict[str, Standard] = {}
+
+    def upsert(kind: str, number: str, m: re.Match):
+        key = f"{kind}-{number}"
+        s = seen.get(key)
+        if not s:
+            s = Standard(kind=kind, number=number)
+            seen[key] = s
+        snip = _snippet(text, m)
+        if source:
+            snip = f"[{source}] " + snip
+        if snip not in s.contexts:
+            s.contexts.append(snip)
+
+    for m in _MIL_RE.finditer(text):
+        upsert(f"MIL-{m.group(1)}", m.group(2), m)
+    for m in _FED_STD_RE.finditer(text):
+        upsert(f"FED-{m.group(1)}", m.group(2), m)
+    for m in _AA_RE.finditer(text):
+        # strip the "A-A-" prefix for storage; citation reassembles it.
+        upsert("A-A", m.group(1).removeprefix("A-A-"), m)
+
+    return sorted(seen.values(), key=lambda s: (s.kind, s.number))
+
+
+def standards_to_dicts(stds: Iterable[Standard]) -> list[dict]:
+    return [{"kind": s.kind, "number": s.number, "citation": s.citation, "contexts": s.contexts} for s in stds]
 
 
 def clauses_to_dicts(clauses: Iterable[Clause]) -> list[dict]:
