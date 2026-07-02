@@ -176,6 +176,42 @@ KNOWN_TITLES: dict[str, str] = {
 # comply. Kept intentionally practical — not a legal summary, a "what does this
 # mean for my capability profile?" note.
 
+# One-line description of each regulation FAMILY (as a whole), for the
+# rolled-up Scorecard view. Extend as new supplements are added.
+REGULATION_DESCRIPTIONS: dict[str, str] = {
+    "FAR":    "Federal Acquisition Regulation — baseline procurement rules for every US federal contract.",
+    "DFARS":  "DoD's FAR supplement — cybersecurity (NIST 800-171 / CMMC), sourcing (specialty metals, Buy American), tech-data rights, item marking.",
+    "DLAD":   "Defense Logistics Agency directive — supply-chain-focused clauses (delivery, higher-level QMS, source inspection, item-peculiar packaging) applied to every DLA solicitation.",
+    "AFARS":  "Army FAR supplement.",
+    "AFFARS": "Air Force FAR supplement.",
+    "DAFFARS":"Department of the Air Force FAR supplement.",
+    "NMCARS": "Navy / Marine Corps FAR supplement — Navy-specific facility access, accident reporting, and technical-instruction clauses.",
+    "NFS":    "NASA FAR Supplement — mission-critical safety, IT security, export licensing, and patent-rights clauses.",
+    "HSAR":   "DHS Homeland Security Acquisition Regulation — DHS-specific IT security and contractor-employee access clauses.",
+    "HHSAR":  "HHS Acquisition Regulation — HHS-specific anti-lobbying, EEO cooperation, and Privacy Act clauses.",
+    "JAR":    "DoJ Acquisition Regulation — DoJ-specific employee security screening and OCI/standards-of-conduct clauses.",
+    "DEAR":   "Department of Energy FAR supplement.",
+    "VAAR":   "Veterans Affairs Acquisition Regulation.",
+    "AGAR":   "USDA Acquisition Regulation.",
+    "EDAR":   "Department of Education Acquisition Regulation.",
+    "TAR":    "Treasury Acquisition Regulation.",
+    "GSAR":   "General Services Administration Acquisition Regulation.",
+    "EPAAR":  "EPA Acquisition Regulation.",
+    "AIDAR":  "USAID Acquisition Regulation.",
+    "DOSAR":  "State Department Acquisition Regulation.",
+    "DOLAR":  "Department of Labor Acquisition Regulation.",
+    "IAAR":   "Department of the Interior Acquisition Regulation.",
+
+    "CFR":    "Code of Federal Regulations — direct citations of regulatory schemes (ITAR at 22 CFR 120–130, EAR at 15 CFR 730–774, SBA size at 13 CFR 121, etc.).",
+    "USC":    "United States Code — statutory basis for many FAR/DFARS clauses (Berry Amendment 10 USC 4862, Specialty Metals 10 USC 4863, Buy American 41 USC 8302, etc.).",
+    "EO":     "Executive Orders — presidential directives with cross-cutting supplier obligations (EO 14028 Cybersecurity, EO 14026 Federal Contractor $17.20 Min Wage, EO 13706 Paid Sick Leave, etc.).",
+    "DoDI":   "DoD Instructions — internal doctrine documents on program management, IT, and security (e.g., DoDI 5000.02 defense acquisition).",
+    "DoDM":   "DoD Manuals — implementation manuals (e.g., DoDM 5220.22 industrial security).",
+    "DoDD":   "DoD Directives — high-level DoD policy statements.",
+    "PubL":   "Public Laws — originating statutes (NDAAs, etc.) that established many current supplier requirements.",
+}
+
+
 EXPLANATIONS: dict[str, str] = {
     # ----- FAR admin & reps/certs (mostly boilerplate; kept for completeness) -----
     "FAR 52.203-13": "Maintain a written business-ethics code and an internal compliance/awareness program.",

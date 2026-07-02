@@ -50,6 +50,37 @@ from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
+from clause_extractor import REGULATION_DESCRIPTIONS
+
+
+def _aggregate_by_regulation(kept_rows: list[dict]) -> list[dict]:
+    """Roll per-citation rows into one row per regulation family.
+
+    Returns dicts with keys: regulation, n_citations, n_contracts, contract_ids.
+    Sorted by n_citations desc, then regulation name.
+    """
+    by_reg: dict[str, dict] = {}
+    for r in kept_rows:
+        slot = by_reg.setdefault(r["regulation"], {
+            "regulation": r["regulation"],
+            "citations": set(),
+            "contracts": set(),
+        })
+        slot["citations"].add(r["citation"])
+        slot["contracts"].update(r["contract_ids"])
+    return sorted(
+        (
+            {
+                "regulation": s["regulation"],
+                "n_citations": len(s["citations"]),
+                "n_contracts": len(s["contracts"]),
+                "contract_ids": sorted(s["contracts"]),
+            }
+            for s in by_reg.values()
+        ),
+        key=lambda r: (-r["n_citations"], r["regulation"]),
+    )
+
 
 def apply_filters(agg_rows: list[dict], filters_cfg: dict) -> tuple[list[dict], list[dict]]:
     """Split aggregated clause rows into (kept, dropped) based on filters_cfg.
@@ -219,37 +250,42 @@ def write_scorecard(results: dict, out_path: Path, *, filters_path: Optional[Pat
                 c.fill = banner_fill
         ws_warn.column_dimensions["A"].width = 90
 
-    # === Sheet 1: Scorecard ============================================
-    # Columns: Citation | Part | Title | What it means | Count | Contract IDs
+    # === Sheet 1: Scorecard (rolled up to regulation categories) =======
+    # Columns: Regulation | What it means | # Unique Citations | # Contracts | Contract IDs
+    # One row per FAR / DFARS / DLAD / CFR / USC / EO / ... family, aggregating
+    # every KEPT citation of that family from every contract. Per-citation
+    # detail still lives on the "Contract x Clause" and "Dropped Clauses" sheets.
+    reg_rows = _aggregate_by_regulation(rows)
+
     if is_simulated:
         ws = wb.create_sheet("Scorecard")
     else:
         ws = wb.active
         ws.title = "Scorecard"
-    ws.append(["Citation", "Part", "Title", "What it means", "Count", "Contract IDs"])
-    for i, r in enumerate(rows, start=2):
+    ws.append(["Regulation", "What it means", "# Unique Citations",
+               "# Contracts", "Contract IDs"])
+    for i, r in enumerate(reg_rows, start=2):
         ws.append([
-            r["citation"], r["part"], r["title"],
-            r["explanation"] or "",
-            r["count"],
+            r["regulation"],
+            REGULATION_DESCRIPTIONS.get(r["regulation"], ""),
+            r["n_citations"],
+            r["n_contracts"],
             ", ".join(r["contract_ids"]),
         ])
-        # zebra
         if i % 2 == 0:
-            for c in range(1, 7):
+            for c in range(1, 6):
                 ws.cell(row=i, column=c).fill = ODD_FILL
-        ws.cell(row=i, column=3).alignment = LEFT  # Title
-        ws.cell(row=i, column=4).alignment = LEFT  # Explanation
-        ws.cell(row=i, column=5).alignment = CENTER  # Count
-        ws.cell(row=i, column=6).alignment = LEFT  # Contract IDs
-    _style_header(ws, 6)
+        ws.cell(row=i, column=2).alignment = LEFT   # What it means (wraps)
+        ws.cell(row=i, column=3).alignment = CENTER # # Citations
+        ws.cell(row=i, column=4).alignment = CENTER # # Contracts
+        ws.cell(row=i, column=5).alignment = LEFT   # Contract IDs
+    _style_header(ws, 5)
     _autosize(ws)
-    ws.column_dimensions["A"].width = 22
-    ws.column_dimensions["B"].width = 10
-    ws.column_dimensions["C"].width = 45
-    ws.column_dimensions["D"].width = 70   # Explanation gets the most room
-    ws.column_dimensions["E"].width = 8
-    ws.column_dimensions["F"].width = 45
+    ws.column_dimensions["A"].width = 12
+    ws.column_dimensions["B"].width = 80   # description gets the most room
+    ws.column_dimensions["C"].width = 20
+    ws.column_dimensions["D"].width = 14
+    ws.column_dimensions["E"].width = 55
 
     # === Sheet 2: Contract x Clause matrix =============================
     ws2 = wb.create_sheet("Contract x Clause")
