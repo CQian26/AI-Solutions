@@ -394,6 +394,40 @@ _FED_STD_RE = re.compile(r"\bFED-(STD|SPEC)-([A-Z0-9]+(?:-[A-Z0-9]+){0,3})\b")
 _AA_RE = re.compile(r"\b(A-A-\d{2,6}[A-Z]?)\b")
 
 
+# ------------------- broader regulatory / statutory citation classes -------
+# These do NOT ship with per-citation title/explanation lookup tables — we
+# catch the CATEGORY (any CFR / USC / EO / DoDI / PubL reference) and let
+# the scorecard show the raw citation. Users looking to attach meaning to
+# a specific one can add it to KNOWN_TITLES + EXPLANATIONS.
+
+# 22 CFR 120, 13 CFR 121.201, 22 CFR 120-130
+_CFR_RE = re.compile(r"\b(\d{1,2})\s+CFR\s+(\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?)\b")
+# 10 USC 4862, 41 U.S.C. § 8302 (case-insensitive; optional dots and §)
+_USC_RE = re.compile(r"\b(\d{1,2})\s+U\.?S\.?C\.?\s+(?:§\s*)?(\d{3,5}[a-z]?)\b", re.I)
+# EO 14028, Executive Order 14028, E.O. 14028
+_EO_RE  = re.compile(r"\b(?:Executive Order|E\.O\.|EO)\s+(\d{4,5})\b")
+# DoDI 5000.02, DoDM 5220.22-M, DoDD 5205.02
+_DODI_RE = re.compile(r"\b(DoD[IMD])\s+(\d{4,5}(?:\.\d+)?(?:-[A-Z])?)\b")
+# Pub. L. 116-92, Public Law 118-31
+_PUBL_RE = re.compile(r"\b(?:Public\s+Law|Pub\.?\s*L\.?)\s+(\d{2,3}-\d{1,4})\b", re.I)
+
+
+# ------------------- extra industry-standard classes -----------------------
+# Same rule as above: categories only, no per-standard lookup.
+
+_AS_RE      = re.compile(r"\bAS\s?(\d{4,5}[A-Z]?)\b")            # AS9100D, AS9145
+_ISO_RE     = re.compile(r"\bISO(?:/IEC)?\s?(\d{4,5}(?::\d{4})?)\b")  # ISO 9001, ISO/IEC 27001:2013
+_IPC_RE     = re.compile(r"\bIPC-([A-Z])-(\d+[A-Z]?)\b")         # IPC-A-610H
+_AWS_RE     = re.compile(r"\bAWS\s+([A-Z]\d+(?:\.\d+)+[A-Z]?)\b")  # AWS D1.1 (requires a dot)
+_ASTM_RE    = re.compile(r"\bASTM\s+([A-Z]\d+[A-Z]?(?:-\d+)?)\b")  # ASTM E8, ASTM A36-16
+_ASME_RE    = re.compile(r"\bASME\s+([A-Z]?\d+(?:\.\d+)+[A-Z]?)\b")  # ASME B31.3 (requires a dot)
+_IEEE_RE    = re.compile(r"\bIEEE\s+(\d{3,4}(?:\.\d+)?)\b")      # IEEE 1584, IEEE 802.3
+_SAE_RE     = re.compile(r"\bSAE\s+(AS|AMS|J|ARP)\s?(\d{3,5}[A-Z]?)\b")  # SAE AMS4928, SAE J429
+_NADCAP_RE  = re.compile(r"\bNadcap\s+AC(\d{4,5})\b", re.I)      # Nadcap AC7108
+_NIST_SP_RE = re.compile(r"\bNIST\s+SP\s+(800-\d{1,3}[A-Z]?(?:\s*Rev\.?\s*\d+)?)\b", re.I)
+_CMMC_RE    = re.compile(r"\bCMMC\s+(?:Level\s+)?L?([1-5])\b", re.I)
+
+
 # ------------------------- data class -------------------------
 
 @dataclass
@@ -469,6 +503,20 @@ def extract_clauses(text: str, *, source: str = "") -> list[Clause]:
         for m in _BARE_DFARS.finditer(text):
             upsert("DFARS", m.group(1), m)
 
+    # 4) Broader regulatory / statutory citation classes.
+    #    Number storage: dotted form for CFR/USC so the citation cell reads
+    #    naturally ("CFR 22.120") and the sort-key logic keeps working.
+    for m in _CFR_RE.finditer(text):
+        upsert("CFR", f"{m.group(1)}.{m.group(2)}", m)
+    for m in _USC_RE.finditer(text):
+        upsert("USC", f"{m.group(1)}.{m.group(2)}", m)
+    for m in _EO_RE.finditer(text):
+        upsert("EO", m.group(1), m)
+    for m in _DODI_RE.finditer(text):
+        upsert(m.group(1), m.group(2), m)   # regulation = "DoDI" / "DoDM" / "DoDD"
+    for m in _PUBL_RE.finditer(text):
+        upsert("PubL", m.group(1), m)
+
     # Sort by (regulation, numeric part, sub-number) for stable output.
     def sort_key(c: Clause):
         try:
@@ -521,6 +569,30 @@ def extract_standards(text: str, *, source: str = "") -> list[Standard]:
     for m in _AA_RE.finditer(text):
         # strip the "A-A-" prefix for storage; citation reassembles it.
         upsert("A-A", m.group(1).removeprefix("A-A-"), m)
+
+    # Additional industry-standard citation classes.
+    for m in _AS_RE.finditer(text):
+        upsert("AS", m.group(1), m)
+    for m in _ISO_RE.finditer(text):
+        upsert("ISO", m.group(1), m)
+    for m in _IPC_RE.finditer(text):
+        upsert(f"IPC-{m.group(1)}", m.group(2), m)
+    for m in _AWS_RE.finditer(text):
+        upsert("AWS", m.group(1), m)
+    for m in _ASTM_RE.finditer(text):
+        upsert("ASTM", m.group(1), m)
+    for m in _ASME_RE.finditer(text):
+        upsert("ASME", m.group(1), m)
+    for m in _IEEE_RE.finditer(text):
+        upsert("IEEE", m.group(1), m)
+    for m in _SAE_RE.finditer(text):
+        upsert("SAE", f"{m.group(1)}{m.group(2)}", m)
+    for m in _NADCAP_RE.finditer(text):
+        upsert("Nadcap", f"AC{m.group(1)}", m)
+    for m in _NIST_SP_RE.finditer(text):
+        upsert("NIST-SP", m.group(1).strip(), m)
+    for m in _CMMC_RE.finditer(text):
+        upsert("CMMC", f"L{m.group(1)}", m)
 
     return sorted(seen.values(), key=lambda s: (s.kind, s.number))
 

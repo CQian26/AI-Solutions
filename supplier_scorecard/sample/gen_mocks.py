@@ -86,17 +86,20 @@ DLAD_PVT = ["DLAD 52.211-9034", "DLAD 52.246-9060"]  # Post-award product testin
 # ------------------------- MIL-SPEC templates -------------------------
 
 # Weapons / gun parts (FSC 10, small arms)
-MIL_WEAPON_PARTS = ["MIL-STD-129P", "MIL-STD-130N", "MIL-STD-1916", "MIL-DTL-13924D", "MIL-PRF-13830B"]
+MIL_WEAPON_PARTS = ["MIL-STD-129P", "MIL-STD-130N", "MIL-STD-1916", "MIL-DTL-13924D", "MIL-PRF-13830B",
+                    "AS9100D", "ISO 9001:2015", "NIST SP 800-171"]
 # Vehicle parts (FSC 25)
-MIL_VEHICLE_PARTS = ["MIL-STD-129P", "MIL-STD-130N", "MIL-STD-1916", "MIL-STD-810G", "MIL-DTL-31000C"]
+MIL_VEHICLE_PARTS = ["MIL-STD-129P", "MIL-STD-130N", "MIL-STD-1916", "MIL-STD-810G", "MIL-DTL-31000C",
+                     "AS9100D", "ISO 9001:2015"]
 # Metals / plates (FSC 95, 34)
-MIL_METALS = ["MIL-STD-129P", "MIL-DTL-24594B", "MIL-DTL-46100E", "FED-STD-595C"]
+MIL_METALS = ["MIL-STD-129P", "MIL-DTL-24594B", "MIL-DTL-46100E", "FED-STD-595C",
+              "ASTM E8", "ASTM A36-16", "ASME B31.3"]
 # Marine / ship (FSC 20)
-MIL_MARINE = ["MIL-STD-129P", "MIL-STD-130N", "MIL-STD-2003-5", "MIL-STD-1310H"]
+MIL_MARINE = ["MIL-STD-129P", "MIL-STD-130N", "MIL-STD-2003-5", "MIL-STD-1310H", "ISO 9001:2015"]
 # Welding equipment
-MIL_WELDING = ["MIL-STD-1595", "MIL-STD-2035", "AWS D1.1"]
+MIL_WELDING = ["MIL-STD-1595", "MIL-STD-2035", "AWS D1.1", "AWS D17.1"]
 # Aviation / precision
-MIL_AVIATION = ["MIL-STD-129P", "MIL-STD-130N", "MIL-STD-1553", "AS9100D"]
+MIL_AVIATION = ["MIL-STD-129P", "MIL-STD-130N", "MIL-STD-1553", "AS9100D", "AS9145", "Nadcap AC7108"]
 
 
 # ------------------------- templates by profile -------------------------
@@ -106,6 +109,10 @@ def _dla_supply_template(fsc: str, is_metal: bool = False, has_electronics: bool
     clauses = list(FAR_COMMERCIAL_CORE) + list(DFARS_CORE) + list(DLAD_CORE)
     clauses += FAR_BUY_AMERICAN + DFARS_BUY_AMERICAN
     clauses += DFARS_CMMC + DFARS_TECH_DATA
+    # Regulatory/statutory framework refs commonly cited in DLA SOWs:
+    clauses += ["10 USC 4862", "EO 14028"]
+    if export_controlled:
+        clauses += ["22 CFR 120-130", "15 CFR 730-774"]
     if is_metal:
         clauses += DFARS_METALS + DFARS_HEXCHROME
     if has_electronics:
