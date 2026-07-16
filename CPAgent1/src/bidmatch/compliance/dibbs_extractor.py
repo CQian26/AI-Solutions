@@ -120,8 +120,14 @@ def fetch_via_browser(sol_num: str, doc_dir: Path, headed: bool = False):
     meta: dict = {}
     pdf_path = None
 
+    import os
+    launch_kwargs = {"headless": not headed}
+    exe = os.environ.get("PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH", "").strip()
+    if exe:
+        launch_kwargs["executable_path"] = exe
+
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=not headed)
+        browser = p.chromium.launch(**launch_kwargs)
         context = browser.new_context(
             accept_downloads=True,
             user_agent=(
