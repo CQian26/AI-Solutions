@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.env
+*.xlsx
+!tests/**/*.xlsx
+downloaded_pdfs/
+.DS_Store
+tests/fixtures/_*
+.cache/
