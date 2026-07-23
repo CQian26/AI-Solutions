@@ -67,14 +67,14 @@
         ${finished ? `
         <div class="text-center text-4xl sm:text-6xl font-extrabold mb-10">🎉 You made it — happy 30th!</div>
         ` : `
-        <div class="flex items-center justify-center gap-3 sm:gap-6 mb-10">
+        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-10">
           <div class="flex flex-col items-center">
-            <span class="text-7xl sm:text-9xl font-extrabold tabular-nums tracking-tight leading-none">${pad(parts.years)}</span>
+            <span class="text-[50vw] font-extrabold tabular-nums tracking-tight leading-none">${pad(parts.years)}</span>
             <span class="text-xs sm:text-sm uppercase tracking-widest text-slate-400 mt-3">Years</span>
           </div>
-          <span class="text-6xl sm:text-8xl font-extrabold text-slate-500 leading-none">:</span>
+          <span class="text-[35vw] font-extrabold text-slate-500 leading-none">:</span>
           <div class="flex flex-col items-center">
-            <span class="text-7xl sm:text-9xl font-extrabold tabular-nums tracking-tight leading-none">${pad(parts.days, 3)}</span>
+            <span class="text-[50vw] font-extrabold tabular-nums tracking-tight leading-none">${pad(parts.days, 3)}</span>
             <span class="text-xs sm:text-sm uppercase tracking-widest text-slate-400 mt-3">Days</span>
           </div>
         </div>`}
@@ -82,11 +82,6 @@
         <div class="w-full h-3 rounded-full bg-white/10 overflow-hidden mb-2">
           <div class="h-full bg-gradient-to-r from-indigo-500 to-emerald-400 transition-all duration-500"
                style="width:${percent.toFixed(4)}%"></div>
-        </div>
-        <div class="flex justify-between text-xs text-slate-400">
-          <span>${START.toDateString()}</span>
-          <span>${percent.toFixed(2)}% elapsed</span>
-          <span>${END.toDateString()}</span>
         </div>
       `;
     }
