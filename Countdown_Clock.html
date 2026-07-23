@@ -1,26 +1,229 @@
 <!-- A 10-year countdown clock. Counts down to a fixed target date, so it's always correct -->
 <!-- whenever the page is opened, no matter how long the computer/browser was off in between. -->
+<!-- Fully self-contained: no external CDN calls, so it renders identically everywhere. -->
 
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>10-Year Countdown</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
+<title>10-Year Countdown</title>
+<style>
+  :root {
+    --bg: #F6F1E4;
+    --bg-vignette: rgba(28, 23, 16, 0.05);
+    --ink: #1C1710;
+    --ink-dim: #746A58;
+    --gold: #9C7A2E;
+    --gold-soft: rgba(156, 122, 46, 0.28);
+    --jade: #1F5C4E;
+    --rule: rgba(28, 23, 16, 0.22);
+  }
 
-  <!-- Tailwind (CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.55; }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15120D;
+      --bg-vignette: rgba(0, 0, 0, 0.45);
+      --ink: #F3ECDD;
+      --ink-dim: #B9AF9B;
+      --gold: #C9A24B;
+      --gold-soft: rgba(201, 162, 75, 0.32);
+      --jade: #3E9280;
+      --rule: rgba(201, 162, 75, 0.28);
     }
-    .glow-dot { animation: pulseGlow 2s ease-in-out infinite; }
-  </style>
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #15120D;
+    --bg-vignette: rgba(0, 0, 0, 0.45);
+    --ink: #F3ECDD;
+    --ink-dim: #B9AF9B;
+    --gold: #C9A24B;
+    --gold-soft: rgba(201, 162, 75, 0.32);
+    --jade: #3E9280;
+    --rule: rgba(201, 162, 75, 0.28);
+  }
+
+  :root[data-theme="light"] {
+    --bg: #F6F1E4;
+    --bg-vignette: rgba(28, 23, 16, 0.05);
+    --ink: #1C1710;
+    --ink-dim: #746A58;
+    --gold: #9C7A2E;
+    --gold-soft: rgba(156, 122, 46, 0.28);
+    --jade: #1F5C4E;
+    --rule: rgba(28, 23, 16, 0.22);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6vh 5vw;
+    background:
+      radial-gradient(120% 90% at 50% 8%, var(--bg-vignette), transparent 60%),
+      var(--bg);
+    color: var(--ink);
+    font-family: ui-sans-serif, "Century Gothic", "Avenir Next", "Futura", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .stage {
+    width: 100%;
+    max-width: 64rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2rem, 6vh, 4rem);
+  }
+
+  /* ---------- marquee eyebrow ---------- */
+  .marquee {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .fan {
+    width: 3.2rem;
+    height: 1.6rem;
+    border-radius: 3.2rem 3.2rem 0 0;
+    background: repeating-conic-gradient(
+      from -90deg at 50% 100%,
+      var(--gold) 0deg 5deg,
+      transparent 5deg 15deg
+    );
+    opacity: 0.9;
+  }
+
+  .badge-row {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    width: min(26rem, 100%);
+  }
+
+  .badge-row .rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--jade);
+    box-shadow: 0 0 0 3px var(--gold-soft);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .dot { animation: pulse 2.4s ease-in-out infinite; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+  }
+
+  /* ---------- hero numerals ---------- */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.5rem, 2vw, 1.5rem);
+    text-align: center;
+  }
+
+  .unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .num {
+    font-size: 50vw;
+    line-height: 0.9;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+
+  .colon {
+    font-size: 35vw;
+    line-height: 0.9;
+    font-weight: 700;
+    color: var(--gold);
+    padding-bottom: 0.06em;
+  }
+
+  .label {
+    margin-top: 0.9rem;
+    font-size: clamp(0.7rem, 1.4vw, 0.95rem);
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+
+  .finished {
+    text-align: center;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .finished .rule-under {
+    margin: 1.25rem auto 0;
+    width: 4rem;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  /* ---------- progress ---------- */
+  .progress-track {
+    width: 100%;
+    max-width: 34rem;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--rule);
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--jade));
+    transition: width 0.6s ease;
+  }
+</style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-slate-100 flex items-center justify-center p-6">
-  <div id="root" class="w-full max-w-3xl"></div>
+<body>
+  <div id="root" class="stage"></div>
 
   <script>
     // ---------- Configure the countdown here ----------
@@ -57,31 +260,35 @@
       const percent = totalSpan > 0 ? (elapsed / totalSpan) * 100 : 100;
 
       root.innerHTML = `
-        <div class="text-center mb-10">
-          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-indigo-300/80">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 glow-dot"></span>
-            Roaring 20s
+        <div class="marquee">
+          <div class="fan"></div>
+          <div class="badge-row">
+            <span class="rule"></span>
+            <span class="badge"><span class="dot"></span>Roaring Twenties</span>
+            <span class="rule"></span>
           </div>
         </div>
 
         ${finished ? `
-        <div class="text-center text-4xl sm:text-6xl font-extrabold mb-10">🎉 You made it — happy 30th!</div>
+        <div class="finished">
+          Welcome to Thirty.
+          <div class="rule-under"></div>
+        </div>
         ` : `
-        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-10">
-          <div class="flex flex-col items-center">
-            <span class="text-[50vw] font-extrabold tabular-nums tracking-tight leading-none">${pad(parts.years)}</span>
-            <span class="text-xs sm:text-sm uppercase tracking-widest text-slate-400 mt-3">Years</span>
+        <div class="hero">
+          <div class="unit">
+            <span class="num">${pad(parts.years)}</span>
+            <span class="label">Years</span>
           </div>
-          <span class="text-[35vw] font-extrabold text-slate-500 leading-none">:</span>
-          <div class="flex flex-col items-center">
-            <span class="text-[50vw] font-extrabold tabular-nums tracking-tight leading-none">${pad(parts.days, 3)}</span>
-            <span class="text-xs sm:text-sm uppercase tracking-widest text-slate-400 mt-3">Days</span>
+          <span class="colon">:</span>
+          <div class="unit">
+            <span class="num">${pad(parts.days, 3)}</span>
+            <span class="label">Days</span>
           </div>
         </div>`}
 
-        <div class="w-full h-3 rounded-full bg-white/10 overflow-hidden mb-2">
-          <div class="h-full bg-gradient-to-r from-indigo-500 to-emerald-400 transition-all duration-500"
-               style="width:${percent.toFixed(4)}%"></div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width:${percent.toFixed(4)}%"></div>
         </div>
       `;
     }
