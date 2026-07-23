@@ -31,7 +31,7 @@
 
     const root = document.getElementById("root");
 
-    function pad(n) { return String(n).padStart(2, "0"); }
+    function pad(n, len = 2) { return String(n).padStart(len, "0"); }
 
     function diffParts(ms) {
       const totalSeconds = Math.max(0, Math.floor(ms / 1000));
@@ -56,33 +56,27 @@
       const elapsed = Math.min(Math.max(now - START, 0), totalSpan);
       const percent = totalSpan > 0 ? (elapsed / totalSpan) * 100 : 100;
 
-      const unit = (value, label) => `
-        <div class="flex flex-col items-center bg-white/5 rounded-2xl px-3 py-4 sm:px-5 sm:py-6 backdrop-blur-sm border border-white/10 shadow-lg">
-          <span class="text-3xl sm:text-5xl font-bold tabular-nums tracking-tight">${pad(value)}</span>
-          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400 mt-1">${label}</span>
-        </div>`;
-
       root.innerHTML = `
-        <div class="text-center mb-8">
-          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-indigo-300/80 mb-3">
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-indigo-300/80">
             <span class="w-2 h-2 rounded-full bg-emerald-400 glow-dot"></span>
-            ${finished ? "Countdown complete" : "Counting down"}
+            Roaring 20s
           </div>
-          <h1 class="text-2xl sm:text-4xl font-semibold text-white">
-            ${finished ? "🎉 You made it — happy 30th!" : "10 Years: 20 &rarr; 30"}
-          </h1>
-          <p class="text-slate-400 mt-2 text-sm sm:text-base">
-            Target: ${END.toDateString()}
-          </p>
         </div>
 
-        ${finished ? "" : `
-        <div class="grid grid-cols-5 gap-2 sm:gap-4 mb-8">
-          ${unit(parts.years, "Years")}
-          ${unit(parts.days, "Days")}
-          ${unit(parts.hours, "Hours")}
-          ${unit(parts.minutes, "Minutes")}
-          ${unit(parts.seconds, "Seconds")}
+        ${finished ? `
+        <div class="text-center text-4xl sm:text-6xl font-extrabold mb-10">🎉 You made it — happy 30th!</div>
+        ` : `
+        <div class="flex items-center justify-center gap-3 sm:gap-6 mb-10">
+          <div class="flex flex-col items-center">
+            <span class="text-7xl sm:text-9xl font-extrabold tabular-nums tracking-tight leading-none">${pad(parts.years)}</span>
+            <span class="text-xs sm:text-sm uppercase tracking-widest text-slate-400 mt-3">Years</span>
+          </div>
+          <span class="text-6xl sm:text-8xl font-extrabold text-slate-500 leading-none">:</span>
+          <div class="flex flex-col items-center">
+            <span class="text-7xl sm:text-9xl font-extrabold tabular-nums tracking-tight leading-none">${pad(parts.days, 3)}</span>
+            <span class="text-xs sm:text-sm uppercase tracking-widest text-slate-400 mt-3">Days</span>
+          </div>
         </div>`}
 
         <div class="w-full h-3 rounded-full bg-white/10 overflow-hidden mb-2">
@@ -94,11 +88,6 @@
           <span>${percent.toFixed(2)}% elapsed</span>
           <span>${END.toDateString()}</span>
         </div>
-
-        <p class="text-center text-slate-500 text-xs mt-8">
-          This countdown is calculated from your device's clock against a fixed target date,
-          so it stays accurate no matter how long your computer has been off between visits.
-        </p>
       `;
     }
 
