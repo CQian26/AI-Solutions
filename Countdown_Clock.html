@@ -1,0 +1,109 @@
+<!-- A 10-year countdown clock. Counts down to a fixed target date, so it's always correct -->
+<!-- whenever the page is opened, no matter how long the computer/browser was off in between. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>10-Year Countdown</title>
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.55; }
+    }
+    .glow-dot { animation: pulseGlow 2s ease-in-out infinite; }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-slate-100 flex items-center justify-center p-6">
+  <div id="root" class="w-full max-w-3xl"></div>
+
+  <script>
+    // ---------- Configure the countdown here ----------
+    // Target window: turning 20 -> turning 30 (10 years).
+    const START = new Date(2026, 6, 26, 0, 0, 0);   // July 26, 2026 (month is 0-indexed)
+    const END   = new Date(2036, 6, 26, 0, 0, 0);   // July 26, 2036
+    // ----------------------------------------------------
+
+    const root = document.getElementById("root");
+
+    function pad(n) { return String(n).padStart(2, "0"); }
+
+    function diffParts(ms) {
+      const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+      const years = Math.floor(totalSeconds / (365.25 * 86400));
+      let remainder = totalSeconds - Math.floor(years * 365.25 * 86400);
+      const days = Math.floor(remainder / 86400);
+      remainder -= days * 86400;
+      const hours = Math.floor(remainder / 3600);
+      remainder -= hours * 3600;
+      const minutes = Math.floor(remainder / 60);
+      const seconds = remainder - minutes * 60;
+      return { years, days, hours, minutes, seconds, totalSeconds };
+    }
+
+    function render() {
+      const now = new Date();
+      const msLeft = END - now;
+      const finished = msLeft <= 0;
+      const parts = diffParts(msLeft);
+
+      const totalSpan = END - START;
+      const elapsed = Math.min(Math.max(now - START, 0), totalSpan);
+      const percent = totalSpan > 0 ? (elapsed / totalSpan) * 100 : 100;
+
+      const unit = (value, label) => `
+        <div class="flex flex-col items-center bg-white/5 rounded-2xl px-3 py-4 sm:px-5 sm:py-6 backdrop-blur-sm border border-white/10 shadow-lg">
+          <span class="text-3xl sm:text-5xl font-bold tabular-nums tracking-tight">${pad(value)}</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400 mt-1">${label}</span>
+        </div>`;
+
+      root.innerHTML = `
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-indigo-300/80 mb-3">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 glow-dot"></span>
+            ${finished ? "Countdown complete" : "Counting down"}
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-semibold text-white">
+            ${finished ? "🎉 You made it — happy 30th!" : "10 Years: 20 &rarr; 30"}
+          </h1>
+          <p class="text-slate-400 mt-2 text-sm sm:text-base">
+            Target: ${END.toDateString()}
+          </p>
+        </div>
+
+        ${finished ? "" : `
+        <div class="grid grid-cols-5 gap-2 sm:gap-4 mb-8">
+          ${unit(parts.years, "Years")}
+          ${unit(parts.days, "Days")}
+          ${unit(parts.hours, "Hours")}
+          ${unit(parts.minutes, "Minutes")}
+          ${unit(parts.seconds, "Seconds")}
+        </div>`}
+
+        <div class="w-full h-3 rounded-full bg-white/10 overflow-hidden mb-2">
+          <div class="h-full bg-gradient-to-r from-indigo-500 to-emerald-400 transition-all duration-500"
+               style="width:${percent.toFixed(4)}%"></div>
+        </div>
+        <div class="flex justify-between text-xs text-slate-400">
+          <span>${START.toDateString()}</span>
+          <span>${percent.toFixed(2)}% elapsed</span>
+          <span>${END.toDateString()}</span>
+        </div>
+
+        <p class="text-center text-slate-500 text-xs mt-8">
+          This countdown is calculated from your device's clock against a fixed target date,
+          so it stays accurate no matter how long your computer has been off between visits.
+        </p>
+      `;
+    }
+
+    render();
+    setInterval(render, 1000);
+  </script>
+</body>
+</html>
